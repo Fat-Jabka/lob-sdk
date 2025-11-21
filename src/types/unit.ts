@@ -1,4 +1,9 @@
-export interface IBaseUnit {
+import { Vector2 } from "@lob-sdk/vector";
+import { EntityId } from ".";
+
+export interface IUnit {
+  id: EntityId;
+  position: Vector2;
   currentFormation: string;
   pendingFormationId: string | null;
   /**

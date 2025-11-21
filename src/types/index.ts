@@ -67,3 +67,4 @@ export type EntityId = number;
 
 export * from "./order";
 export * from "./unit";
+export * from "./objective";
