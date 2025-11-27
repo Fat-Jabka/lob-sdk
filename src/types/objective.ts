@@ -12,4 +12,5 @@ export interface IObjective {
   player: number;
   team: number;
   type: ObjectiveType;
+  logistics?: number;
 }
