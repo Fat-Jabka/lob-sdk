@@ -139,7 +139,7 @@ interface BaseUnitTemplate {
   hp: number;
   org: number;
   stamina: number | null;
-  supply: number | null;
+  supply?: number | null;
   /**
    * Supply consumption per turn for this unit.
    * Defaults to 0 if not specified.
@@ -231,7 +231,6 @@ interface BaseUnitTemplate {
 }
 
 export interface RangeUnitTemplate extends BaseUnitTemplate {
-  range: number;
   rangedAttack: number;
   rangedDamageTypes: string[];
   fireWhileMoving?: boolean;
