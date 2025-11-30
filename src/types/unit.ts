@@ -200,11 +200,7 @@ interface BaseUnitTemplate {
    */
   turningDelay?: number;
 
-  reportStats?: Partial<{
-    men: number;
-    horse: number;
-    guns: number;
-  }>;
+  reportStats?: { [key: string]: number };
 
   /**
    * Number of collision circles for this unit type.
