@@ -92,8 +92,11 @@ export interface UnitDtoPartialId extends Omit<UnitDto, "id"> {
 }
 
 export enum UnitStatus {
+  /** Standing units can receive orders and fight normally */
   Standing = 1,
+  /** Routing units cannot receive orders and they will flee if possible */
   Routing = 2,
+  /** Recovering units cannot receive orders but they will keep fighting */
   Recovering = 3,
 }
 
