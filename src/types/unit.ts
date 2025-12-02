@@ -115,10 +115,27 @@ export interface UnitFormationTemplate {
   collisionCircles: number;
   collisionCircleSize: number;
   collisionCircleDistance?: number;
+  /**
+   * If true, collision circles are arranged vertically (along X axis).
+   * If false or undefined, collision circles are arranged horizontally (along Y axis).
+   * Defaults to false (horizontal).
+   */
+  collisionCirclesVertical?: boolean;
   width: number;
   height: number;
   baseSprite: string;
   overlaySprite?: string;
+  /**
+   * Points used to check what terrain the unit is on.
+   * Each point has an offset relative to the formation center and a weight
+   * that determines how much that point influences the terrain check.
+   * If not specified, defaults to checking only at the unit's center position.
+   */
+  terrainCheckPoints?: Array<{
+    x: number; // offset in pixels relative to formation center
+    y: number; // offset in pixels relative to formation center
+    weight: number; // integer weight (higher = more influence)
+  }>;
 }
 
 interface BaseUnitTemplate {
@@ -201,17 +218,6 @@ interface BaseUnitTemplate {
   turningDelay?: number;
 
   reportStats?: { [key: string]: number };
-
-  /**
-   * Number of collision circles for this unit type.
-   * Defaults to 2 if not specified.
-   */
-  collisionCircles?: number;
-  /**
-   * Diameter of collision circles for this unit type.
-   * Defaults to 12 if not specified.
-   */
-  collisionCircleSize?: number;
 
   /**
    * If true, the sprite of the unit will not rotate.
