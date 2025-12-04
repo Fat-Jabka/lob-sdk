@@ -21,14 +21,6 @@ export interface FormationTemplate {
    */
   collisionCirclesVertical?: boolean;
   /**
-   * Width of the formation in pixels.
-   */
-  width: number;
-  /**
-   * Height of the formation in pixels.
-   */
-  height: number;
-  /**
    * Points used to check what terrain the unit is on.
    * Each point has an offset relative to the formation center and a weight
    * that determines how much that point influences the terrain check.
