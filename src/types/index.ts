@@ -2,6 +2,44 @@ export interface FormationTemplate {
   id: string;
   frontBackArc: number;
 
+  /**
+   * Number of collision circles for this formation.
+   */
+  collisionCircles: number;
+  /**
+   * Size of each collision circle in pixels.
+   */
+  collisionCircleSize: number;
+  /**
+   * Distance between collision circles. Defaults to collisionCircleSize if not specified.
+   */
+  collisionCircleDistance?: number;
+  /**
+   * If true, collision circles are arranged vertically (along X axis).
+   * If false or undefined, collision circles are arranged horizontally (along Y axis).
+   * Defaults to false (horizontal).
+   */
+  collisionCirclesVertical?: boolean;
+  /**
+   * Width of the formation in pixels.
+   */
+  width: number;
+  /**
+   * Height of the formation in pixels.
+   */
+  height: number;
+  /**
+   * Points used to check what terrain the unit is on.
+   * Each point has an offset relative to the formation center and a weight
+   * that determines how much that point influences the terrain check.
+   * If not specified, defaults to checking only at the unit's center position.
+   */
+  terrainCheckPoints?: Array<{
+    x: number; // offset in pixels relative to formation center
+    y: number; // offset in pixels relative to formation center
+    weight: number; // integer weight (higher = more influence)
+  }>;
+
   movementModifier?: number;
   rotationSpeedModifier?: number;
   rangedAttackModifier?: number;
