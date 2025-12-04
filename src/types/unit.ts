@@ -85,6 +85,11 @@ export interface UnitDto {
    * Current formation
    */
   f?: string;
+
+  /**
+   * Entrenchment level.
+   */
+  en?: number;
 }
 
 export interface UnitDtoPartialId extends Omit<UnitDto, "id"> {
@@ -234,6 +239,11 @@ interface BaseUnitTemplate {
    * Default formation for this unit type.
    */
   defaultFormation: string;
+
+  /**
+   * Max entrenchment level.
+   */
+  maxEntrenchment?: number;
 }
 
 export interface RangeUnitTemplate extends BaseUnitTemplate {
