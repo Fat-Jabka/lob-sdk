@@ -90,6 +90,11 @@ export interface UnitDto {
    * Entrenchment level.
    */
   en?: number;
+
+  /**
+   * Stopped ticks.
+   */
+  stt?: number;
 }
 
 export interface UnitDtoPartialId extends Omit<UnitDto, "id"> {
