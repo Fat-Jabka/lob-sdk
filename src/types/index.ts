@@ -26,11 +26,7 @@ export interface FormationTemplate {
    * that determines how much that point influences the terrain check.
    * If not specified, defaults to checking only at the unit's center position.
    */
-  checkPoints?: Array<{
-    x: number; // offset in pixels relative to formation center
-    y: number; // offset in pixels relative to formation center
-    weight: number; // integer weight (higher = more influence)
-  }>;
+  checkPoints?: Array<FormationCheckPoint>;
 
   movementModifier?: number;
   rotationSpeedModifier?: number;
@@ -98,3 +94,22 @@ export type EntityId = number;
 export * from "./order";
 export * from "./unit";
 export * from "./objective";
+
+/**
+ * Points used to check what terrain the unit is on.
+ * Each point has an offset relative to the formation center and a weight
+ * that determines how much that point influences the terrain check.
+ * If not specified, defaults to checking only at the unit's center position.
+ */
+export interface FormationCheckPoint {
+  /** Offset in pixels relative to formation center */
+  x: number;
+  /** Offset in pixels relative to formation center */
+  y: number;
+  /** Integer weight (higher = more influence) */
+  weight: number;
+}
+
+export interface FormationCheckPointWithProportion extends FormationCheckPoint {
+  proportion: number;
+}
