@@ -26,7 +26,7 @@ export interface FormationTemplate {
    * that determines how much that point influences the terrain check.
    * If not specified, defaults to checking only at the unit's center position.
    */
-  terrainCheckPoints?: Array<{
+  checkPoints?: Array<{
     x: number; // offset in pixels relative to formation center
     y: number; // offset in pixels relative to formation center
     weight: number; // integer weight (higher = more influence)
