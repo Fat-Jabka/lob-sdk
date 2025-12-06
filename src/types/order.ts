@@ -149,7 +149,6 @@ export interface OrderTemplate {
   chargeResistance?: number;
   keepsEnemyRun?: boolean;
   receivedOrgDamage?: number;
-  ammoConsumptionModifier?: number;
   canFocusLocation?: boolean;
   orgRegainModifier?: number;
 }
