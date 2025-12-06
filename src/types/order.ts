@@ -151,4 +151,5 @@ export interface OrderTemplate {
   receivedOrgDamage?: number;
   ammoConsumptionModifier?: number;
   canFocusLocation?: boolean;
+  orgRegainModifier?: number;
 }
