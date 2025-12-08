@@ -156,6 +156,16 @@ interface BaseUnitTemplate {
    * Defaults to 0 if not specified.
    */
   supplyConsumption?: number;
+  /**
+   * Manpower cost per supply point provided to this unit.
+   * If not set, uses the global supplyManpowerCost from SupplyLinesRule.
+   */
+  supplyManpowerCost?: number;
+  /**
+   * Gold cost per supply point provided to this unit.
+   * If not set, uses the global supplyGoldCost from SupplyLinesRule.
+   */
+  supplyGoldCost?: number;
   orgRadius: number;
   orgRadiusBonus: number;
   movementSound: string;

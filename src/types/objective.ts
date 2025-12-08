@@ -13,4 +13,6 @@ export interface IObjective {
   team: number;
   type: ObjectiveType;
   logistics?: number;
+  manpowerPerTurn?: number;
+  goldPerTurn?: number;
 }
