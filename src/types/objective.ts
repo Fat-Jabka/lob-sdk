@@ -15,4 +15,6 @@ export interface IObjective {
   logistics?: number;
   manpowerPerTurn?: number;
   goldPerTurn?: number;
+  manpower?: number; // Accumulated manpower resources
+  gold?: number; // Accumulated gold resources
 }
