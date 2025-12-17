@@ -273,4 +273,5 @@ export interface IUnit {
   formationChangeTicksRemaining: number;
 
   supply: number | null;
+  supplyConsumption: number;
 }
