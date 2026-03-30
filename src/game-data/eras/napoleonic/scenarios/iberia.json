@@ -2,44 +2,178 @@
   "name": "name",
   "description": "description",
   "type": "random",
-  "ranked": true,
   "baseTerrain": 0,
+  "ranked": true,
   "defaultDeploymentZones": {
     "topMainDeploymentZone": {
-      "minX": 2,
-      "maxX": 2,
-      "minY": 2,
-      "maxY": 2,
-      "width": 50,
-      "height": 15
+      "minX": 5,
+      "maxX": 5,
+      "minY": 3,
+      "maxY": 3,
+      "width": 90,
+      "height": 10
     },
     "topForwardDeploymentZone": {
-      "minX": 2,
-      "maxX": 2,
-      "minY": 2,
-      "maxY": 2,
-      "width": 20,
-      "height": 45
+      "minX": 5,
+      "maxX": 5,
+      "minY": 18,
+      "maxY": 18,
+      "width": 90,
+      "height": 10
     },
     "bottomMainDeploymentZone": {
-      "minX": 50,
-      "maxX": 50,
-      "minY": 85,
-      "maxY": 85,
-      "width": 50,
-      "height": 15
+      "minX": 5,
+      "maxX": 5,
+      "minY": 90,
+      "maxY": 90,
+      "width": 90,
+      "height": 10
     },
     "bottomForwardDeploymentZone": {
-      "minX": 80,
-      "maxX": 80,
-      "minY": 55,
-      "maxY": 55,
-      "width": 20,
-      "height": 45
+      "minX": 5,
+      "maxX": 5,
+      "minY": 76,
+      "maxY": 76,
+      "width": 90,
+      "height": 10
     }
   },
 
   "instructions": [
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [20, 26], "max": [24, 30] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [45, 26], "max": [55, 30] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [76, 26], "max": [80, 30] },
+      "width": 5,
+      "height": 5
+    },
+
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [20, 70], "max": [24, 74] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [45, 70], "max": [55, 74] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [76, 70], "max": [80, 74] },
+      "width": 5,
+      "height": 5
+    },
+
+    {
+      "type": "OBJECTIVE_LAYER",
+      "player": 1,
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [23],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 2,
+      "maxObj": 1
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [23],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 1,
+      "maxObj": 2
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "player": 2,
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [22],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 2,
+      "maxObj": 1
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [22],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 1,
+      "maxObj": 2
+    },
+
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [17, 47],
+        "max": [27, 53]
+      }
+    },
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [42, 47],
+        "max": [58, 53]
+      }
+    },
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [73, 47],
+        "max": [83, 55]
+      }
+    },
+    {
+      "type": "TERRAIN_NOISE",
+      "terrain": 0,
+      "scale": 1,
+      "ranges": [{ "min": 0, "max": 1 }],
+      "multiplier": 1
+    },
+
     {
       "type": "HEIGHT_NOISE",
       "noises": [
@@ -1192,15 +1326,15 @@
         "max": 1,
         "min_scaling_factor": {
           "s": 1,
-          "m": 1,
-          "l": 1,
+          "m": 2,
+          "l": 2,
           "xl": 2
         },
         "max_scaling_factor": {
-          "s": 1,
-          "m": 2,
-          "l": 2,
-          "xl": 3
+          "s": 2,
+          "m": 3,
+          "l": 4,
+          "xl": 4
         }
       },
       "width": 1,
@@ -1222,103 +1356,9 @@
       ],
       "distance weight": -0.25,
       "curveLen": 1,
-      "curveWeight": 10,
-      "noiseWeight": 30,
+      "curveWeight": 100,
+      "noiseWeight": 100,
       "noiseSmoothness": 0.8
-    },
-    {
-      "type": "NATURAL_PATH",
-      "terrain": 4,
-      "between": "left-right",
-      "yBounds": { "min": 5, "max": 38 },
-      "xBounds": { "min": 0, "max": 100 },
-      "range": { "min": 5, "max": 95 },
-      "amount": {
-        "min": 1,
-        "max": 1,
-        "min_scaling_factor": {
-          "s": 1,
-          "m": 1,
-          "l": 1,
-          "xl": 1
-        },
-        "max_scaling_factor": {
-          "s": 1,
-          "m": 1,
-          "l": 1,
-          "xl": 1
-        }
-      },
-      "width": 1,
-      "height": 4,
-      "heightDiffCost": 1000,
-      "terrainReplacements": [
-        { "fromTerrain": 3, "toTerrain": 7 },
-        { "fromTerrain": 7, "toTerrain": 7 }
-      ],
-      "startHeightRanges": [{ "min": 4, "max": 4 }],
-      "terrainCosts": [
-        { "terrain": 4, "cost": 1.75 },
-        { "terrain": 0, "cost": 5.25 },
-        { "terrain": 2, "cost": 4.45 },
-        { "terrain": 3, "cost": 10.15 },
-        { "terrain": 7, "cost": 6.15 },
-        { "terrain": 11, "cost": 7.15 },
-        { "terrain": 17, "cost": 7.15 },
-        { "terrain": 18, "cost": 7.15 }
-      ],
-      "distance weight": -0.25,
-      "curveLen": 1,
-      "curveWeight": 0,
-      "noiseWeight": 0,
-      "noiseSmoothness": 1
-    },
-    {
-      "type": "NATURAL_PATH",
-      "terrain": 4,
-      "between": "left-right",
-      "yBounds": { "min": 62, "max": 95 },
-      "xBounds": { "min": 0, "max": 100 },
-      "range": { "min": 5, "max": 95 },
-      "amount": {
-        "min": 1,
-        "max": 1,
-        "min_scaling_factor": {
-          "s": 1,
-          "m": 1,
-          "l": 1,
-          "xl": 1
-        },
-        "max_scaling_factor": {
-          "s": 1,
-          "m": 1,
-          "l": 1,
-          "xl": 1
-        }
-      },
-      "startHeightRanges": [{ "min": 4, "max": 4 }],
-      "width": 1,
-      "height": 4,
-      "heightDiffCost": 1000,
-      "terrainReplacements": [
-        { "fromTerrain": 3, "toTerrain": 7 },
-        { "fromTerrain": 7, "toTerrain": 7 }
-      ],
-      "terrainCosts": [
-        { "terrain": 4, "cost": 1.75 },
-        { "terrain": 0, "cost": 5.25 },
-        { "terrain": 2, "cost": 4.45 },
-        { "terrain": 3, "cost": 10.15 },
-        { "terrain": 7, "cost": 6.15 },
-        { "terrain": 11, "cost": 7.15 },
-        { "terrain": 17, "cost": 7.15 },
-        { "terrain": 18, "cost": 7.15 }
-      ],
-      "distance weight": -0.25,
-      "curveLen": 1,
-      "curveWeight": 0,
-      "noiseWeight": 0,
-      "noiseSmoothness": 1
     },
 
     {
@@ -1328,92 +1368,8 @@
       "mergeStrategy": "avg",
       "min": 4,
       "max": 4
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "player": 2,
-      "xBounds": { "min": 25, "max": 38 },
-      "yBounds": { "min": 25, "max": 38 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 3
-      },
-      "minDistance": 15,
-      "objectiveType": 2,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "player": 1,
-      "xBounds": { "min": 62, "max": 75 },
-      "yBounds": { "min": 62, "max": 75 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 3
-      },
-      "minDistance": 15,
-      "objectiveType": 2,
-      "maxObj": 1
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 40, "max": 50 },
-      "yBounds": { "min": 40, "max": 50 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 1
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 50, "max": 60 },
-      "yBounds": { "min": 50, "max": 60 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 1
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 30, "max": 40 },
-      "yBounds": { "min": 60, "max": 70 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 2
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 60, "max": 70 },
-      "yBounds": { "min": 30, "max": 40 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 2
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
     }
   ],
-  "triggers": [],
   "locales": {
     "en": {
       "name": "Iberia",
@@ -1421,47 +1377,43 @@
     },
     "ru": {
       "name": "Иберия",
-      "description": "Сражайтесь через хребты Иберийского полуострова"
+      "description": "Хребты Пиренейского полуострова замерли в ожидании боя"
+    },
+    "ar": {
+      "name": "ايبيريا",
+      "description": "قتال عبر التلال من شبه الجزيرة الايبيرية"
+    },
+    "de": {
+      "name": "Iberia",
+      "description": "Kämpfe über die Kämme der Iberischen Halbinsel"
+    },
+    "el": {
+      "name": "Ιβηρία",
+      "description": "Καταπολέμηση στις κορυφογραμμές της Ιβηρικής Χερσονήσου"
     },
     "es": {
       "name": "Iberia",
-      "description": "Lucha a través de las crestas de la Península Ibérica"
-    },
-    "de": {
-      "name": "Iberien",
-      "description": "Kämpfe über die Rücken der Iberischen Halbinsel"
+      "description": "Lucha por las cordilleras de la Península Ibérica"
     },
     "fr": {
       "name": "Ibérie",
       "description": "Combattez à travers les crêtes de la péninsule ibérique"
     },
-    "it": {
-      "name": "Iberia",
-      "description": "Combattete attraverso i crinali della penisola iberica"
-    },
-    "pl": {
-      "name": "Iberia",
-      "description": "Walcz na grzbietach Półwyspu Iberyjskiego"
-    },
-    "ar": {
-      "name": "أيبيريا",
-      "description": "قتال عبر تلال شبه الجزيرة الأيبيرية"
-    },
-    "el": {
-      "name": "Ιβηρία",
-      "description": "Πολεμήστε στις κορυφογραμμές της Ιβηρικής Χερσονήσου"
-    },
     "hi": {
-      "name": "इबेरिया",
-      "description": "इबेरियन प्रायद्वीप की लकीरों में लड़ें"
+      "name": "आइबेरिया",
+      "description": "इबेरियन प्रायद्वीपीय की लकीरों के पार लड़ो"
     },
     "hu": {
-      "name": "Ibéria",
-      "description": "Harcolj keresztül az Ibériai-félsziget gerincein"
+      "name": "Iberia",
+      "description": "Küzdelem az Ibériai-félsziget gerincén"
     },
     "id": {
       "name": "Iberia",
-      "description": "Bertarung melintasi pegunungan di Semenanjung Iberia"
+      "description": "Bertarung melintasi punggung bukit Semenanjung Iberia"
+    },
+    "it": {
+      "name": "Iberia",
+      "description": "Lotta attraverso le creste della penisola iberica"
     },
     "ja": {
       "name": "イベリア",
@@ -1469,27 +1421,31 @@
     },
     "kr": {
       "name": "이베리아",
-      "description": "이베리아 반도의 능선을 가로 질러 싸워라."
+      "description": "이베리아 반도의 능선을 가로 질러 싸우십시오"
+    },
+    "pl": {
+      "name": "Iberia",
+      "description": "Walcz przez grzbiety Półwyspu Iberyjskiego"
     },
     "pt": {
       "name": "Ibéria",
-      "description": "Lute através das cristas da Península Ibérica"
+      "description": "Luta através dos cumes da Península Ibérica"
     },
     "tr": {
       "name": "İberya",
-      "description": "İber Yarımadası'nın sırtlarında savaş"
+      "description": "İber Yarımadası'nın sıradağlarında mücadele edin"
     },
     "uk": {
       "name": "Іберія",
-      "description": "Боріться крізь гребені Піренейського півострова"
+      "description": "Боріться на гірських хребтах Піренейського півострова"
     },
     "vi": {
-      "name": "Bán đảo Iberia",
-      "description": "Chiến đấu qua các sườn núi của Bán đảo Iberia"
+      "name": "Iberia",
+      "description": "Chiến đấu trên các rặng núi Của Bán Đảo Iberia"
     },
     "zh": {
       "name": "伊比利亚",
-      "description": "在伊比利亚半岛的山脊上战斗"
+      "description": "跨越伊比利亚半岛的山脊战斗"
     }
   }
 }

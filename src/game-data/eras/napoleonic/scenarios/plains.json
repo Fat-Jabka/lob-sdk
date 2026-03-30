@@ -38,7 +38,142 @@
       "height": 10
     }
   },
+
   "instructions": [
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [20, 26], "max": [24, 30] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [45, 26], "max": [55, 30] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 22,
+      "position": { "type": "range", "min": [76, 26], "max": [80, 30] },
+      "width": 5,
+      "height": 5
+    },
+
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [20, 70], "max": [24, 74] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [45, 70], "max": [55, 74] },
+      "width": 5,
+      "height": 5
+    },
+    {
+      "type": "TERRAIN_RECTANGLE",
+      "terrain": 23,
+      "position": { "type": "range", "min": [76, 70], "max": [80, 74] },
+      "width": 5,
+      "height": 5
+    },
+
+    {
+      "type": "OBJECTIVE_LAYER",
+      "player": 1,
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [23],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 2,
+      "maxObj": 1
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [23],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 1,
+      "maxObj": 2
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "player": 2,
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [22],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 2,
+      "maxObj": 1
+    },
+    {
+      "type": "OBJECTIVE_LAYER",
+      "xBounds": { "min": 20, "max": 100 },
+      "yBounds": { "min": 0, "max": 100 },
+      "terrainFilter": {
+        "terrains": [22],
+        "searchRadius": 1,
+        "minAmount": 1
+      },
+      "minDistance": 15,
+      "objectiveType": 1,
+      "maxObj": 2
+    },
+
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [17, 47],
+        "max": [27, 53]
+      }
+    },
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [42, 47],
+        "max": [58, 53]
+      }
+    },
+    {
+      "type": "OBJECTIVE",
+      "player": 0,
+      "position": {
+        "type": "range",
+        "min": [73, 47],
+        "max": [83, 55]
+      }
+    },
+    {
+      "type": "TERRAIN_NOISE",
+      "terrain": 0,
+      "scale": 1,
+      "ranges": [{ "min": 0, "max": 1 }],
+      "multiplier": 1
+    },
+
     {
       "type": "HEIGHT_NOISE",
       "noises": [{ "scale": { "x": 44, "y": 53 }, "multiplier": 20 }],
@@ -1632,89 +1767,6 @@
       "mergeStrategy": "round",
       "min": 1,
       "max": 1
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "player": 2,
-      "xBounds": { "min": 25, "max": 75 },
-      "yBounds": { "min": 23, "max": 33 },
-      "terrainFilter": {
-        "terrains": [2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 3
-      },
-      "minDistance": 15,
-      "objectiveType": 2,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "player": 1,
-      "xBounds": { "min": 25, "max": 75 },
-      "yBounds": { "min": 67, "max": 77 },
-      "terrainFilter": {
-        "terrains": [2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 3
-      },
-      "minDistance": 15,
-      "objectiveType": 2,
-      "maxObj": 1
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 20, "max": 80 },
-      "yBounds": { "min": 40, "max": 50 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 1
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 20, "max": 80 },
-      "yBounds": { "min": 50, "max": 60 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 1
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 17, "max": 83 },
-      "yBounds": { "min": 34, "max": 40 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 2
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
-    },
-    {
-      "type": "OBJECTIVE_LAYER",
-      "xBounds": { "min": 17, "max": 83 },
-      "yBounds": { "min": 50, "max": 66 },
-      "terrainFilter": {
-        "terrains": [1, 2, 3, 7],
-        "searchRadius": 2,
-        "minAmount": 2
-      },
-      "minDistance": 14,
-      "objectiveType": 1,
-      "maxObj": 1
     }
   ],
   "triggers": [],
