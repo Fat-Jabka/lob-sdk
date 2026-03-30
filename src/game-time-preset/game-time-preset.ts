@@ -129,8 +129,8 @@ export class GameTimePresetManager {
       },
       {
         id: "rapid",
-        bankTimeSeconds: 3000,
-        incrementSeconds: 50,
+        bankTimeSeconds: 2700,
+        incrementSeconds: 45,
         turnCapSeconds: 360,
         deploymentTimeSeconds: 360,
         kFactor: 32,
