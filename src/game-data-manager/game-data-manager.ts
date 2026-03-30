@@ -723,15 +723,17 @@ export class GameDataManager {
     return { width: 32, height: 32 };
   }
 
-  public getUnitBaseTexture(unitType: UnitType): string {
+  public getUnitBaseTexture(unitType: UnitType, formationId?: string): string {
     const template = this._unitTemplateManager.getTemplate(unitType);
-    // Get sprite from default formation
-    const defaultFormation = template.formations.find(
-      (f) => f.id === template.defaultFormation,
+    const formationName = formationId ?? template.defaultFormation;
+    const formation = template.formations.find(
+      (f) => f.id === formationName,
     );
-    if (defaultFormation) {
-      return defaultFormation.baseSprite;
+    
+    if (formation) {
+      return formation.baseSprite;
     }
+
     // Fallback
     return "unknown";
   }
