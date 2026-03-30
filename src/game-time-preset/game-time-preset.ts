@@ -11,12 +11,15 @@ export const SECONDS_PER_YEAR = 31536000;
 
 /** Game time preset IDs — config is the source of truth in @common/game-time-presets */
 export type GameTimePresetId =
+  // Fast
   | "bullet"
   | "standard"
   | "classic"
+  // Slow
+  | "extended"
   | "daily"
   | "correspondence"
-  | "marathon"
+  // Custom
   | "offline"
   | "custom";
 
@@ -137,7 +140,7 @@ export class GameTimePresetManager {
       },
 
       {
-        id: "marathon",
+        id: "extended",
         bankTimeSeconds: 60 * 60 * 24 * 2, // 2 days
         incrementSeconds: 60 * 60 * 12, // 12 hours
         turnCapSeconds: 0,
