@@ -112,7 +112,6 @@ export class GameTimePresetManager {
     // Turn cap is generally limited to ~2x the expected avg turn length to prevent stalling
     const presets: GameTimePreset[] = [
       {
-        // Est game time ~35 min + 2 deployment
         id: "bullet",
         bankTimeSeconds: 900,
         incrementSeconds: 15,
@@ -121,7 +120,6 @@ export class GameTimePresetManager {
         kFactor: 20,
       },
       {
-        // Est game time ~50 min + 3.5 deployment
         id: "blitz",
         bankTimeSeconds: 1800,
         incrementSeconds: 30,
@@ -130,10 +128,9 @@ export class GameTimePresetManager {
         kFactor: 26,
       },
       {
-        // Est game time ~1 hour 10 min + 5 deployment
         id: "rapid",
-        bankTimeSeconds: 2700,
-        incrementSeconds: 45,
+        bankTimeSeconds: 3000,
+        incrementSeconds: 50,
         turnCapSeconds: 360,
         deploymentTimeSeconds: 360,
         kFactor: 32,
@@ -141,24 +138,24 @@ export class GameTimePresetManager {
 
       {
         id: "marathon",
-        bankTimeSeconds: 60 * 60 * 4, // 4 hours
-        incrementSeconds: 60 * 5, // 5 min
+        bankTimeSeconds: 60 * 60 * 24 * 2, // 2 days
+        incrementSeconds: 60 * 60 * 12, // 12 hours
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,
       },
       {
         id: "daily",
-        bankTimeSeconds: 60 * 60 * 24 * 1.5, // 36 hours
-        incrementSeconds: 60 * 60 * 24 * 1, // 24 hours
+        bankTimeSeconds: 60 * 60 * 24 * 3, // 3 days
+        incrementSeconds: 60 * 60 * 24, // 24 hours
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,
       },
       {
         id: "correspondence",
-        bankTimeSeconds: 60 * 60 * 24 * 3, // 3 days
-        incrementSeconds: 60 * 60 * 24 * 3, // 3 days
+        bankTimeSeconds: 60 * 60 * 24 * 5, // 5 days
+        incrementSeconds: 60 * 60 * 24 * 2, // 2 days
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,
