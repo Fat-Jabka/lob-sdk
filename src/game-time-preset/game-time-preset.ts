@@ -11,12 +11,15 @@ export const SECONDS_PER_YEAR = 31536000;
 
 /** Game time preset IDs — config is the source of truth in @common/game-time-presets */
 export type GameTimePresetId =
+  // Fast
   | "bullet"
-  | "blitz"
-  | "rapid"
+  | "standard"
+  | "classic"
+  // Slow
+  | "extended"
   | "daily"
   | "correspondence"
-  | "marathon"
+  // Custom
   | "offline"
   | "custom";
 
@@ -89,7 +92,7 @@ export class GameTimePresetManager {
   private static _instance: GameTimePresetManager | null = null;
   private _presets: Map<GameTimePresetId, GameTimePreset> = new Map();
 
-  public static readonly DEFAULT_PRESET_ID: GameTimePresetId = "blitz";
+  public static readonly DEFAULT_PRESET_ID: GameTimePresetId = "standard";
   public static readonly DEFAULT_FAST_PRESET_IDS: GameTimePresetId[] = [
     "bullet",
   ];
@@ -112,53 +115,50 @@ export class GameTimePresetManager {
     // Turn cap is generally limited to ~2x the expected avg turn length to prevent stalling
     const presets: GameTimePreset[] = [
       {
-        // Est game time ~35 min + 2 deployment
         id: "bullet",
         bankTimeSeconds: 900,
         incrementSeconds: 15,
-        turnCapSeconds: 120,
-        deploymentTimeSeconds: 120,
+        turnCapSeconds: 90,
+        deploymentTimeSeconds: 90,
         kFactor: 20,
       },
       {
-        // Est game time ~50 min + 3.5 deployment
-        id: "blitz",
+        id: "standard",
         bankTimeSeconds: 1800,
         incrementSeconds: 30,
-        turnCapSeconds: 240,
-        deploymentTimeSeconds: 240,
+        turnCapSeconds: 180,
+        deploymentTimeSeconds: 180,
         kFactor: 26,
       },
       {
-        // Est game time ~1 hour 10 min + 5 deployment
-        id: "rapid",
-        bankTimeSeconds: 2700,
-        incrementSeconds: 45,
-        turnCapSeconds: 360,
-        deploymentTimeSeconds: 360,
+        id: "classic",
+        bankTimeSeconds: 3000,
+        incrementSeconds: 50,
+        turnCapSeconds: 300,
+        deploymentTimeSeconds: 300,
         kFactor: 32,
       },
 
       {
-        id: "marathon",
-        bankTimeSeconds: 60 * 60 * 4, // 4 hours
-        incrementSeconds: 60 * 5, // 5 min
+        id: "extended",
+        bankTimeSeconds: 60 * 60 * 24 * 2, // 2 days
+        incrementSeconds: 60 * 60 * 12, // 12 hours
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,
       },
       {
         id: "daily",
-        bankTimeSeconds: 60 * 60 * 24 * 1.5, // 36 hours
-        incrementSeconds: 60 * 60 * 24 * 1, // 24 hours
+        bankTimeSeconds: 60 * 60 * 24 * 3, // 3 days
+        incrementSeconds: 60 * 60 * 24, // 24 hours
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,
       },
       {
         id: "correspondence",
-        bankTimeSeconds: 60 * 60 * 24 * 3, // 3 days
-        incrementSeconds: 60 * 60 * 24 * 3, // 3 days
+        bankTimeSeconds: 60 * 60 * 24 * 5, // 5 days
+        incrementSeconds: 60 * 60 * 24 * 2, // 2 days
         turnCapSeconds: 0,
         deploymentTimeSeconds: 0,
         kFactor: 36,

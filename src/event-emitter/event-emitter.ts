@@ -48,4 +48,11 @@ export class EventEmitter<T extends Record<EventName, any>> {
 
     eventListeners.forEach((listener) => listener(arg));
   }
+
+  /**
+   * Removes all listeners for all events.
+   */
+  clear() {
+    this.listeners.clear();
+  }
 }
