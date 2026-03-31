@@ -44,6 +44,11 @@ export interface Player {
    * Used for Fischer timing. Null if player hasn't submitted.
    */
   submittedAt: number | null;
+  /**
+   * Timestamp when this player withdrew from the game (seconds since epoch).
+   * Null when the player has not withdrawn.
+   */
+  withdrawnAt?: number | null;
 }
 
 export interface PlayerInfo {
@@ -90,6 +95,11 @@ export interface PlayerInfo {
    * Used for Fischer timing. Null if player hasn't submitted.
    */
   submittedAt: number | null;
+  /**
+   * Timestamp when this player withdrew from the game (seconds since epoch).
+   * Null when the player has not withdrawn.
+   */
+  withdrawnAt?: number | null;
 }
 
 /**
