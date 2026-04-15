@@ -5,7 +5,6 @@
   "baseTerrain": 0,
   "ranked": true,
   "defaultDeploymentZones": {
-  "defaultDeploymentZones": {
     "topMainDeploymentZone": {
       "minX": 5,
       "maxX": 5,
