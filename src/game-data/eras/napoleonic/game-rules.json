@@ -2,13 +2,13 @@
   "stamina": {
     "meleeTurnCost": 200,
     "rangedTurnCost": 50,
-    "hasRanMeleeStaminaCostModifier": 0.5,
+    "hasRanMeleeStaminaCostModifier": 0,
     "regainRates": {
-      "range1": 100,
+      "range1": 85,
       "range2": 75,
-      "range3": 50,
-      "range4": 35,
-      "range5": 25
+      "range3": 65,
+      "range4": 45,
+      "range5": 35
     },
     "upperModifierLimit": 0.85,
     "lowerModifierLimit": 0.4,
