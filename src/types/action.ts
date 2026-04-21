@@ -55,6 +55,12 @@ export interface TurnAction extends BaseAction {
     team: number;
     /** Total army power of the team. */
     armyPower: number;
+    /**
+     * Team's accumulated ticks under pressure at the start of the turn.
+     * Carried on the TurnAction so replays can mirror the live victory-bar
+     * behavior. 0 means not under pressure. Absent on older replays.
+     */
+    ticksUnderPressure?: number;
   }[];
 }
 

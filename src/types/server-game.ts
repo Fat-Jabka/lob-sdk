@@ -259,6 +259,12 @@ export interface GameState<UsePartialIds extends boolean = false> {
      * Units gained in the middle of the battle. See `addUnit` trigger.
      */
     unitsGained: UnitCounts | null;
+    /**
+     * Ticks the player has spent under objective pressure. Persisted on
+     * snapshots so replay scrubbing restores the correct victory-bar state.
+     * 0 means not under pressure. Absent on older snapshots.
+     */
+    ticksUnderPressure?: number;
   }[];
   /** Information about teams and their army power. */
   teams: {
