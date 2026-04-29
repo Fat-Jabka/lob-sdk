@@ -218,7 +218,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 148,
+    "ammoCost": 99,
     "extendRange": false
   },
   {
@@ -250,7 +250,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 260,
+    "ammoCost": 173,
     "extendRange": true
   },
   {
@@ -301,7 +301,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 140,
+    "ammoCost": 93,
     "extendRange": false
   },
   {
@@ -361,7 +361,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 155,
+    "ammoCost": 103,
     "extendRange": false
   },
   {
@@ -412,7 +412,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 108,
+    "ammoCost": 72,
     "extendRange": false
   },
   {
@@ -444,7 +444,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 250,
+    "ammoCost": 167,
     "extendRange": true
   },
   {
@@ -495,7 +495,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 145,
+    "ammoCost": 97,
     "extendRange": false
   },
   {
@@ -555,7 +555,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 145,
+    "ammoCost": 97,
     "extendRange": false
   },
   {
@@ -587,7 +587,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 210,
+    "ammoCost": 140,
     "extendRange": true
   },
   {
@@ -638,7 +638,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 160,
+    "ammoCost": 107,
     "extendRange": false
   },
   {
@@ -698,7 +698,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 160,
+    "ammoCost": 107,
     "extendRange": false
   },
   {
@@ -730,7 +730,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 220,
+    "ammoCost": 147,
     "extendRange": true
   },
   {
@@ -781,7 +781,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 165,
+    "ammoCost": 110,
     "extendRange": false
   },
   {
@@ -841,7 +841,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 165,
+    "ammoCost": 110,
     "extendRange": false
   },
   {
@@ -890,7 +890,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 144,
+    "ammoCost": 96,
     "extendRange": false
   },
   {
@@ -939,7 +939,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 108,
+    "ammoCost": 72,
     "extendRange": false
   },
   {
@@ -995,7 +995,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 240,
+    "ammoCost": 160,
     "extendRange": false
   },
   {
@@ -1027,7 +1027,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 260,
+    "ammoCost": 173,
     "extendRange": true
   },
   {
@@ -1059,7 +1059,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 250,
+    "ammoCost": 167,
     "extendRange": true
   },
   {
@@ -1084,7 +1084,7 @@
     "projectilePenetration": 0.1,
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
-    "ammoCost": 356,
+    "ammoCost": 237,
     "extendRange": true
   },
   {
@@ -1176,7 +1176,7 @@
     "shotSound": "rocket-volley",
     "shotAnim": "rocketVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 150,
+    "ammoCost": 100,
     "extendRange": false
   },
   {
@@ -1221,7 +1221,7 @@
     "shotSound": "rocket-volley",
     "shotAnim": "rocketVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 75,
+    "ammoCost": 50,
     "extendRange": false
   }
 ]
