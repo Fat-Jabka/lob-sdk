@@ -731,7 +731,7 @@ export class GameDataManager {
     const formation = template.formations.find(
       (f) => f.id === formationName,
     );
-    
+
     if (formation) {
       return formation.baseSprite;
     }
