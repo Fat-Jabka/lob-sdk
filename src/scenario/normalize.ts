@@ -37,17 +37,10 @@ export function normalizeScenario(raw: RawScenarioInput): Scenario {
   }
 }
 
-// Scenarios authored before `allowDeploymentPhase` existed fall back to the
-// old coupling: dynamic-army implied a deployment phase, fixed-roster skipped
-// it. Warn so an author who forgot the flag sees it instead of debugging a
-// missing-feature symptom.
+// Old schema: dynamic-army implied a deployment phase, fixed-roster skipped it.
 const _backfillCurrent = (raw: Scenario): Scenario => {
   if (raw.allowDeploymentPhase !== undefined) return raw;
-  const fallback = raw.allowDynamicArmy === true;
-  console.warn(
-    `[normalizeScenario] "${raw.name}" missing 'allowDeploymentPhase' (using ${fallback}).`,
-  );
-  return { ...raw, allowDeploymentPhase: fallback };
+  return { ...raw, allowDeploymentPhase: raw.allowDynamicArmy === true };
 };
 
 const _isCurrent = (raw: RawScenarioInput): raw is Scenario =>
