@@ -361,7 +361,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 140,
+    "ammoCost": 155,
     "extendRange": false
   },
   {
@@ -957,16 +957,16 @@
     },
     "orgModifierByTargetOrg": {
       "start": 0.9,
-      "end": 0.65,
-      "modifier": -0.25
+      "end": 0.6,
+      "modifier": -0.15
     },
     "ranges": [
-      { "start": 69, "end": 200, "startMod": 0.0, "endMod": -0.2 },
+      { "start": 69, "end": 200, "startMod": 0.0, "endMod": -0.15 },
       {
         "start": 200,
         "end": 340,
-        "startMod": -0.2,
-        "endMod": -0.7,
+        "startMod": -0.15,
+        "endMod": -0.6,
         "name": "long"
       }
     ],
@@ -980,17 +980,17 @@
           "start": 69,
           "end": 200,
           "startRadius": 32,
-          "endRadius": 40
+          "endRadius": 32
         },
         {
           "start": 200,
           "end": 340,
-          "startRadius": 40,
-          "endRadius": 48
+          "startRadius": 32,
+          "endRadius": 32
         }
       ],
-      "edgeDamageModifier": -0.1,
-      "absorptionModifier": 1.25
+      "edgeDamageModifier": -0.05,
+      "absorptionModifier": 0
     },
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
