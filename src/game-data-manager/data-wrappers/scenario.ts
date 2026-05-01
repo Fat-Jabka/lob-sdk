@@ -10,17 +10,10 @@ import { Tutorial } from "@lob-sdk/types/tutorial";
 import { UnitDtoPartialId } from "./unit";
 import { STAT_PRECISION_SCALE } from "./scale";
 
-/**
- * Translations for scenario content, organized by language.
- * Each language key (e.g., "en", "es", "fr") contains a Record of translation keys to translated strings.
- */
 export type GameLocales = {
   [language: string]: Record<string, string>;
 };
 
-/**
- * Type of game scenario.
- */
 export enum GameScenarioType {
   /** Preset scenario with a fixed map and unit placement. */
   Preset = "preset",
@@ -37,21 +30,13 @@ export enum GameScenarioType {
  */
 export type DeploymentZoneType = "main" | "forward";
 
-/**
- * A single deployment zone rectangle belonging to a team.
- */
 export interface TeamDeploymentZone {
-  /** The team number this zone belongs to. */
   team: number;
-  /** Whether the zone is a main or a forward (skirmisher-allowed) zone. */
   type: DeploymentZoneType;
-  /** X coordinate of the zone's top-left corner. */
+  /** Top-left corner. */
   x: number;
-  /** Y coordinate of the zone's top-left corner. */
   y: number;
-  /** Width of the deployment zone. */
   width: number;
-  /** Height of the deployment zone. */
   height: number;
 }
 
@@ -103,48 +88,29 @@ export const getForwardZone = (
   return zone;
 };
 
-/**
- * Represents the game map with terrain, height data, and deployment zones.
- */
 export interface GameMap {
-  /** Width of the map in tiles. */
+  /** Width of the map in pixels (tile-indexed `terrains`/`heightMap` use TILE_SIZE). */
   width: number;
-  /** Height of the map in tiles. */
+  /** Height of the map in pixels. */
   height: number;
-  /** Optional deployment zones for each team. */
   deploymentZones?: TeamDeploymentZones[];
-  /** 2D array of terrain types, indexed by [x][y]. */
+  /** Indexed by [x][y] in tiles. */
   terrains: TerrainType[][];
-  /** 2D array of height values, indexed by [x][y]. */
+  /** Indexed by [x][y] in tiles. */
   heightMap: number[][];
-  /** Seed used for random map generation. */
   seed?: number;
 }
 
-/**
- * Base interface for all scenario types.
- * Contains common properties shared by all scenario types.
- */
 interface BaseScenario {
-  /** Name of the scenario. */
   name: string;
-  /** Description of the scenario. */
   description: string;
-  /** Type of scenario. */
   type: GameScenarioType;
-  /** Whether this scenario can be used in ranked matches. */
   ranked?: boolean;
-  /** Whether this scenario should be hidden from scenario selection. */
+  /** Hidden from scenario selection lists. */
   hidden?: boolean;
-  /** Game triggers that can modify game state during play. */
   triggers?: GameTrigger[];
-  /**
-   * Default: true. If false, disables automatic victory when only one team is alive.
-   */
+  /** Default true. If false, disables automatic victory when only one team is alive. */
   conquestVictory?: boolean;
-  /**
-   * Translations for scenario name, description, and trigger messages.
-   */
   locales?: GameLocales;
 }
 
@@ -242,19 +208,14 @@ export interface Scenario {
   type?: never;
   /** Discriminator: new scenarios use {@link randomDeploymentZones} instead. */
   defaultDeploymentZones?: never;
-  /** Display name. */
   name: string;
-  /** Display description. */
   description: string;
-  /** Whether the scenario can be used in ranked matches. */
   ranked?: boolean;
-  /** Whether the scenario should be hidden from selection. */
+  /** Hidden from scenario selection lists. */
   hidden?: boolean;
-  /** Game triggers that can modify game state during play. */
   triggers?: GameTrigger[];
   /** Default true. If false, disables automatic victory when only one team is alive. */
   conquestVictory?: boolean;
-  /** Translations for scenario name, description, and trigger keys. */
   locales?: GameLocales;
   /**
    * Prebaked map (handcrafted via the editor or imported as JSON). When set,
