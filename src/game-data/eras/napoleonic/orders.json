@@ -18,6 +18,7 @@
   {
     "id": 4,
     "name": "fireAndAdvance",
+    "isDefault": true,
     "speedModifierWhenShooting": -0.1,
     "speedModifierWhenShootingByCategory": {
       "infantry": -0.1,

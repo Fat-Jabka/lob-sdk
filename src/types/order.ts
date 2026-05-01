@@ -269,6 +269,8 @@ export interface OrderTemplate {
   canFocusLocation?: boolean;
   /** Modifier for organization regain rate while executing this order. */
   orgRegainModifier?: number;
+  /** When true, the UI selects this order by default at the start of a game. At most one order per era should set this. */
+  isDefault?: boolean;
 }
 
 /**

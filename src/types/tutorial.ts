@@ -167,6 +167,17 @@ export type TutorialHighlightSelector =
        */
       kind: "specificUnit";
       unitId?: number;
+    }
+  | {
+      /**
+       * Every player unit currently matching the named situation predicate.
+       * Re-evaluated each frame so the highlight set shrinks as the player
+       * acts (e.g. forms line on threatened infantry one by one). Pairs with
+       * the `anyUnitInSituation` showWhen so the beat both shows the
+       * remaining work and auto-dismisses when the work is done.
+       */
+      kind: "playerUnitsInSituation";
+      situation: TutorialSituationKey;
     };
 
 export interface TutorialHighlight {
@@ -516,6 +527,16 @@ export type TutorialBeatCondition =
        */
       kind: "boundUnitNotInFormation";
       formationId: string[];
+    }
+  | {
+      /**
+       * True iff at least one player unit currently matches the named
+       * situation predicate. Used as `showWhen` on the "ahora cambia las
+       * demás" follow-up beat: auto-dismisses once the player has acted on
+       * every threatened unit (situation set drops to empty).
+       */
+      kind: "anyUnitInSituation";
+      situation: TutorialSituationKey;
     }
   | {
       /**

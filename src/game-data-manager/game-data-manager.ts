@@ -812,6 +812,19 @@ export class GameDataManager {
     return Array.from(this._unitCategoryAllowedOrders.get(unitCategory) ?? []);
   }
 
+  // Order IDs defined in the era's orders.json, in declaration order. Eras
+  // omit orders they don't support so the UI can derive its selectable
+  // list from the data instead of hardcoding per era.
+  public getOrderTypes(): OrderType[] {
+    return this._orders.map((order) => order.id);
+  }
+
+  // Order flagged with `isDefault: true` in the era's orders.json. Returns
+  // null if no order is flagged so callers can fall back as they prefer.
+  public getDefaultOrderType(): OrderType | null {
+    return this._orders.find((order) => order.isDefault)?.id ?? null;
+  }
+
   public canUseOrder(
     unitCategory: UnitCategoryId,
     orderType: OrderType,
