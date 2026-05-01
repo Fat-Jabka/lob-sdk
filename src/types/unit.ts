@@ -1,4 +1,4 @@
-import { Point2 } from "@lob-sdk/vector";
+import { Point2, Vector2 } from "@lob-sdk/vector";
 import { EntityId } from "@lob-sdk/types";
 
 /**
@@ -134,7 +134,7 @@ export interface UnitFormationTemplate {
   changeAnimations?: Record<string, string>;
 }
 
-export interface BaseUnitTemplate {
+interface BaseUnitTemplate {
   name: string;
   type: UnitType;
   category: UnitCategoryId;
@@ -281,24 +281,7 @@ export interface RangeUnitTemplate extends BaseUnitTemplate {
   panicFireDistance?: number;
 }
 
-/**
- * Marks ranged-only fields as absent on the melee branch of {@link UnitTemplate}.
- * Turning the union into a discriminated union lets consumers narrow with
- * `if (template.rangedAttack !== undefined)` instead of `in` checks.
- */
-export type WithoutRangedFields = {
-  rangedAttack?: never;
-  rangedDamageTypes?: never;
-  fireWhileMoving?: never;
-  minDistanceToFAA?: never;
-  ammo?: never;
-  noAmmoRegain?: never;
-  panicFireDistance?: never;
-};
-
-export type UnitTemplate = Readonly<
-  (BaseUnitTemplate & WithoutRangedFields) | RangeUnitTemplate
->;
+export type UnitTemplate = Readonly<BaseUnitTemplate | RangeUnitTemplate>;
 export type UnitTemplates = Record<UnitType, UnitTemplate>;
 
 /**

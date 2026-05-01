@@ -7,14 +7,8 @@
     {
       "type": "HEIGHT_NOISE",
       "noises": [
-        {
-          "scale": 50,
-          "multiplier": 1.5
-        },
-        {
-          "scale": 50,
-          "multiplier": 1.5
-        }
+        { "scale": 50, "multiplier": 1.5 },
+        { "scale": 50, "multiplier": 1.5 }
       ],
       "mergeStrategy": "min",
       "max": 6
@@ -23,40 +17,24 @@
       "type": "TERRAIN_NOISE",
       "terrain": 1,
       "scale": 25,
-      "ranges": [
-        {
-          "min": 0.92,
-          "max": 1
-        }
-      ],
+      "ranges": [{ "min": 0.92, "max": 1.0 }],
       "offset": 0.15
     },
     {
       "type": "TERRAIN_NOISE",
       "terrain": 9,
       "scale": 20,
-      "ranges": [
-        {
-          "min": 0.88,
-          "max": 1
-        }
-      ],
+      "ranges": [{ "min": 0.88, "max": 1.0 }],
       "offset": 0.1
     },
     {
       "type": "LAKE",
-      "size": {
-        "min": 14,
-        "max": 16
-      },
+      "size": { "min": 14, "max": 16 },
       "minDistance": 0,
       "organicness": 0.9,
       "position": {
         "type": "exact",
-        "coords": [
-          50,
-          50
-        ]
+        "coords": [50, 50]
       },
       "terrains": {
         "deep": 5,
@@ -71,10 +49,7 @@
       "player": 0,
       "position": {
         "type": "exact",
-        "coords": [
-          20,
-          50
-        ]
+        "coords": [20, 50]
       }
     },
     {
@@ -82,10 +57,7 @@
       "player": 0,
       "position": {
         "type": "exact",
-        "coords": [
-          80,
-          50
-        ]
+        "coords": [80, 50]
       }
     }
   ],
