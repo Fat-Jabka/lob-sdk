@@ -179,6 +179,25 @@ export type TutorialHighlightSelector =
        */
       kind: "playerUnitsInSituation";
       situation: TutorialSituationKey;
+    }
+  | {
+      /**
+       * The bound cavalry plus the enemy infantry whose exposed flank it
+       * should charge — same picker as the `flankedInfantryTarget` move
+       * destination, so the intro highlight, the gesture target ring, and
+       * the gesture itself stay in sync. Returns both rects so a single
+       * selector entry highlights both ends of the charge. Requires a
+       * chapter bound with `oncePerUnit`.
+       */
+      kind: "flankedEnemyInfantry";
+      /** Search radius from the cavalry, world px. */
+      withinPx: number;
+      /** Enemy categories that count as infantry. */
+      enemyCategory: string[];
+      /** Min run-up distance, world px. Default 8. */
+      minRunupPx?: number;
+      /** Max abs(org delta) cavalry vs non-line infantry. Default 0.10. */
+      maxOrgGap?: number;
     };
 
 export interface TutorialHighlight {

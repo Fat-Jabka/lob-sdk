@@ -4670,14 +4670,11 @@
             "copy": "tutorial.situational.cavalryVsInfantryFlank.intro",
             "advanceOn": "button",
             "highlight": {
-              "targetSelector": [
-                { "kind": "specificUnit" },
-                {
-                  "kind": "nearestEnemyTo",
-                  "playerCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
-                  "enemyCategory": ["infantry", "guardsInfantry", "militiaInfantry"]
-                }
-              ],
+              "targetSelector": {
+                "kind": "flankedEnemyInfantry",
+                "withinPx": 160,
+                "enemyCategory": ["infantry", "guardsInfantry", "militiaInfantry"]
+              },
               "style": "ring"
             }
           },
@@ -4718,12 +4715,16 @@
             "orderType": 2,
             "gesture": "drawOrder",
             "highlight": {
-              "targetSelector": { "kind": "specificUnit" },
-              "style": "spotlight"
+              "targetSelector": {
+                "kind": "flankedEnemyInfantry",
+                "withinPx": 160,
+                "enemyCategory": ["infantry", "guardsInfantry", "militiaInfantry"]
+              },
+              "style": "ring"
             },
             "moveDestination": {
               "kind": "flankedInfantryTarget",
-              "withinPx": 192,
+              "withinPx": 160,
               "enemyCategory": ["infantry", "guardsInfantry", "militiaInfantry"]
             }
           }
