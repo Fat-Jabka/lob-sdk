@@ -3563,9 +3563,9 @@
             "advanceOn": "unitRepositioned",
             "unitCategory": "midCavalry",
             "moveDestination": {
-              "x": 452,
+              "x": 392,
               "y": 965,
-              "width": 120,
+              "width": 240,
               "height": 20
             }
           },
@@ -3753,9 +3753,9 @@
             "orderType": 1,
             "gesture": "moveUnit",
             "moveDestination": {
-              "x": 452,
+              "x": 392,
               "y": 544,
-              "width": 120,
+              "width": 240,
               "height": 20
             }
           },
@@ -4956,7 +4956,8 @@
         "id": "dominatingShouldPushObjective",
         "fireOn": {
           "situation": "dominatingShouldPushObjective",
-          "afterChapter": "enemyContact"
+          "afterChapter": "enemyContact",
+          "endOfTurnIdle": true
         },
         "beats": [
           {
@@ -4977,7 +4978,8 @@
         "id": "losingShouldFallbackToObjective",
         "fireOn": {
           "situation": "losingShouldFallbackToObjective",
-          "afterChapter": "enemyContact"
+          "afterChapter": "enemyContact",
+          "endOfTurnIdle": true
         },
         "beats": [
           {
