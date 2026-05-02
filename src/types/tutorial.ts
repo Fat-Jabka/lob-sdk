@@ -823,7 +823,8 @@ export type TutorialSituationKey =
   | "infantryFallback"
   | "infantryVsSkirmishers"
   | "infantryVsArtillery"
-  | "infantryColumnMarch";
+  | "infantryColumnMarch"
+  | "hasIdleUnit";
 
 export type TutorialFireOn =
   /** Fires when the client enters the given turn number (including turn 0). */

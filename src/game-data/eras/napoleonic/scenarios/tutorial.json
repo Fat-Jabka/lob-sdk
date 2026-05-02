@@ -4997,6 +4997,25 @@
         ]
       },
       {
+        "id": "selectIdleUnitHint",
+        "fireOn": {
+          "situation": "hasIdleUnit",
+          "fromTurn": 2,
+          "endOfTurnIdle": true
+        },
+        "beats": [
+          {
+            "copy": "tutorial.guidance.selectIdleUnit.intro",
+            "advanceOn": "button",
+            "highlight": {
+              "targetId": "hud-select-idle",
+              "style": "spotlight"
+            },
+            "placement": "top"
+          }
+        ]
+      },
+      {
         "id": "infantryFirefightRange",
         "fireOn": {
           "situation": "infantryFirefightRange",
@@ -5735,6 +5754,7 @@
       "tutorial.situational.cavalryVsShakenInfantry.drawCharge": "{input.moveUnit} into the broken infantry — running into contact triggers the charge.",
       "tutorial.situational.dominatingShouldPushObjective.intro": "You hold the lead. Push toward the enemy objective {icon.targetFlagEnemy} with what you've learned — closing it out denies them any comeback.",
       "tutorial.situational.losingShouldFallbackToObjective.intro": "You're behind on points. Pull back to your objective {icon.targetFlagFriendly} and hold it with what you've learned — defending is cheaper than retaking.",
+      "tutorial.guidance.selectIdleUnit.intro": "Some of your units don't have orders yet. Use this button to jump straight to the next idle unit so nobody is left standing this turn.",
       "tutorial.situational.cavalryShouldPursueRouter.intro": "That enemy is broken and running, with no support to interrupt the chase. A pursuit by cavalry breaks them for good — finish them before they reform.",
       "tutorial.situational.cavalryShouldPursueRouter.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
       "tutorial.situational.cavalryShouldPursueRouter.openMenu": "Open the order menu to switch to Run {icon.run}",
