@@ -5023,6 +5023,48 @@
         ]
       },
       {
+        "id": "dominatingShouldPushObjective",
+        "fireOn": {
+          "situation": "dominatingShouldPushObjective",
+          "afterChapter": "enemyContact"
+        },
+        "beats": [
+          {
+            "copy": "tutorial.situational.dominatingShouldPushObjective.intro",
+            "advanceOn": "button",
+            "highlight": {
+              "targetSelector": {
+                "kind": "objectives",
+                "objective": "enemy",
+                "radiusTiles": 8
+              },
+              "style": "spotlight"
+            }
+          }
+        ]
+      },
+      {
+        "id": "losingShouldFallbackToObjective",
+        "fireOn": {
+          "situation": "losingShouldFallbackToObjective",
+          "afterChapter": "enemyContact"
+        },
+        "beats": [
+          {
+            "copy": "tutorial.situational.losingShouldFallbackToObjective.intro",
+            "advanceOn": "button",
+            "highlight": {
+              "targetSelector": {
+                "kind": "objectives",
+                "objective": "friendly",
+                "radiusTiles": 8
+              },
+              "style": "spotlight"
+            }
+          }
+        ]
+      },
+      {
         "id": "infantryFirefightRange",
         "fireOn": {
           "situation": "infantryFirefightRange",
@@ -5740,6 +5782,8 @@
       "tutorial.situational.cavalryVsShakenInfantry.openMenu": "Open the order menu to switch to Run {icon.run}",
       "tutorial.situational.cavalryVsShakenInfantry.pickRun": "Pick Run {icon.run} — running into contact triggers the charge.",
       "tutorial.situational.cavalryVsShakenInfantry.drawCharge": "{input.moveUnit} into the broken infantry — running into contact triggers the charge.",
+      "tutorial.situational.dominatingShouldPushObjective.intro": "You hold the lead. Push toward the enemy objective {icon.targetFlag} with what you've learned — closing it out denies them any comeback.",
+      "tutorial.situational.losingShouldFallbackToObjective.intro": "You're behind on points. Pull back to your objective {icon.targetFlag} and hold it with what you've learned — defending is cheaper than retaking.",
       "tutorial.situational.cavalryShouldPursueRouter.intro": "That enemy is broken and running, with no support to interrupt the chase. A pursuit by cavalry breaks them for good — finish them before they reform.",
       "tutorial.situational.cavalryShouldPursueRouter.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
       "tutorial.situational.cavalryShouldPursueRouter.openMenu": "Open the order menu to switch to Run {icon.run}",

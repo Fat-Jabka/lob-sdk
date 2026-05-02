@@ -797,6 +797,8 @@ export type TutorialSituationKey =
   | "cavalryVsSkirmishers"
   | "cavalryVsArtillery"
   | "cavalryShouldPursueRouter"
+  | "dominatingShouldPushObjective"
+  | "losingShouldFallbackToObjective"
   | "infantryFirefightRange"
   | "infantryBayonetCharge"
   | "infantryFallback"
