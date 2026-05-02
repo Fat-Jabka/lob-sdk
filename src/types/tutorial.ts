@@ -127,6 +127,8 @@ export type TutorialHighlightSelector =
       kind: "enemyUnits";
       /** Optional category filter. Defaults to any enemy unit. */
       category?: string | string[];
+      /** Optional `currentFormation` filter (e.g. `"square"`). */
+      formation?: string | string[];
     }
   | {
       /**
@@ -587,6 +589,19 @@ export type TutorialBeatCondition =
        * every threatened unit (situation set drops to empty).
        */
       kind: "anyUnitInSituation";
+      situation: TutorialSituationKey;
+    }
+  | {
+      /**
+       * True iff the chapter's bound unit is currently among the units the
+       * named situation predicate matches. Used as `showWhen` on every beat
+       * of an `oncePerUnit` situational chapter so the lesson auto-dismisses
+       * if the world stops fitting the lesson — e.g. the bound infantry
+       * leaves column, the bound enemy forms square, the org gap closes, the
+       * target moves out of range. Returns false when there is no bound
+       * unit. Re-evaluated each frame.
+       */
+      kind: "boundUnitInSituation";
       situation: TutorialSituationKey;
     }
   | {
