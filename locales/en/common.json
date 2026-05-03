@@ -911,7 +911,7 @@
   "notAvailableForAllUnits": "Not available for all units",
   "unitsHaveDifferentFormations": "Selected units have different formations",
   "profileChart": {
-    "rankedWinrate": "Ranked",
+    "rankedWinrate90d": "Ranked (90d)",
     "arenaWinrate": "Arena",
     "wins": "Wins",
     "losses": "Losses"
