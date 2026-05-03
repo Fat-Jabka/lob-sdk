@@ -5744,7 +5744,7 @@
       "tutorial.submitHint": "When everything's ready, submit orders to advance to the next turn.",
       "tutorial.enemyContact.intro": "Enemy in sight, form up.",
       "tutorial.objectives.message": "This is the Victory Points bar. If your side of the bar reaches 0, you lose. Each turn, casualties and captured objectives add or subtract points. Click for more information.",
-      "tutorial.situational.skirmisherVsArtillery.intro": "Enemy battery in your skirmisher's reach. Pour fire into the gun crew — light infantry shred unprotected artillery before it can answer.",
+      "tutorial.situational.skirmisherVsArtillery.intro": "Enemy battery in your skirmisher's reach. Pour fire into the gun crew — skirmishers shred unprotected artillery before it can answer.",
       "tutorial.situational.skirmisherVsArtillery.select": "{input.selectUnits} your skirmisher to select it.",
       "tutorial.situational.skirmisherVsArtillery.openMenu": "Open the order menu to switch to FAA {icon.fireAdvance}",
       "tutorial.situational.skirmisherVsArtillery.pickFAA": "Pick FAA {icon.fireAdvance} so the skirmisher closes and fires on the way in.",
