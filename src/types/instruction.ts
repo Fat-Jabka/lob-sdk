@@ -38,7 +38,12 @@ export interface GenerateRandomMapProps {
 export interface GenerateRandomMapResult {
   /** The generated game map. */
   map: GameMap;
-  /** Objectives placed on the generated map. */
+  /**
+   * All objectives on the generated map. Includes scenario.objectives
+   * (pre-placed) followed by objectives produced by Objective /
+   * ObjectiveLayer instructions. Callers should not re-merge
+   * scenario.objectives.
+   */
   objectives: ObjectiveDto<false>[];
 }
 

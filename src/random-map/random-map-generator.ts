@@ -57,7 +57,12 @@ export class RandomMapGenerator {
       map = gameDataManager.getMapSizes()[battleSize].map;
     }
 
-    const objectives: ObjectiveDto<false>[] = [];
+    // Pre-placed objectives from the scenario seed the result; instruction
+    // executors append on top. Callers should NOT merge `scenario.objectives`
+    // again — the SDK owns the merge.
+    const objectives: ObjectiveDto<false>[] = [
+      ...(scenario.objectives ?? []),
+    ];
 
     // Caller-supplied seed wins; otherwise prefer the baked map's seed; else random.
     const fixedMap: GameMap | undefined = scenario.map;
