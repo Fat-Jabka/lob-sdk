@@ -290,7 +290,7 @@ export class Ww2Bot implements IBot {
 
         if (shouldCharge) {
         orders.push({
-          type: OrderType.Run,
+          type: OrderType.Walk,
           id: unit.id,
           targetId: closestEnemy.id,
         });
@@ -303,7 +303,7 @@ export class Ww2Bot implements IBot {
       if (strategy.preferFireAndAdvance) {
         const path = this._getMovementPath(unit, closestEnemy.position);
         orders.push({
-          type: OrderType.FireAndAdvance,
+          type: OrderType.Walk,
           id: unit.id,
           path: path,
         });
@@ -391,19 +391,11 @@ export class Ww2Bot implements IBot {
     // Default movement towards target
     const path = this._getMovementPath(unit, targetPosition);
 
-    if (strategy.preferRun) {
-      orders.push({
-        type: OrderType.Run,
-        id: unit.id,
-        path,
-      });
-    } else {
-      orders.push({
-        type: OrderType.Walk,
-        id: unit.id,
-        path,
-      });
-    }
+    orders.push({
+      type: OrderType.Walk,
+      id: unit.id,
+      path,
+    });
   }
 
   private _getStrategyForType(groupType: BotUnitCategory) {
