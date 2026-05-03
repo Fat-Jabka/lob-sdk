@@ -42,20 +42,16 @@ export class RandomMapGenerator {
   }: GenerateRandomMapProps): GenerateRandomMapResult {
     const gameDataManager = GameDataManager.get(era);
     // Fixed-roster scenarios (tutorial, presets) pass `dynamicBattleType: null`.
-    // battleType/battleSize/map defaults are resolved lazily and only consumed
-    // by code paths that genuinely need them (NaturalPath, scaledZones,
-    // procedural-zone fallback, procedural-tile defaults).
-    let battleSize: Size | undefined;
-    let map: { tilesX: number; tilesY: number } | undefined;
-    if (dynamicBattleType !== null) {
-      const battleType = gameDataManager.getBattleType(dynamicBattleType);
-      const mapSizeIndex = getMapSizeIndex(
-        maxPlayers,
-        battleType.mapSize.length,
-      );
-      battleSize = battleType.mapSize[mapSizeIndex] as Size;
-      map = gameDataManager.getMapSizes()[battleSize].map;
-    }
+    // Fall back to the era's DEFAULT_BATTLE_TYPE so downstream consumers
+    // (NaturalPath amount scaling, scaledZones, procedural-zone defaults,
+    // procedural-tile defaults) always have a battleSize to work with.
+    const resolvedBattleType =
+      dynamicBattleType ??
+      gameDataManager.getGameConstants().DEFAULT_BATTLE_TYPE;
+    const battleType = gameDataManager.getBattleType(resolvedBattleType);
+    const mapSizeIndex = getMapSizeIndex(maxPlayers, battleType.mapSize.length);
+    const battleSize = battleType.mapSize[mapSizeIndex] as Size;
+    const { map } = gameDataManager.getMapSizes()[battleSize];
 
     // Pre-placed objectives from the scenario seed the result; instruction
     // executors append on top. Callers should NOT merge `scenario.objectives`
@@ -83,15 +79,10 @@ export class RandomMapGenerator {
       // Precedence: caller-supplied tilesX/tilesY (scenario editor) >
       // scenario.fixedSize (pinned dimensions) > battle-size defaults.
       if (!tilesX) {
-        tilesX = scenario.fixedSize?.tilesX ?? map?.tilesX;
+        tilesX = scenario.fixedSize?.tilesX ?? map.tilesX;
       }
       if (!tilesY) {
-        tilesY = scenario.fixedSize?.tilesY ?? map?.tilesY;
-      }
-      if (tilesX === undefined || tilesY === undefined) {
-        throw new Error(
-          "RandomMapGenerator: cannot derive tile dimensions — scenario has no map/fixedSize and dynamicBattleType is null. Either supply tilesX/tilesY, set scenario.fixedSize, or pass a non-null dynamicBattleType.",
-        );
+        tilesY = scenario.fixedSize?.tilesY ?? map.tilesY;
       }
 
       widthPx = tilesX * tileSize;
@@ -183,7 +174,7 @@ export class RandomMapGenerator {
   private resolveDeploymentZones(
     scenario: Scenario,
     fixedMap: GameMap | undefined,
-    battleSize: Size | undefined,
+    battleSize: Size,
     widthPx: number,
     heightPx: number,
     era: GameEra,
@@ -201,14 +192,8 @@ export class RandomMapGenerator {
       return [pixelZones[0], pixelZones[1]];
     }
 
-    const scaledZones = this._getScaledZones(scenario);
-    if (scaledZones && battleSize === undefined) {
-      throw new Error(
-        "RandomMapGenerator: scenario.scaledDeploymentZones requires a non-null dynamicBattleType to resolve battleSize.",
-      );
-    }
     const randomZones =
-      (battleSize !== undefined ? scaledZones?.[battleSize] : undefined) ??
+      this._getScaledZones(scenario)?.[battleSize] ??
       this._getRandomZones(scenario);
 
     if (randomZones) {
@@ -225,11 +210,6 @@ export class RandomMapGenerator {
       return undefined;
     }
 
-    if (battleSize === undefined) {
-      throw new Error(
-        "RandomMapGenerator: cannot fall back to battle-size default deployment zones — dynamicBattleType is null. Declare scenario.deploymentZones, scenario.randomDeploymentZones, or pass a non-null dynamicBattleType.",
-      );
-    }
     return [
       getDeploymentZonesByMapSize(
         battleSize,
@@ -314,7 +294,7 @@ export class RandomMapGenerator {
     widthPx: number,
     heightPx: number,
     tileSize: number,
-    battleSize: Size | undefined,
+    battleSize: Size,
     instructions: AnyInstruction[],
   ) {
     instructions.forEach(
@@ -379,11 +359,6 @@ export class RandomMapGenerator {
             break;
           }
           case InstructionType.NaturalPath: {
-            if (battleSize === undefined) {
-              throw new Error(
-                "RandomMapGenerator: NaturalPath instruction requires a non-null dynamicBattleType to resolve battleSize for amount scaling.",
-              );
-            }
             new NaturalPathExecutor(
               instruction,
               scenario,
