@@ -16,8 +16,8 @@ import { GameEra } from "@lob-sdk/game-data-manager";
 export interface GenerateRandomMapProps {
   /** The scenario describing map generation (and optional baked map). */
   scenario: Scenario;
-  /** The dynamic battle type configuration. */
-  dynamicBattleType: DynamicBattleType;
+  /** The dynamic battle type configuration. `null` for fixed-roster scenarios. */
+  dynamicBattleType: DynamicBattleType | null;
   /** Maximum number of players for the map. */
   maxPlayers: number;
   /** Optional seed for random number generation. If not provided, a random seed will be used. */

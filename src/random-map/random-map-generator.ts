@@ -41,11 +41,21 @@ export class RandomMapGenerator {
     tilesY,
   }: GenerateRandomMapProps): GenerateRandomMapResult {
     const gameDataManager = GameDataManager.get(era);
-    const battleType = gameDataManager.getBattleType(dynamicBattleType);
-    const mapSizeIndex = getMapSizeIndex(maxPlayers, battleType.mapSize.length);
-    const battleSize = battleType.mapSize[mapSizeIndex] as Size;
-    const mapSizes = gameDataManager.getMapSizes();
-    const { map } = mapSizes[battleSize];
+    // Fixed-roster scenarios (tutorial, presets) pass `dynamicBattleType: null`.
+    // battleType/battleSize/map defaults are resolved lazily and only consumed
+    // by code paths that genuinely need them (NaturalPath, scaledZones,
+    // procedural-zone fallback, procedural-tile defaults).
+    let battleSize: Size | undefined;
+    let map: { tilesX: number; tilesY: number } | undefined;
+    if (dynamicBattleType !== null) {
+      const battleType = gameDataManager.getBattleType(dynamicBattleType);
+      const mapSizeIndex = getMapSizeIndex(
+        maxPlayers,
+        battleType.mapSize.length,
+      );
+      battleSize = battleType.mapSize[mapSizeIndex] as Size;
+      map = gameDataManager.getMapSizes()[battleSize].map;
+    }
 
     const objectives: ObjectiveDto<false>[] = [];
 
@@ -68,10 +78,15 @@ export class RandomMapGenerator {
       // Precedence: caller-supplied tilesX/tilesY (scenario editor) >
       // scenario.fixedSize (pinned dimensions) > battle-size defaults.
       if (!tilesX) {
-        tilesX = scenario.fixedSize?.tilesX ?? map.tilesX;
+        tilesX = scenario.fixedSize?.tilesX ?? map?.tilesX;
       }
       if (!tilesY) {
-        tilesY = scenario.fixedSize?.tilesY ?? map.tilesY;
+        tilesY = scenario.fixedSize?.tilesY ?? map?.tilesY;
+      }
+      if (tilesX === undefined || tilesY === undefined) {
+        throw new Error(
+          "RandomMapGenerator: cannot derive tile dimensions — scenario has no map/fixedSize and dynamicBattleType is null. Either supply tilesX/tilesY, set scenario.fixedSize, or pass a non-null dynamicBattleType.",
+        );
       }
 
       widthPx = tilesX * tileSize;
@@ -163,7 +178,7 @@ export class RandomMapGenerator {
   private resolveDeploymentZones(
     scenario: Scenario,
     fixedMap: GameMap | undefined,
-    battleSize: Size,
+    battleSize: Size | undefined,
     widthPx: number,
     heightPx: number,
     era: GameEra,
@@ -181,8 +196,14 @@ export class RandomMapGenerator {
       return [pixelZones[0], pixelZones[1]];
     }
 
+    const scaledZones = this._getScaledZones(scenario);
+    if (scaledZones && battleSize === undefined) {
+      throw new Error(
+        "RandomMapGenerator: scenario.scaledDeploymentZones requires a non-null dynamicBattleType to resolve battleSize.",
+      );
+    }
     const randomZones =
-      this._getScaledZones(scenario)?.[battleSize] ??
+      (battleSize !== undefined ? scaledZones?.[battleSize] : undefined) ??
       this._getRandomZones(scenario);
 
     if (randomZones) {
@@ -199,6 +220,11 @@ export class RandomMapGenerator {
       return undefined;
     }
 
+    if (battleSize === undefined) {
+      throw new Error(
+        "RandomMapGenerator: cannot fall back to battle-size default deployment zones — dynamicBattleType is null. Declare scenario.deploymentZones, scenario.randomDeploymentZones, or pass a non-null dynamicBattleType.",
+      );
+    }
     return [
       getDeploymentZonesByMapSize(
         battleSize,
@@ -283,7 +309,7 @@ export class RandomMapGenerator {
     widthPx: number,
     heightPx: number,
     tileSize: number,
-    battleSize: Size,
+    battleSize: Size | undefined,
     instructions: AnyInstruction[],
   ) {
     instructions.forEach(
@@ -348,6 +374,11 @@ export class RandomMapGenerator {
             break;
           }
           case InstructionType.NaturalPath: {
+            if (battleSize === undefined) {
+              throw new Error(
+                "RandomMapGenerator: NaturalPath instruction requires a non-null dynamicBattleType to resolve battleSize for amount scaling.",
+              );
+            }
             new NaturalPathExecutor(
               instruction,
               scenario,
