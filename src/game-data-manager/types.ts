@@ -22,6 +22,17 @@ export interface Avatar {
   locked?: boolean;
 }
 
+export type AchievementTrigger =
+  | { type: "tutorial_completed" }
+  | { type: "ranked_wins_total"; threshold: number }
+  | { type: "arenas_won_total"; threshold: number };
+
+export interface Achievement {
+  id: number;
+  name: string;
+  trigger: AchievementTrigger;
+}
+
 export interface ObjectiveSkin {
   id: number;
   name: string;

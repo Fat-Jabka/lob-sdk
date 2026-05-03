@@ -24,6 +24,7 @@ import {
   UnitSkin,
   ObjectiveSkin,
   Avatar,
+  Achievement,
   MapSizeTemplate,
   MatchmakingPresetsData,
 } from "./types";
@@ -34,6 +35,7 @@ import napoleonicOrders from "@lob-sdk/game-data/eras/napoleonic/orders.json";
 import napoleonicUnitTemplates from "@lob-sdk/game-data/eras/napoleonic/unit-templates.json";
 import napoleonicGameConstants from "@lob-sdk/game-data/eras/napoleonic/game-constants.json";
 import napoleonicAvatars from "@lob-sdk/game-data/eras/napoleonic/avatars.json";
+import napoleonicAchievements from "@lob-sdk/game-data/eras/napoleonic/achievements.json";
 import napoleonicDamageTypes from "@lob-sdk/game-data/eras/napoleonic/damage-types.json";
 import napoleonicTerrains from "@lob-sdk/game-data/eras/napoleonic/terrains.json";
 import napoleonicTerrainCategories from "@lob-sdk/game-data/eras/napoleonic/terrain-categories.json";
@@ -83,6 +85,7 @@ import ww2Orders from "@lob-sdk/game-data/eras/ww2/orders.json";
 import ww2UnitTemplates from "@lob-sdk/game-data/eras/ww2/unit-templates.json";
 import ww2GameConstants from "@lob-sdk/game-data/eras/ww2/game-constants.json";
 import ww2Avatars from "@lob-sdk/game-data/eras/ww2/avatars.json";
+import ww2Achievements from "@lob-sdk/game-data/eras/ww2/achievements.json";
 import ww2DamageTypes from "@lob-sdk/game-data/eras/ww2/damage-types.json";
 import ww2Terrains from "@lob-sdk/game-data/eras/ww2/terrains.json";
 import ww2TerrainCategories from "@lob-sdk/game-data/eras/ww2/terrain-categories.json";
@@ -141,6 +144,10 @@ export class GameDataManager {
   // Avatars
   private avatars: Avatar[] = [];
   private avatarMap: Map<number, Avatar> = new Map();
+
+  // Achievements
+  private achievements: Achievement[] = [];
+  private achievementMap: Map<number, Achievement> = new Map();
 
   // Damage types
   private damageTypes: DamageTypeTemplate[] = [];
@@ -256,6 +263,7 @@ export class GameDataManager {
         );
         this.gameConstants = napoleonicGameConstants as GameConstants;
         this.avatars = napoleonicAvatars as Avatar[];
+        this.achievements = napoleonicAchievements as Achievement[];
         this.damageTypes = napoleonicDamageTypes as DamageTypeTemplate[];
         this.terrains = napoleonicTerrains as GameDataManager["terrains"];
         this.terrainCategories = napoleonicTerrainCategories as Record<
@@ -319,6 +327,7 @@ export class GameDataManager {
         );
         this.gameConstants = ww2GameConstants as GameConstants;
         this.avatars = ww2Avatars as Avatar[];
+        this.achievements = ww2Achievements as Achievement[];
         this.damageTypes = ww2DamageTypes as DamageTypeTemplate[];
         this.terrains = ww2Terrains as GameDataManager["terrains"];
         this.terrainCategories =
@@ -372,6 +381,7 @@ export class GameDataManager {
 
     // Build avatar map for O(1) lookup
     this.avatarMap = new Map(this.avatars.map((a) => [a.id, a]));
+    this.achievementMap = new Map(this.achievements.map((a) => [a.id, a]));
 
     this.objectiveSkins.forEach((objectiveSkin) => {
       this.objectiveSkinMap.set(objectiveSkin.id, objectiveSkin);
@@ -523,6 +533,14 @@ export class GameDataManager {
    */
   public getAvatar(avatarId?: number | null): Avatar | undefined {
     return this.avatarMap.get(avatarId as number);
+  }
+
+  public getAchievements(): Achievement[] {
+    return this.achievements;
+  }
+
+  public getAchievement(achievementId?: number | null): Achievement | undefined {
+    return this.achievementMap.get(achievementId as number);
   }
 
   /**
