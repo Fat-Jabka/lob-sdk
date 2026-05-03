@@ -868,10 +868,10 @@ export type TutorialFireOn =
    * a prerequisite chapter id having already fired — typically used to
    * keep situational lessons quiet until first enemy contact, so they
    * don't contradict the player's deployment-phase choices.
-   * `endOfTurnIdle` defers firing until a turn-transition tick on which
-   * the tutorial message queue is empty and no other chapter is firing —
-   * the lesson only surfaces when nothing else is competing for the
-   * player's attention. Used for low-priority strategic reminders.
+   * `endOfTurnIdle` defers firing until a tick on which the tutorial
+   * message queue is empty and no other chapter is firing — the lesson
+   * only surfaces when nothing else is competing for the player's
+   * attention. Used for low-priority strategic reminders.
    */
   | {
       situation: TutorialSituationKey;

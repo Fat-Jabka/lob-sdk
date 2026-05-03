@@ -5080,7 +5080,8 @@
         "id": "selectIdleUnitHint",
         "fireOn": {
           "situation": "hasIdleUnit",
-          "fromTurn": 2
+          "fromTurn": 2,
+          "endOfTurnIdle": true
         },
         "beats": [
           {
@@ -5740,7 +5741,7 @@
       "tutorial.move.orderSkirmisherB": "Send this one into different cover. Skirmishers work best when they're spread out.",
       "tutorial.move.deselectBeforeNext": "Hit {icon.deselect} before picking the next unit type.",
       "tutorial.move.removeOrdersInfo": "Changed your mind? {icon.removeOrders} clears the orders on the selected units so you can redraw them.",
-      "tutorial.submitHint": "When everything's ready, submit orders to advance to the next turn.",
+      "tutorial.submitHint": "When everything's ready, press {icon.submitOrders} to advance to the next turn.",
       "tutorial.enemyContact.intro": "Enemy in sight, form up.",
       "tutorial.objectives.message": "This is the Victory Points bar. If your side of the bar reaches 0, you lose. Each turn, casualties and captured objectives add or subtract points. Click for more information.",
       "tutorial.situational.skirmisherVsArtillery.intro": "Enemy battery in your skirmisher's reach. Pour fire into the gun crew — skirmishers shred unprotected artillery before it can answer.",
