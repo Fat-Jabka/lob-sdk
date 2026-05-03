@@ -5847,7 +5847,7 @@
       "tutorial.situational.infantryColumnMarch.drawOrder": "{input.moveUnit} into the highlighted zone near the enemy objective — that's where the line is going to form.",
       "tutorial.situational.artilleryRotateToFire.intro": "Enemy is close and your cannon has a clean shot but it's still moving. Stop the march and rotate the unit to autofire.",
       "tutorial.situational.artilleryRotateToFire.selectCannon": "Select the cannon.",
-      "tutorial.situational.artilleryRotateToFire.useRotate": "Now {input.moveUnit} from it toward the enemy. A cyan Rotate {icon.rotate} arrow draws — the gun stops, faces the target, and fires next turn.",
+      "tutorial.situational.artilleryRotateToFire.useRotate": "{input.moveUnit} from the unit toward where you want it to face.",
       "tutorial.situational.artilleryFireAndAdvance.intro": "Enemy is far enough that you can keep closing while you fire. Switch this artillery unit to {icon.fireAdvance}",
       "tutorial.situational.artilleryFireAndAdvance.selectCannon": "Select the cannon.",
       "tutorial.situational.artilleryFireAndAdvance.openMenu": "Open the order menu to switch to {icon.fireAdvance}",
