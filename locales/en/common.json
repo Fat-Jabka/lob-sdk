@@ -919,7 +919,9 @@
     "arenaWinrate": "Arena",
     "wins": "Wins",
     "losses": "Losses",
-    "totalGames": "{{count}} games",
-    "totalArenas": "{{count}} arenas"
+    "totalGames_one": "1 game",
+    "totalGames_other": "{{count}} games",
+    "totalArenas_one": "1 arena",
+    "totalArenas_other": "{{count}} arenas"
   }
 }
