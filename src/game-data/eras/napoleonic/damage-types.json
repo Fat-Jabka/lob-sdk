@@ -412,7 +412,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 12000,
+    "ammoCost": 10800,
     "extendRange": false
   },
   {
@@ -880,8 +880,8 @@
         {
           "start": 250,
           "end": 550,
-          "startRadius": 18,
-          "endRadius": 64
+          "startRadius": 24,
+          "endRadius": 32
         }
       ],
       "edgeDamageModifier": -0.1,
@@ -916,7 +916,7 @@
         "start": 220,
         "end": 425,
         "startMod": -0.05,
-        "endMod": -0.25,
+        "endMod": -0.35,
         "name": "long"
       }
     ],
@@ -929,8 +929,8 @@
         {
           "start": 250,
           "end": 425,
-          "startRadius": 24,
-          "endRadius": 36
+          "startRadius": 18,
+          "endRadius": 26
         }
       ],
       "edgeDamageModifier": -0.1,
@@ -939,7 +939,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 12000,
+    "ammoCost": 10800,
     "extendRange": false
   },
   {
