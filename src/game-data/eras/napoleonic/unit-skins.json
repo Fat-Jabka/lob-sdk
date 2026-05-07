@@ -3595,5 +3595,27 @@
       }
     },
     "discount": 0.2
+  },
+  {
+    "id": 219,
+    "name": "austrian-infantry",
+    "tier": 1,
+    "premiumPrice": 150,
+    "unitType": 1,
+    "formations": {
+      "mass": {
+        "overlay": "austrian-infantry"
+      },
+      "column": {
+        "overlay": "austrian-infantry-column"
+      },
+      "line": {
+        "overlay": "austrian-infantry-line"
+      },
+      "square": {
+        "overlay": "austrian-infantry-square"
+      }
+    },
+    "discount": 0.2
   }
 ]
