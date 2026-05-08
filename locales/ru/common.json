@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Добро пожаловать в Lines of Battle!",
+  "skip": "Пропустить",
   "home": "Главная страница",
   "language": "Язык",
   "tutorial": "Руководство",
+  "tutorialRequired": "Пройдите обучение перед игрой онлайн",
+  "tutorialRequiredDescription": "Вам нужно завершить обучение, прежде чем встать в очередь на онлайн-матчи.",
+  "goToTutorial": "Перейти к обучению",
   "tutorials": "Обучение",
   "play": "В бой!",
   "ranking": "Лучшие игроки",
@@ -23,7 +27,9 @@
   "addPlayer": "Добавить игрока",
   "credits": "Спасибо вам!",
   "settings": "Настройки",
-  "eloDescription": "Рейтинг Эло — это система расчёта относительного мастерства игроков. Чем выше Ваш рейтинг, тем Вы сильнее по сравнению с другими игроками. Победа увеличит Ваш рейтинг Эло, а поражение уменьшит его.",
+  "leagueDescription": "Ваша лига отражает ваш уровень мастерства. Побеждайте, чтобы продвигаться в своей лиге; достигнув вершины, вы перейдёте в следующую. Слишком много поражений могут привести к понижению. Наведите курсор на значок лиги, чтобы увидеть свой прогресс до следующей.",
+  "averageLeague": "Средняя лига",
+  "clanLeague": "Лига коалиции",
   "welcomeName": "Добро пожаловать, {{name}}!",
   "myGames": "Активные битвы",
   "gameStatus": {
@@ -62,7 +68,6 @@
     "extendQueueSuccess": "Идёт поиск среди всех значений Эло.",
     "cancelledBy": "Очередь была отменена {{username}}.",
     "playersInQueue": "{{count}} игроков в очереди",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Вы:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Соединение Потеряно. Переподключение..."
   },
   "fastMode": "Быстрая игра",
@@ -179,6 +184,10 @@
   "offerDraw": "Предложить ничью",
   "replayBattle": "Воспроизвести ход битвы",
   "downloadReplay": "Скачать повтор",
+  "stepByTurn": "Пошагово (автопауза между ходами)",
+  "pause": "Пауза",
+  "stop": "Стоп",
+  "restartReplay": "Перезапустить повтор",
   "replayGame": "Повторить игру",
   "importReplay": "Импорт повтора",
   "result": "Результат",
@@ -472,7 +481,6 @@
   "human": "Человек",
   "bot": "Бот",
   "armyOfPlayer": "Армия игрока {{player}}",
-  "averageElo": "Среднее значение Эло",
   "hybridDescription": "Гибридные карты используют неслучайную, заранее заданную местность, но позволяют игрокам использовать созданные ими армии.",
   "battleReport": "Итоги битвы",
   "gameEndReasons": {
@@ -493,7 +501,6 @@
     "leader": "Лидер",
     "member": "Участник"
   },
-  "clanElo": "Рейтинг Эло Коалиции: {{elo}}",
   "members": "Участники",
   "deleteClan": "Удалить Коалицию",
   "deleteClanModal": {
@@ -560,6 +567,19 @@
   "submittingOrders": "Отправляем приказы...",
   "checkingUpdates": "Проверяем обновления...",
   "arenas": "Арены",
+  "lobby": {
+    "autoStartCountdown": "Автозапуск через {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} на {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Режим {{title}} доступен для создания",
+    "homeBannerJoinable": "Присоединиться к {{title}}, начнётся через {{countdown}}",
+    "homeBannerCooldown": "{{title}} разблокируется через {{countdown}}",
+    "create": "Создать",
+    "createTitle": "Создать {{title}}",
+    "createDescription": "Будет создана партия {{title}}. Лобби открыто для всех игроков, пока не заполнится или не начнётся автоматически.",
+    "join": "Присоединиться"
+  },
   "arena": {
     "reconnecting": "Переподключение…",
     "inLobbySearching": "В лобби – поиск соперника",
@@ -655,25 +675,26 @@
   "projectilePenetration": "Мощь снаряда",
   "league": {
     "title": "Лига",
-    "a": "Император",
-    "b1": "Алмаз I",
-    "b2": "Алмаз II",
-    "b3": "Алмаз III",
-    "c1": "Платина I",
-    "c2": "Платина II",
-    "c3": "Платина III",
-    "d1": "Золото I",
-    "d2": "Золото II",
-    "d3": "Золото III",
-    "e1": "Серебро I",
-    "e2": "Серебро II",
-    "e3": "Серебро III",
-    "f1": "Бронза I",
-    "f2": "Бронза II",
-    "f3": "Бронза III",
-    "g1": "Железо I",
-    "g2": "Железо II",
-    "g3": "Железо III"
+    "unranked": "Без ранга",
+    "emperor": "Император",
+    "diamond-1": "Алмаз I",
+    "diamond-2": "Алмаз II",
+    "diamond-3": "Алмаз III",
+    "platinum-1": "Платина I",
+    "platinum-2": "Платина II",
+    "platinum-3": "Платина III",
+    "gold-1": "Золото I",
+    "gold-2": "Золото II",
+    "gold-3": "Золото III",
+    "silver-1": "Серебро I",
+    "silver-2": "Серебро II",
+    "silver-3": "Серебро III",
+    "bronze-1": "Бронза I",
+    "bronze-2": "Бронза II",
+    "bronze-3": "Бронза III",
+    "iron-1": "Железо I",
+    "iron-2": "Железо II",
+    "iron-3": "Железо III"
   },
   "skinTier": {
     "1": "Новобранец",
@@ -731,6 +752,16 @@
   "preset": "Фиксированный сценарий",
   "hybrid": "Гибридная карта",
   "random": "Случайная карта",
+  "scenarioFeatures": "Особенности",
+  "scenarioFeature": {
+    "fixedMap": "Фиксированная карта",
+    "proceduralMap": "Процедурно сгенерированная карта",
+    "fixedArmy": "Фиксированная армия",
+    "dynamicArmy": "Динамическая армия",
+    "fixedPlayers": "Фиксированные игроки",
+    "objectives": "Цели",
+    "scriptedEvents": "Скриптовые события"
+  },
   "projectileWidth": "Ширина области огня",
   "allyCollisionLevel": "Уровень столкновения с союзниками",
   "enemyCollisionLevel": "Уровень столкновения с врагом",
@@ -895,5 +926,26 @@
   "switchToEra": "Переключиться на {{era}}",
   "goHome": "На главную",
   "notAvailableForAllUnits": "Доступно не для всех отрядов!",
-  "unitsHaveDifferentFormations": "Выбранные отряды имеют разные построения"
+  "unitsHaveDifferentFormations": "Выбранные отряды имеют разные построения",
+  "profileChart": {
+    "rankedWinrate90d": "Рейтинг (90д)",
+    "arenaWinrate": "Арена",
+    "wins": "Победы",
+    "losses": "Поражения",
+    "totalGames_one": "1 игра",
+    "totalGames_few": "{{count}} игры",
+    "totalGames_many": "{{count}} игр",
+    "totalGames_other": "{{count}} игры",
+    "totalArenas_one": "1 арена",
+    "totalArenas_few": "{{count}} арены",
+    "totalArenas_many": "{{count}} арен",
+    "totalArenas_other": "{{count}} арены"
+  },
+  "tutorialSummary": {
+    "heading": "Итоги обучения",
+    "count": "Показано {{seen}} из {{total}} уроков",
+    "description": "Каждый урок охватывает ситуацию, о которой стоит знать.",
+    "allSeen": "Вы увидели все уроки обучения.",
+    "viewMissed": "Посмотреть пропущенные уроки"
+  }
 }

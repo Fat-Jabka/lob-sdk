@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Üdvözöljük a Lines of Battle-ban!",
+  "skip": "Kihagyás",
   "home": "Home",
   "language": "Nyelv",
   "tutorial": "Tutorial",
+  "tutorialRequired": "Fejezd be a tutorialt, mielőtt online játszanál",
+  "tutorialRequiredDescription": "Be kell fejezned a tutorialt, mielőtt sorba állhatnál az online meccsekhez.",
+  "goToTutorial": "Ugrás a tutorialra",
   "tutorials": "Oktatóanyagok",
   "play": "Játék",
   "ranking": "Toplista",
@@ -22,7 +26,9 @@
   "addPlayer": "Játékos hozzáadása",
   "credits": "Kreditek",
   "settings": "Beállítások",
-  "eloDescription": "Az Élő (világnyelvi nevén Elo) egy pontozási rendszer - Élő Árpád találmánya - azt a célt szolgálja, hogy összevethesd a teljesítményed más játékosokaiéval. Minél több az Élőd, annál erősebb vagy más játékosokhoz képest. A győzelmeid növelik az Élődet, míg a vereségek csökkentik.",
+  "leagueDescription": "A ligád a tudásszintedet tükrözi. Nyerj mérkőzéseket, hogy haladj a ligában; a csúcsra érve a következő ligába lépsz. Túl sok vereség visszavetheti a rangodat. Mutass az emblémára, hogy lásd a következő ligához tartozó haladásodat.",
+  "averageLeague": "Átlagos liga",
+  "clanLeague": "Koalíciós liga",
   "welcomeName": "Üdv {{name}}!",
   "myGames": "Játékaim",
   "gameStatus": {
@@ -61,7 +67,6 @@
     "extendQueueSuccess": "Keresés bármilyen Elo tartományban.",
     "cancelledBy": "A várólistát {{username}} törölte.",
     "playersInQueue": "{{count}} játékos keres",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Te:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Kapcsolat Megszakadt. Újracsatlakozás"
   },
   "fastMode": "Gyors mód",
@@ -167,6 +172,10 @@
   "offerDraw": "Döntetlen felajánlása",
   "replayBattle": "Visszajátszás",
   "downloadReplay": "Replay letöltése",
+  "stepByTurn": "Körönként (automatikus szünet körök között)",
+  "pause": "Szünet",
+  "stop": "Leállítás",
+  "restartReplay": "Visszajátszás újraindítása",
   "replayGame": "Játék visszajátszása",
   "importReplay": "Replay importálása",
   "result": "Eredmények",
@@ -548,6 +557,16 @@
   "preset": "Előre beállított",
   "hybrid": "Hibrid",
   "random": "Véletlenszerű",
+  "scenarioFeatures": "Jellemzők",
+  "scenarioFeature": {
+    "fixedMap": "Rögzített térkép",
+    "proceduralMap": "Eljárásosan generált térkép",
+    "fixedArmy": "Rögzített hadsereg",
+    "dynamicArmy": "Dinamikus hadsereg",
+    "fixedPlayers": "Rögzített játékosok",
+    "objectives": "Célok",
+    "scriptedEvents": "Szkriptelt események"
+  },
   "academy": "Akadémia",
   "encyclopedia": "Enciklopédia",
   "tutorialTips": "Oktatóanyag Tippek",
@@ -578,6 +597,19 @@
     "authSuccessMessage": "Discord fiók sikeresen összekapcsolva!",
     "authErrorMessage": "A Discord engedélyezés sikertelen. Kérlek próbáld újra.",
     "linkingAccount": "Discord fiók összekapcsolása..."
+  },
+  "lobby": {
+    "autoStartCountdown": "Automatikus indítás {{countdown}} múlva"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} a {{playersPerTeam}} ellen {{battleTypeName}}",
+    "homeBannerAvailable": "{{title}} mód elérhető",
+    "homeBannerJoinable": "Csatlakozz: {{title}}, indul {{countdown}} múlva",
+    "homeBannerCooldown": "{{title}} feloldódik {{countdown}} múlva",
+    "create": "Létrehozás",
+    "createTitle": "{{title}} létrehozása",
+    "createDescription": "Egy {{title}} játék készül. A lobbi minden játékos számára nyitva van, amíg meg nem telik vagy automatikusan elindul.",
+    "join": "Csatlakozás"
   },
   "redirecting": "Átirányítás...",
   "success": "Siker!",
@@ -619,5 +651,45 @@
   "startGameNow": "Elindítod a játékot most?",
   "startGameNowTooltip": "Azok az egységek, amelyek nincsenek játékoshoz rendelve, egyenletesen oszlanak meg azok között a csatlakozott játékosok között, akik ugyanabban a csapatban vannak, mint ezek az egységek.",
   "user": "Felhasználó",
-  "meleeStaminaCost": "Közelharci kitartás költség"
+  "meleeStaminaCost": "Közelharci kitartás költség",
+  "profileChart": {
+    "rankedWinrate90d": "Rangsorolt (90n)",
+    "arenaWinrate": "Aréna",
+    "wins": "Győzelmek",
+    "losses": "Vereségek",
+    "totalGames_one": "1 játék",
+    "totalGames_other": "{{count}} játék",
+    "totalArenas_one": "1 aréna",
+    "totalArenas_other": "{{count}} aréna"
+  },
+  "league": {
+    "title": "Liga",
+    "emperor": "Császár",
+    "diamond-3": "Gyémánt III",
+    "diamond-2": "Gyémánt II",
+    "diamond-1": "Gyémánt I",
+    "platinum-3": "Platina III",
+    "platinum-2": "Platina II",
+    "platinum-1": "Platina I",
+    "gold-3": "Arany III",
+    "gold-2": "Arany II",
+    "gold-1": "Arany I",
+    "silver-3": "Ezüst III",
+    "silver-2": "Ezüst II",
+    "silver-1": "Ezüst I",
+    "bronze-3": "Bronz III",
+    "bronze-2": "Bronz II",
+    "bronze-1": "Bronz I",
+    "iron-3": "Vas III",
+    "iron-2": "Vas II",
+    "iron-1": "Vas I",
+    "unranked": "Besorolatlan"
+  },
+  "tutorialSummary": {
+    "heading": "Bemutató összefoglaló",
+    "count": "{{seen}} / {{total}} lecke megjelenítve",
+    "description": "Minden lecke egy érdemes megismerni való helyzetet mutat be.",
+    "allSeen": "Láttad a bemutató összes leckéjét.",
+    "viewMissed": "Kihagyott leckék megtekintése"
+  }
 }

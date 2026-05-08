@@ -1,5 +1,7 @@
 {
   "appLoadingMessage": "Welcome to Lines of Battle!",
+  "continue": "Continue",
+  "skip": "Skip",
   "home": "Home",
   "language": "Language",
   "tutorial": "Tutorial",
@@ -23,7 +25,9 @@
   "addPlayer": "Add player",
   "credits": "Credits",
   "settings": "Settings",
-  "eloDescription": "Elo is a rating system used to calculate the relative skill level of players. The higher your Elo, the stronger you are compared to others. Winning increases your Elo, while losing decreases it.",
+  "leagueDescription": "Your league reflects your skill level. Win games to earn progress within your league, and once you reach the top of a league, you advance to the next one. Lose too many games and you may drop down. Hover the league badge to see your progress to the next league.",
+  "averageLeague": "Average League",
+  "clanLeague": "Coalition League",
   "welcomeName": "Welcome {{name}}!",
   "myGames": "My games",
   "gameStatus": {
@@ -62,7 +66,6 @@
     "extendQueueSuccess": "Searching in any Elo range.",
     "cancelledBy": "The queue was cancelled by {{username}}.",
     "playersInQueue": "{{count}} players searching",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>You:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Connection Lost. Reconnecting"
   },
   "fastMode": "Fast Mode",
@@ -83,6 +86,9 @@
   "addMatchmakingConfig": "Add matchmaking configuration",
   "matchmakingModeSwitchWarning": "Fast and Slow configurations cannot be sent together. If you change to {{mode}}, the other configuration(s) will be reset. Do you want to proceed?",
   "matchmakingDescription": "Matchmaking mode lets you quickly join a game with random players using predefined settings.",
+  "tutorialRequired": "Complete the tutorial before playing online",
+  "tutorialRequiredDescription": "You need to finish the tutorial before you can queue for online matches.",
+  "goToTutorial": "Go to tutorial",
   "requiredInMatchmakingQueue": "Always in queue",
   "requiredScenarioBadge": "Required",
   "onlyPartyLeaderCanSearch": "Only the party leader can search for a match.",
@@ -179,6 +185,10 @@
   "offerDraw": "Offer draw",
   "replayBattle": "Replay battle",
   "downloadReplay": "Download Replay",
+  "stepByTurn": "Step by turn (auto-pause between turns)",
+  "pause": "Pause",
+  "stop": "Stop",
+  "restartReplay": "Restart replay",
   "replayGame": "Replay Game",
   "importReplay": "Import Replay",
   "result": "Result",
@@ -472,7 +482,6 @@
   "human": "Human",
   "bot": "Bot",
   "armyOfPlayer": "Army of Player {{player}}",
-  "averageElo": "Average Elo",
   "hybridDescription": "Hybrid maps use non-random, preset terrain, but enable players to use their own custom armies to play.",
   "battleReport": "Battle Report",
   "gameEndReasons": {
@@ -493,7 +502,6 @@
     "leader": "Leader",
     "member": "Member"
   },
-  "clanElo": "Coalition Elo: {{elo}}",
   "members": "Members",
   "deleteClan": "Delete Coalition",
   "deleteClanModal": {
@@ -559,6 +567,19 @@
   "resetToDefault": "Reset to default",
   "submittingOrders": "Submitting orders...",
   "checkingUpdates": "Checking updates...",
+  "lobby": {
+    "autoStartCountdown": "Auto-start in {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "{{title}} mode available to create",
+    "homeBannerJoinable": "Join {{title}}, starts in {{countdown}}",
+    "homeBannerCooldown": "{{title}} unlocks in {{countdown}}",
+    "create": "Create",
+    "createTitle": "Create {{title}}",
+    "createDescription": "A {{title}} game will be created. The lobby is open to all players until it fills or auto-starts.",
+    "join": "Join"
+  },
   "arenas": "Arenas",
   "arena": {
     "reconnecting": "Reconnecting…",
@@ -657,25 +678,26 @@
   "projectilePenetration": "Projectile penetration",
   "league": {
     "title": "League",
-    "a": "Emperor",
-    "b1": "Diamond I",
-    "b2": "Diamond II",
-    "b3": "Diamond III",
-    "c1": "Platinum I",
-    "c2": "Platinum II",
-    "c3": "Platinum III",
-    "d1": "Gold I",
-    "d2": "Gold II",
-    "d3": "Gold III",
-    "e1": "Silver I",
-    "e2": "Silver II",
-    "e3": "Silver III",
-    "f1": "Bronze I",
-    "f2": "Bronze II",
-    "f3": "Bronze III",
-    "g1": "Iron I",
-    "g2": "Iron II",
-    "g3": "Iron III"
+    "unranked": "Unranked",
+    "emperor": "Emperor",
+    "diamond-1": "Diamond I",
+    "diamond-2": "Diamond II",
+    "diamond-3": "Diamond III",
+    "platinum-1": "Platinum I",
+    "platinum-2": "Platinum II",
+    "platinum-3": "Platinum III",
+    "gold-1": "Gold I",
+    "gold-2": "Gold II",
+    "gold-3": "Gold III",
+    "silver-1": "Silver I",
+    "silver-2": "Silver II",
+    "silver-3": "Silver III",
+    "bronze-1": "Bronze I",
+    "bronze-2": "Bronze II",
+    "bronze-3": "Bronze III",
+    "iron-1": "Iron I",
+    "iron-2": "Iron II",
+    "iron-3": "Iron III"
   },
   "skinTier": {
     "1": "Conscript",
@@ -733,6 +755,16 @@
   "preset": "Preset",
   "hybrid": "Hybrid",
   "random": "Random",
+  "scenarioFeatures": "Features",
+  "scenarioFeature": {
+    "fixedMap": "Fixed map",
+    "proceduralMap": "Procedurally generated map",
+    "fixedArmy": "Fixed army",
+    "dynamicArmy": "Dynamic army",
+    "fixedPlayers": "Fixed players",
+    "objectives": "Objectives",
+    "scriptedEvents": "Scripted events"
+  },
   "projectileWidth": "Projectile width",
   "allyCollisionLevel": "Ally collision level",
   "enemyCollisionLevel": "Enemy collision level",
@@ -897,9 +929,20 @@
   "notAvailableForAllUnits": "Not available for all units",
   "unitsHaveDifferentFormations": "Selected units have different formations",
   "profileChart": {
-    "rankedWinrate": "Ranked",
+    "rankedWinrate90d": "Ranked (90d)",
     "arenaWinrate": "Arena",
     "wins": "Wins",
-    "losses": "Losses"
+    "losses": "Losses",
+    "totalGames_one": "1 game",
+    "totalGames_other": "{{count}} games",
+    "totalArenas_one": "1 arena",
+    "totalArenas_other": "{{count}} arenas"
+  },
+  "tutorialSummary": {
+    "heading": "Tutorial summary",
+    "count": "{{seen}} of {{total}} lessons shown",
+    "description": "Each lesson covers a situation worth knowing.",
+    "allSeen": "You saw every lesson the tutorial has to offer.",
+    "viewMissed": "View missed lessons"
   }
 }

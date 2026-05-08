@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Вітаємо в Lines of Battle!",
+  "skip": "Пропустити",
   "home": "Головна",
   "language": "Мова",
   "tutorial": "Навчання",
+  "tutorialRequired": "Пройдіть навчання перед грою онлайн",
+  "tutorialRequiredDescription": "Вам потрібно завершити навчання, перш ніж стати в чергу на онлайн-матчі.",
+  "goToTutorial": "Перейти до навчання",
   "tutorials": "Навчальні посібники",
   "play": "Грати",
   "ranking": "Рейтинг",
@@ -22,7 +26,9 @@
   "addPlayer": "Додати гравця",
   "credits": "Автори",
   "settings": "Налаштування",
-  "eloDescription": "Ело - це система оцінювання, що використовується для визначення відносного рівня майстерності гравців. Чим вище ваше Ело, тим сильніші ви в порівнянні з іншими. Перемога підвищує ваше Ело, а поразка знижує його.",
+  "leagueDescription": "Ваша ліга відображає рівень вашої майстерності. Перемагайте, щоб просуватися у своїй лізі; досягнувши вершини, ви перейдете до наступної. Занадто багато поразок можуть призвести до пониження. Наведіть курсор на значок ліги, щоб побачити свій прогрес до наступної.",
+  "averageLeague": "Середня ліга",
+  "clanLeague": "Ліга коаліції",
   "welcomeName": "Ласкаво просимо {{name}}!",
   "myGames": "Мої ігри",
   "noGamesYet": "Ще немає ігор! Натисніть Грати, щоб створити нову.",
@@ -57,7 +63,6 @@
     "extendQueueSuccess": "Пошук у будь-якому діапазоні Elo.",
     "cancelledBy": "Чергу було скасовано {{username}}.",
     "playersInQueue": "{{count}} гравців шукають",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Ви:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Втрачено З'єднання. Перепідключення"
   },
   "fastMode": "Швидкий режим",
@@ -167,6 +172,10 @@
   "offerDraw": "Запропонувати нічию",
   "replayBattle": "Відтворити битву",
   "downloadReplay": "Завантажити повтор",
+  "stepByTurn": "Покроково (автопауза між ходами)",
+  "pause": "Пауза",
+  "stop": "Зупинити",
+  "restartReplay": "Перезапустити повтор",
   "replayGame": "Повторити гру",
   "importReplay": "Імпортувати повтор",
   "result": "Результати",
@@ -442,7 +451,6 @@
   "human": "Людина",
   "bot": "Бот",
   "armyOfPlayer": "Військо гравця {{player}}",
-  "averageElo": "Середній рейтинг Elo",
   "hybridDescription": "Hybrid maps use non-random, preset terrain, but enable players to use their own custom armies to play.",
   "battleReport": "Звіт про битву",
   "gameEndReasons": {
@@ -463,7 +471,6 @@
     "leader": "Лідер",
     "member": "Учасник"
   },
-  "clanElo": "Рейтинг коаліції: {{elo}}",
   "members": "Учасники",
   "deleteClan": "Розпустити коаліцію",
   "deleteClanModal": {
@@ -547,6 +554,19 @@
   "allyOverlap": "Накладання союзників",
   "hard": "Жорстκε",
   "soft": "М'яκε",
+  "lobby": {
+    "autoStartCountdown": "Автозапуск через {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} на {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Режим {{title}} доступний для створення",
+    "homeBannerJoinable": "Приєднатися до {{title}}, почнеться через {{countdown}}",
+    "homeBannerCooldown": "{{title}} розблоковується через {{countdown}}",
+    "create": "Створити",
+    "createTitle": "Створити {{title}}",
+    "createDescription": "Буде створено гру {{title}}. Лобі відкрите для всіх гравців, доки не заповниться або не почнеться автоматично.",
+    "join": "Приєднатися"
+  },
   "infantry": "Піхота",
   "cavalry": "Кіннота",
   "artillery": "Артилерія",
@@ -554,6 +574,16 @@
   "preset": "Попередньо встановлений",
   "hybrid": "Гібридний",
   "random": "Випадковий",
+  "scenarioFeatures": "Особливості",
+  "scenarioFeature": {
+    "fixedMap": "Фіксована карта",
+    "proceduralMap": "Процедурно згенерована карта",
+    "fixedArmy": "Фіксована армія",
+    "dynamicArmy": "Динамічна армія",
+    "fixedPlayers": "Фіксовані гравці",
+    "objectives": "Цілі",
+    "scriptedEvents": "Скриптові події"
+  },
   "academy": "Академія",
   "encyclopedia": "Енциклопедія",
   "tutorialTips": "Поради Навчання",
@@ -676,5 +706,49 @@
   "startGameNow": "Почати гру зараз?",
   "startGameNowTooltip": "Підрозділи, не призначені жодному гравцеві, будуть рівномірно розподілені між підключеними гравцями тієї ж команди, що й ці підрозділи.",
   "user": "Користувач",
-  "meleeStaminaCost": "Вартість витривалості рукопашного бою"
+  "meleeStaminaCost": "Вартість витривалості рукопашного бою",
+  "profileChart": {
+    "rankedWinrate90d": "Рейтинг (90д)",
+    "arenaWinrate": "Арена",
+    "wins": "Перемоги",
+    "losses": "Поразки",
+    "totalGames_one": "1 гра",
+    "totalGames_few": "{{count}} гри",
+    "totalGames_many": "{{count}} ігор",
+    "totalGames_other": "{{count}} гри",
+    "totalArenas_one": "1 арена",
+    "totalArenas_few": "{{count}} арени",
+    "totalArenas_many": "{{count}} арен",
+    "totalArenas_other": "{{count}} арени"
+  },
+  "league": {
+    "title": "Ліга",
+    "emperor": "Імператор",
+    "diamond-3": "Діамант III",
+    "diamond-2": "Діамант II",
+    "diamond-1": "Діамант I",
+    "platinum-3": "Платина III",
+    "platinum-2": "Платина II",
+    "platinum-1": "Платина I",
+    "gold-3": "Золото III",
+    "gold-2": "Золото II",
+    "gold-1": "Золото I",
+    "silver-3": "Срібло III",
+    "silver-2": "Срібло II",
+    "silver-1": "Срібло I",
+    "bronze-3": "Бронза III",
+    "bronze-2": "Бронза II",
+    "bronze-1": "Бронза I",
+    "iron-3": "Залізо III",
+    "iron-2": "Залізо II",
+    "iron-1": "Залізо I",
+    "unranked": "Без рангу"
+  },
+  "tutorialSummary": {
+    "heading": "Підсумок навчання",
+    "count": "Показано {{seen}} з {{total}} уроків",
+    "description": "Кожен урок охоплює ситуацію, яку варто знати.",
+    "allSeen": "Ви побачили всі уроки навчання.",
+    "viewMissed": "Переглянути пропущені уроки"
+  }
 }

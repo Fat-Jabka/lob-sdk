@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Savaş Çizgilerine Hoş Geldiniz!",
+  "skip": "Atla",
   "home": "Ana Sayfa",
   "language": "Dil",
   "tutorial": "Eğitim",
+  "tutorialRequired": "Çevrimiçi oynamadan önce eğitimi tamamlayın",
+  "tutorialRequiredDescription": "Çevrimiçi maçlar için sıraya girmeden önce eğitimi bitirmeniz gerekir.",
+  "goToTutorial": "Eğitime git",
   "tutorials": "Öğreticiler",
   "play": "Oyna",
   "ranking": "Sıralama",
@@ -22,7 +26,9 @@
   "addPlayer": "Oyuncu ekle",
   "credits": "Katkılar",
   "settings": "Ayarlar",
-  "eloDescription": "Elo, oyuncuların göreceli beceri seviyelerini hesaplamak için kullanılan bir derecelendirme sistemidir. Elo'nuz ne kadar yüksekse, diğerlerine göre o kadar güçlüsünüz demektir. Kazanmak Elo'nuzu artırır, kaybetmek ise düşürür.",
+  "leagueDescription": "Liginiz beceri seviyenizi yansıtır. Liginizde ilerlemek için maçları kazanın; zirveye ulaştığınızda bir sonraki lige yükselirsiniz. Çok fazla yenilgi sizi düşürebilir. Bir sonraki lige kalan ilerlemenizi görmek için lig rozetinin üzerine gelin.",
+  "averageLeague": "Ortalama Lig",
+  "clanLeague": "Koalisyon Ligi",
   "welcomeName": "Hoş geldiniz {{name}}!",
   "myGames": "Oyunlarım",
   "gameStatus": {
@@ -61,7 +67,6 @@
     "extendQueueSuccess": "Herhangi bir Elo aralığında aranıyor.",
     "cancelledBy": "Kuyruk {{username}} tarafından iptal edildi.",
     "playersInQueue": "{{count}} oyuncu aranıyor",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Sen:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Bağlantı Kesildi. Yeniden Bağlanıyor"
   },
   "fastMode": "Hızlı Mod",
@@ -167,6 +172,10 @@
   "offerDraw": "Beraberlik Teklif Et",
   "replayBattle": "Savaşı Tekrar Oyna",
   "downloadReplay": "Tekrarı İndir",
+  "stepByTurn": "Tur tur (turlar arası otomatik duraklatma)",
+  "pause": "Duraklat",
+  "stop": "Durdur",
+  "restartReplay": "Tekrarı yeniden başlat",
   "replayGame": "Oyunu Tekrar Oyna",
   "importReplay": "Tekrarı İçe Aktar",
   "result": "Sonuç",
@@ -426,7 +435,6 @@
   "human": "İnsan",
   "bot": "Bot",
   "armyOfPlayer": "Oyuncu {{player}}’ın ordusu",
-  "averageElo": "Ortalama Elo",
   "hybridDescription": "Hibrit haritalar rastgele olmayan, önceden ayarlanmış arazi kullanır, ancak oyuncuların kendi özel ordularını kullanmalarına olanak tanır.",
   "battleReport": "Savaş Raporu",
   "gameEndReasons": {
@@ -447,7 +455,6 @@
     "leader": "Lider",
     "member": "Üye"
   },
-  "clanElo": "Koalisyon Elo: {{elo}}",
   "members": "Üyeler",
   "deleteClan": "Koalisyonu Sil",
   "deleteClanModal": {
@@ -529,6 +536,19 @@
   "dismiss": "Kapat",
   "turningDelay": "Dönüş gecikmesi",
   "allyOverlap": "Müttefik çakışması",
+  "lobby": {
+    "autoStartCountdown": "Otomatik başlangıç: {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "{{title}} modu oluşturulabilir",
+    "homeBannerJoinable": "{{title}} oyununa katıl, {{countdown}} sonra başlar",
+    "homeBannerCooldown": "{{title}} {{countdown}} sonra açılır",
+    "create": "Oluştur",
+    "createTitle": "{{title}} Oluştur",
+    "createDescription": "Bir {{title}} oyunu oluşturulacak. Lobi, dolana veya otomatik başlayana kadar tüm oyunculara açıktır.",
+    "join": "Katıl"
+  },
   "hard": "Sert",
   "soft": "Yumuşak",
   "infantry": "Piyade",
@@ -538,6 +558,16 @@
   "preset": "Önceden ayarlanmış",
   "hybrid": "Hibrit",
   "random": "Rastgele",
+  "scenarioFeatures": "Özellikler",
+  "scenarioFeature": {
+    "fixedMap": "Sabit harita",
+    "proceduralMap": "Prosedürel oluşturulmuş harita",
+    "fixedArmy": "Sabit ordu",
+    "dynamicArmy": "Dinamik ordu",
+    "fixedPlayers": "Sabit oyuncular",
+    "objectives": "Hedefler",
+    "scriptedEvents": "Senaryolu olaylar"
+  },
   "academy": "Akademi",
   "encyclopedia": "Ansiklopedi",
   "tutorialTips": "Eğitim İpuçları",
@@ -666,5 +696,43 @@
   "startGameNow": "Oyunu şimdi başlat?",
   "startGameNowTooltip": "Hiçbir oyuncuya atanmamış birimler, o birimlerle aynı takımdaki bağlı oyuncular arasında eşit şekilde bölüştürülür.",
   "user": "Kullanıcı",
-  "meleeStaminaCost": "Yakın dövüş dayanıklılık maliyeti"
+  "meleeStaminaCost": "Yakın dövüş dayanıklılık maliyeti",
+  "profileChart": {
+    "rankedWinrate90d": "Dereceli (90g)",
+    "arenaWinrate": "Arena",
+    "wins": "Galibiyetler",
+    "losses": "Mağlubiyetler",
+    "totalGames_other": "{{count}} oyun",
+    "totalArenas_other": "{{count}} arena"
+  },
+  "league": {
+    "title": "Lig",
+    "emperor": "İmparator",
+    "diamond-3": "Elmas III",
+    "diamond-2": "Elmas II",
+    "diamond-1": "Elmas I",
+    "platinum-3": "Platin III",
+    "platinum-2": "Platin II",
+    "platinum-1": "Platin I",
+    "gold-3": "Altın III",
+    "gold-2": "Altın II",
+    "gold-1": "Altın I",
+    "silver-3": "Gümüş III",
+    "silver-2": "Gümüş II",
+    "silver-1": "Gümüş I",
+    "bronze-3": "Bronz III",
+    "bronze-2": "Bronz II",
+    "bronze-1": "Bronz I",
+    "iron-3": "Demir III",
+    "iron-2": "Demir II",
+    "iron-1": "Demir I",
+    "unranked": "Derecesiz"
+  },
+  "tutorialSummary": {
+    "heading": "Eğitim özeti",
+    "count": "{{total}} dersten {{seen}} tanesi gösterildi",
+    "description": "Her ders bilmeye değer bir durumu kapsar.",
+    "allSeen": "Eğitimdeki tüm dersleri gördün.",
+    "viewMissed": "Kaçırılan dersleri gör"
+  }
 }

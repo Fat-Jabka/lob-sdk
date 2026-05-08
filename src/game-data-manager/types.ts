@@ -1,6 +1,7 @@
 import { GameTimePresetId } from "@lob-sdk/game-time-preset";
 import {
   DynamicBattleType,
+  LeagueType,
   ScenarioName,
   SkinTier,
   TeamSize,
@@ -20,6 +21,18 @@ export interface Avatar {
   premiumPrice: number;
   discount?: number;
   locked?: boolean;
+}
+
+export type AchievementTrigger =
+  | { type: "tutorial_completed" }
+  | { type: "ranked_wins_total"; threshold: number }
+  | { type: "arenas_won_total"; threshold: number }
+  | { type: "league_reached"; league: LeagueType };
+
+export interface Achievement {
+  id: number;
+  name: string;
+  trigger: AchievementTrigger;
 }
 
 export interface ObjectiveSkin {
@@ -159,7 +172,8 @@ export interface GameConstants {
   CAN_LEAVE_MAP_MIN_ORG: number;
   CAN_LEAVE_MAP_MIN_HP_PROPORTION: number;
 
-  ATTACK_COOLDOWN: number;
+  /** Full attack cycle in ticks — unit attacks once every ATTACK_PERIOD ticks. */
+  ATTACK_PERIOD: number;
 
   CHARGE_RESISTANCE_LOSS_BY_ORG: number;
 
@@ -329,6 +343,13 @@ export interface GameConstants {
    * Whether the era is in beta.
    */
   BETA: boolean;
+
+  /**
+   * Divisor for converting internal stat precision to display values.
+   * Stats in the data files are stored ×this factor for integer-math precision.
+   * Divide by this before showing values in the UI.
+   */
+  STAT_DISPLAY_DIVISOR: number;
 }
 
 // Damage Type Types (moved from @common/damage-type)
@@ -372,6 +393,7 @@ export interface MeleeDamageTypeTemplate {
   id: number;
   name: string;
   ranged?: false;
+  ammoCost?: never;
   damageModifier?: number;
   orgDamageRatio: number;
   cannotChargeAgainst?: UnitCategoryId[];
@@ -553,8 +575,11 @@ export interface AllyCollisionRule {
 }
 
 export interface TutorialRule {
-  /** List of scenario names to show in the tutorials page */
-  scenarios: ScenarioName[];
+  /**
+   * Single tutorial scenario for the era. `null` means the era has no tutorial
+   * and matchmaking/arenas for that era are not gated by tutorial completion.
+   */
+  scenario: ScenarioName | null;
 }
 
 export interface OrganizationRule {
@@ -652,6 +677,8 @@ export interface UnitSkin {
       base?: string;
       /** Name of the overlay sprite */
       overlay?: string | null;
+      /** Optional formation-specific attack color override; falls back to the skin-level `attackColor`. */
+      attackColor?: string;
     };
   };
   tier: SkinTier;

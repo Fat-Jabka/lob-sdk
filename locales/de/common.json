@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Willkommen bei Lines of Battle!",
+  "skip": "Überspringen",
   "home": "Startseite",
   "language": "Sprache",
   "tutorial": "Tutorial",
+  "tutorialRequired": "Schließe das Tutorial ab, bevor du online spielst",
+  "tutorialRequiredDescription": "Du musst das Tutorial abschließen, bevor du dich für Online-Matches in die Warteschlange stellen kannst.",
+  "goToTutorial": "Zum Tutorial",
   "tutorials": "Tutorials",
   "play": "Spielen",
   "ranking": "Rangliste",
@@ -22,7 +26,9 @@
   "addPlayer": "Spieler hinzufügen",
   "credits": "Gutschriften",
   "settings": "Einstellungen",
-  "eloDescription": "Elo ist ein Bewertungssystem, mit dem ein ungefähreres Geschicklevel des Spielers berechnet wird. Je höher Ihre Elo, desto besser sind Sie im Vergleich zu Anderen. Gewinnen erhöht Ihre Elo, währen Verlieren sie verringert.",
+  "leagueDescription": "Deine Liga spiegelt dein Können wider. Gewinne Spiele, um in deiner Liga aufzusteigen; an der Spitze rückst du in die nächste auf. Zu viele Niederlagen können dich absteigen lassen. Bewege den Mauszeiger über das Liga-Abzeichen, um deinen Fortschritt zur nächsten Liga zu sehen.",
+  "averageLeague": "Durchschnittliche Liga",
+  "clanLeague": "Koalitionsliga",
   "welcomeName": "Willkommen {{name}}!",
   "myGames": "Meine Spiele",
   "gameStatus": {
@@ -61,7 +67,6 @@
     "extendQueueSuccess": "Suche in jedem Elo-Bereich.",
     "cancelledBy": "Die Warteschlange wurde von {{username}} abgebrochen.",
     "playersInQueue": "{{count}} Spieler suchen",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Du:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Verbindung Verloren. Wiederverbindung"
   },
   "fastMode": "schneller Modus",
@@ -167,6 +172,10 @@
   "offerDraw": "Unentschieden anbieten",
   "replayBattle": "Schlacht wiedergeben",
   "downloadReplay": "Replay herunterladen",
+  "stepByTurn": "Zug für Zug (automatische Pause zwischen Zügen)",
+  "pause": "Pause",
+  "stop": "Stopp",
+  "restartReplay": "Wiederholung neu starten",
   "replayGame": "Spiel wiedergeben",
   "importReplay": "Replay importieren",
   "result": "Ergebnis",
@@ -425,7 +434,6 @@
   "human": "Mensch",
   "bot": "Bot",
   "armyOfPlayer": "Armee des Spielers {{player}}",
-  "averageElo": "Durchschnittliche Elo",
   "hybridDescription": "Hybridkarten benutzen nicht-zufälliges, voreingestelltes Gelände, aber ermöglichen dem Spieler benutzerdefinierte Armeen zu verwenden.",
   "battleReport": "Schlachtbericht",
   "gameEndReasons": {
@@ -445,7 +453,6 @@
     "leader": "Anführer",
     "member": "Mitglieder"
   },
-  "clanElo": "Koalitions-Elo: {{elo}}",
   "members": "Mitglieder",
   "deleteClan": "Koalition löschen",
   "deleteClanModal": {
@@ -590,6 +597,19 @@
   "medium": "Mittel",
   "high": "Hoch",
   "dismiss": "Verwerfen",
+  "lobby": {
+    "autoStartCountdown": "Automatischer Start in {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Modus {{title}} verfügbar",
+    "homeBannerJoinable": "{{title}} beitreten, startet in {{countdown}}",
+    "homeBannerCooldown": "{{title}} wird in {{countdown}} freigeschaltet",
+    "create": "Erstellen",
+    "createTitle": "{{title}} erstellen",
+    "createDescription": "Eine {{title}}-Partie wird erstellt. Die Lobby ist für alle Spieler offen, bis sie voll ist oder automatisch startet.",
+    "join": "Beitreten"
+  },
   "turningDelay": "Drehverzögerung",
   "allyOverlap": "Verbündeten-Überlappung",
   "hard": "Hart",
@@ -601,6 +621,16 @@
   "preset": "Voreinstellung",
   "hybrid": "Hybrid",
   "random": "Zufällig",
+  "scenarioFeatures": "Merkmale",
+  "scenarioFeature": {
+    "fixedMap": "Feste Karte",
+    "proceduralMap": "Prozedural generierte Karte",
+    "fixedArmy": "Feste Armee",
+    "dynamicArmy": "Dynamische Armee",
+    "fixedPlayers": "Feste Spieler",
+    "objectives": "Ziele",
+    "scriptedEvents": "Skriptereignisse"
+  },
   "academy": "Akademie",
   "encyclopedia": "Enzyklopädie",
   "tutorialTips": "Tutorial-Tipps",
@@ -664,5 +694,45 @@
   "startGameNow": "Spiel jetzt starten?",
   "startGameNowTooltip": "Einheiten, die keinem Spieler zugewiesen sind, werden gleichmäßig auf die verbundenen Spieler in derselben Mannschaft wie diese Einheiten aufgeteilt.",
   "user": "Benutzer",
-  "meleeStaminaCost": "Nahkampf-Ausdauerkosten"
+  "meleeStaminaCost": "Nahkampf-Ausdauerkosten",
+  "profileChart": {
+    "rankedWinrate90d": "Rangliste (90T)",
+    "arenaWinrate": "Arena",
+    "wins": "Siege",
+    "losses": "Niederlagen",
+    "totalGames_one": "1 Spiel",
+    "totalGames_other": "{{count}} Spiele",
+    "totalArenas_one": "1 Arena",
+    "totalArenas_other": "{{count}} Arenen"
+  },
+  "league": {
+    "title": "Liga",
+    "emperor": "Imperator",
+    "diamond-3": "Diamant III",
+    "diamond-2": "Diamant II",
+    "diamond-1": "Diamant I",
+    "platinum-3": "Platin III",
+    "platinum-2": "Platin II",
+    "platinum-1": "Platin I",
+    "gold-3": "Gold III",
+    "gold-2": "Gold II",
+    "gold-1": "Gold I",
+    "silver-3": "Silber III",
+    "silver-2": "Silber II",
+    "silver-1": "Silber I",
+    "bronze-3": "Bronze III",
+    "bronze-2": "Bronze II",
+    "bronze-1": "Bronze I",
+    "iron-3": "Eisen III",
+    "iron-2": "Eisen II",
+    "iron-1": "Eisen I",
+    "unranked": "Nicht eingestuft"
+  },
+  "tutorialSummary": {
+    "heading": "Tutorial-Zusammenfassung",
+    "count": "{{seen}} von {{total}} Lektionen gezeigt",
+    "description": "Jede Lektion behandelt eine wissenswerte Situation.",
+    "allSeen": "Du hast alle Lektionen des Tutorials gesehen.",
+    "viewMissed": "Verpasste Lektionen ansehen"
+  }
 }

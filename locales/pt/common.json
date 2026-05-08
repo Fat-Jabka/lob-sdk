@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Bem-vindo ao Lines of Battle!",
+  "skip": "Pular",
   "home": "Início",
   "language": "Idioma",
   "tutorial": "Tutorial",
+  "tutorialRequired": "Complete o tutorial antes de jogar online",
+  "tutorialRequiredDescription": "Você precisa terminar o tutorial antes de entrar na fila para partidas online.",
+  "goToTutorial": "Ir para o tutorial",
   "tutorials": "Tutoriais",
   "play": "Jogar",
   "ranking": "Classificação",
@@ -22,7 +26,9 @@
   "addPlayer": "Adicionar jogador",
   "credits": "Créditos",
   "settings": "Configurações",
-  "eloDescription": "Elo é um sistema de pontuação usado para calcular o nível de habilidade relativo dos jogadores. Quanto maior seu Elo, mais forte você é em comparação com os outros. Vencer aumenta seu Elo, enquanto perder diminui.",
+  "leagueDescription": "Sua liga reflete seu nível de habilidade. Vença partidas para ganhar progresso dentro da sua liga e, ao chegar ao topo, você avança para a próxima. Perder muitas partidas pode fazer você cair. Passe o cursor sobre o emblema para ver seu progresso até a próxima liga.",
+  "averageLeague": "Liga média",
+  "clanLeague": "Liga da coligação",
   "welcomeName": "Bem-vindo {{name}}!",
   "myGames": "Meus jogos",
   "gameStatus": {
@@ -61,7 +67,6 @@
     "extendQueueSuccess": "Procurando em qualquer faixa de Elo.",
     "cancelledBy": "A fila foi cancelada por {{username}}.",
     "playersInQueue": "{{count}} jogadores procurando",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Você:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Conexão Perdida. Reconectando"
   },
   "fastMode": "Modo Rápido",
@@ -167,6 +172,10 @@
   "offerDraw": "Oferecer empate",
   "replayBattle": "Repetir batalha",
   "downloadReplay": "Baixar replay",
+  "stepByTurn": "Passo a passo (pausa automática entre turnos)",
+  "pause": "Pausar",
+  "stop": "Parar",
+  "restartReplay": "Reiniciar replay",
   "replayGame": "Repetir jogo",
   "importReplay": "Importar replay",
   "result": "Resultado",
@@ -425,7 +434,6 @@
   "human": "Humano",
   "bot": "Bot",
   "armyOfPlayer": "Exército do Jogador {{player}}",
-  "averageElo": "Elo Médio",
   "hybridDescription": "Mapas híbridos usam terreno predefinido não aleatório, mas permitem que os jogadores usem seus próprios exércitos personalizados para jogar.",
   "battleReport": "Relatório de Batalha",
   "gameEndReasons": {
@@ -446,7 +454,6 @@
     "leader": "Líder",
     "member": "Membro"
   },
-  "clanElo": "Elo da Coalizão: {{elo}}",
   "members": "Membros",
   "deleteClan": "Excluir Coalizão",
   "deleteClanModal": {
@@ -530,6 +537,19 @@
   "allyOverlap": "Sobreposição de aliados",
   "hard": "Dura",
   "soft": "Suave",
+  "lobby": {
+    "autoStartCountdown": "Início automático em {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Modo {{title}} disponível para criar",
+    "homeBannerJoinable": "Entre em {{title}}, começa em {{countdown}}",
+    "homeBannerCooldown": "{{title}} desbloqueia em {{countdown}}",
+    "create": "Criar",
+    "createTitle": "Criar {{title}}",
+    "createDescription": "Uma partida {{title}} será criada. O lobby está aberto a todos os jogadores até encher ou iniciar automaticamente.",
+    "join": "Entrar"
+  },
   "infantry": "Infantaria",
   "cavalry": "Cavalaria",
   "artillery": "Artilharia",
@@ -537,6 +557,16 @@
   "preset": "Predefinido",
   "hybrid": "Híbrido",
   "random": "Aleatório",
+  "scenarioFeatures": "Recursos",
+  "scenarioFeature": {
+    "fixedMap": "Mapa fixo",
+    "proceduralMap": "Mapa gerado proceduralmente",
+    "fixedArmy": "Exército fixo",
+    "dynamicArmy": "Exército dinâmico",
+    "fixedPlayers": "Jogadores fixos",
+    "objectives": "Objetivos",
+    "scriptedEvents": "Eventos roteirizados"
+  },
   "academy": "Academia",
   "encyclopedia": "Enciclopédia",
   "tutorialTips": "Dicas do Tutorial",
@@ -665,5 +695,45 @@
   "startGameNow": "Iniciar a partida agora?",
   "startGameNowTooltip": "Unidades não atribuídas a nenhum jogador serão divididas igualmente entre os jogadores conectados no mesmo time dessas unidades.",
   "user": "Usuário",
-  "meleeStaminaCost": "Custo de resistência corpo a corpo"
+  "meleeStaminaCost": "Custo de resistência corpo a corpo",
+  "profileChart": {
+    "rankedWinrate90d": "Ranqueada (90d)",
+    "arenaWinrate": "Arena",
+    "wins": "Vitórias",
+    "losses": "Derrotas",
+    "totalGames_one": "1 partida",
+    "totalGames_other": "{{count}} partidas",
+    "totalArenas_one": "1 arena",
+    "totalArenas_other": "{{count}} arenas"
+  },
+  "league": {
+    "title": "Liga",
+    "emperor": "Imperador",
+    "diamond-3": "Diamante III",
+    "diamond-2": "Diamante II",
+    "diamond-1": "Diamante I",
+    "platinum-3": "Platina III",
+    "platinum-2": "Platina II",
+    "platinum-1": "Platina I",
+    "gold-3": "Ouro III",
+    "gold-2": "Ouro II",
+    "gold-1": "Ouro I",
+    "silver-3": "Prata III",
+    "silver-2": "Prata II",
+    "silver-1": "Prata I",
+    "bronze-3": "Bronze III",
+    "bronze-2": "Bronze II",
+    "bronze-1": "Bronze I",
+    "iron-3": "Ferro III",
+    "iron-2": "Ferro II",
+    "iron-1": "Ferro I",
+    "unranked": "Sem classificação"
+  },
+  "tutorialSummary": {
+    "heading": "Resumo do tutorial",
+    "count": "{{seen}} de {{total}} lições mostradas",
+    "description": "Cada lição cobre uma situação que vale a pena conhecer.",
+    "allSeen": "Você viu todas as lições do tutorial.",
+    "viewMissed": "Ver lições perdidas"
+  }
 }

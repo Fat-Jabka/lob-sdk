@@ -1,0 +1,49 @@
+{
+  "section": "उपलब्धियाँ",
+  "unlockedOn": "{{date}} को अनलॉक हुआ",
+  "locked": "लॉक",
+  "tutorial-completed": {
+    "name": "ट्यूटोरियल आरंभकर्ता",
+    "description": "ट्यूटोरियल पूरा करें।"
+  },
+  "first-victory": {
+    "name": "पहली जीत",
+    "description": "1 रैंक्ड गेम जीतें।"
+  },
+  "veteran-i": {
+    "name": "अनुभवी I",
+    "description": "10 रैंक्ड गेम जीतें।"
+  },
+  "veteran-ii": {
+    "name": "अनुभवी II",
+    "description": "50 रैंक्ड गेम जीतें।"
+  },
+  "veteran-iii": {
+    "name": "अनुभवी III",
+    "description": "100 रैंक्ड गेम जीतें।"
+  },
+  "arena-champion-i": {
+    "name": "अरेना चैंपियन I",
+    "description": "1 अरेना जीतें।"
+  },
+  "arena-champion-ii": {
+    "name": "अरेना चैंपियन II",
+    "description": "5 अरेना जीतें।"
+  },
+  "arena-champion-iii": {
+    "name": "अरेना चैंपियन III",
+    "description": "25 अरेना जीतें।"
+  },
+  "league-platinum": {
+    "name": "प्लैटिनम लीग",
+    "description": "रैंक्ड में प्लैटिनम तक पहुँचें।"
+  },
+  "league-diamond": {
+    "name": "डायमंड लीग",
+    "description": "रैंक्ड में डायमंड तक पहुँचें।"
+  },
+  "league-emperor": {
+    "name": "सम्राट लीग",
+    "description": "रैंक्ड में सम्राट तक पहुँचें।"
+  }
+}

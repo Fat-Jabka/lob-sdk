@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Καλώς ορίσατε στο Lines of Battle!",
+  "skip": "Παράλειψη",
   "home": "Σπίτι",
   "language": "Γλώσσα",
   "tutorial": "Δοκιμαστικό.",
+  "tutorialRequired": "Ολοκληρώστε το tutorial πριν παίξετε online",
+  "tutorialRequiredDescription": "Πρέπει να ολοκληρώσετε το tutorial πριν μπείτε στην ουρά για online παιχνίδια.",
+  "goToTutorial": "Μετάβαση στο tutorial",
   "tutorials": "Σεμινάρια",
   "play": "παίξε",
   "ranking": "Νούμερο",
@@ -23,7 +27,9 @@
   "addPlayer": "Βάλε παίχτη",
   "credits": "Τίτλοι",
   "settings": "Ρυθμίσεις",
-  "eloDescription": "Το Elo είναι ένα σύστημα αξιολόγησης που χρησιμοποιείται για τον υπολογισμό του σχετικού επιπέδου δεξιοτήτων των παικτών. Όσο υψηλότερο είναι το Elo σας, τόσο πιο δυνατοί είστε σε σύγκριση με τους άλλους. Η νίκη αυξάνει το Elo σας, ενώ η ήττα το μειώνει.",
+  "leagueDescription": "Η λίγκα σας αντικατοπτρίζει το επίπεδο των δεξιοτήτων σας. Κερδίστε αγώνες για να προχωράτε στη λίγκα σας· όταν φτάσετε στην κορυφή, ανεβαίνετε στην επόμενη. Πολλές ήττες μπορεί να σας ρίξουν χαμηλότερα. Περάστε τον δείκτη πάνω από το σήμα της λίγκας για να δείτε την πρόοδό σας προς την επόμενη.",
+  "averageLeague": "Μέση Λίγκα",
+  "clanLeague": "Λίγκα Συμμαχίας",
   "welcomeName": "καλωσήρθες {{name}}!",
   "myGames": "τα παιχνίδια μου",
   "gameStatus": {
@@ -62,7 +68,6 @@
     "extendQueueSuccess": "Αναζήτηση σε οποιαδήποτε σειρά Elo.",
     "cancelledBy": "Η ουρά ακυρώθηκε από {{username}}.",
     "playersInQueue": "{{count}} παίκτες αναζητούν",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Εσείς:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Η Σύνδεση Χάθηκε. Επανασύνδεση"
   },
   "fastMode": "Γρήγορη λειτουργία",
@@ -178,6 +183,10 @@
   "offerDraw": "Προσφέρετε Ισοπαλία",
   "replayBattle": "Replay battle",
   "downloadReplay": "Λήψη επανάληψης",
+  "stepByTurn": "Βήμα προς βήμα (αυτόματη παύση μεταξύ γύρων)",
+  "pause": "Παύση",
+  "stop": "Διακοπή",
+  "restartReplay": "Επανεκκίνηση επανάληψης",
   "replayGame": "Επανάληψη παιχνιδιού",
   "importReplay": "Εισαγωγή επανάληψης",
   "result": "Αποτέλεσμα",
@@ -458,7 +467,6 @@
   "human": "Ανθρώπος",
   "bot": "Ρομπότ",
   "armyOfPlayer": "Στρατός Παίκτη {{player}}",
-  "averageElo": "Μέσο Elo",
   "hybridDescription": "Hybrid maps use non-random, preset terrain, but enable players to use their own custom armies to play.",
   "battleReport": "Αναφορά μάχης",
   "gameEndReasons": {
@@ -479,7 +487,6 @@
     "leader": "Ηγέτης",
     "member": "Μέλος"
   },
-  "clanElo": "Elo συμμαχίας: {{elo}}",
   "members": "Μέλη",
   "deleteClan": "Διαγραφή συμμαχίας",
   "deleteClanModal": {
@@ -613,6 +620,19 @@
   "viewGame": "Δείτε το παιχνίδι",
   "rank": "Τάξη",
   "maxPlayers": "Μέγιστοι παίκτες",
+  "lobby": {
+    "autoStartCountdown": "Αυτόματη έναρξη σε {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} εναντίον {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Λειτουργία {{title}} διαθέσιμη",
+    "homeBannerJoinable": "Είσοδος σε {{title}}, ξεκινά σε {{countdown}}",
+    "homeBannerCooldown": "{{title}} ξεκλειδώνει σε {{countdown}}",
+    "create": "Δημιουργία",
+    "createTitle": "Δημιουργία {{title}}",
+    "createDescription": "Θα δημιουργηθεί ένα παιχνίδι {{title}}. Η αίθουσα είναι ανοιχτή σε όλους τους παίκτες μέχρι να γεμίσει ή να ξεκινήσει αυτόματα.",
+    "join": "Είσοδος"
+  },
   "hasPassword": "Διαθέτει κωδικό πρόσβασης",
   "optional": "Προαιρετικό",
   "round": "Γύρος",
@@ -642,25 +662,26 @@
   "projectilePenetration": "Διείσδυση βλήματος",
   "league": {
     "title": "κατηγορία",
-    "a": "Αυτοκράτορας",
-    "b1": "Diamond I",
-    "b2": "Diamond II",
-    "b3": "Diamond III",
-    "c1": "Platinum I",
-    "c2": "Platinum II",
-    "c3": "Platinum III",
-    "d1": "Gold I",
-    "d2": "Gold II",
-    "d3": "Gold III",
-    "e1": "Silver I",
-    "e2": "Silver II",
-    "e3": "Silver III",
-    "f1": "Bronze I",
-    "f2": "Bronze II",
-    "f3": "Bronze III",
-    "g1": "Iron I",
-    "g2": "Iron II",
-    "g3": "Iron III"
+    "unranked": "Χωρίς κατάταξη",
+    "emperor": "Αυτοκράτορας",
+    "diamond-1": "Diamond I",
+    "diamond-2": "Diamond II",
+    "diamond-3": "Diamond III",
+    "platinum-1": "Platinum I",
+    "platinum-2": "Platinum II",
+    "platinum-3": "Platinum III",
+    "gold-1": "Gold I",
+    "gold-2": "Gold II",
+    "gold-3": "Gold III",
+    "silver-1": "Silver I",
+    "silver-2": "Silver II",
+    "silver-3": "Silver III",
+    "bronze-1": "Bronze I",
+    "bronze-2": "Bronze II",
+    "bronze-3": "Bronze III",
+    "iron-1": "Iron I",
+    "iron-2": "Iron II",
+    "iron-3": "Iron III"
   },
   "skinTier": {
     "1": "Κληρωτός",
@@ -709,6 +730,16 @@
   "preset": "Προεπιλέξτε",
   "hybrid": "Υβρίδικο",
   "random": "Τυχαίο",
+  "scenarioFeatures": "Χαρακτηριστικά",
+  "scenarioFeature": {
+    "fixedMap": "Σταθερός χάρτης",
+    "proceduralMap": "Διαδικαστικά δημιουργημένος χάρτης",
+    "fixedArmy": "Σταθερός στρατός",
+    "dynamicArmy": "Δυναμικός στρατός",
+    "fixedPlayers": "Σταθεροί παίκτες",
+    "objectives": "Στόχοι",
+    "scriptedEvents": "Σεναριακά συμβάντα"
+  },
   "projectileWidth": "Πλάτος βλήματος",
   "allyCollisionLevel": "Επίπεδο σύγκρουσης συμμάχου",
   "enemyCollisionLevel": "Επίπεδο σύγκρουσης εχθρού",
@@ -828,5 +859,22 @@
   "privacy": "Απορρήτου",
   "showCountry": "Εμφάνιση χώρας",
   "switchToEra": "Αλλαγή σε {{era}}",
-  "goHome": "Μετάβαση στην Αρχική"
+  "goHome": "Μετάβαση στην Αρχική",
+  "profileChart": {
+    "rankedWinrate90d": "Κατάταξη (90η)",
+    "arenaWinrate": "Αρένα",
+    "wins": "Νίκες",
+    "losses": "Ήττες",
+    "totalGames_one": "1 παιχνίδι",
+    "totalGames_other": "{{count}} παιχνίδια",
+    "totalArenas_one": "1 αρένα",
+    "totalArenas_other": "{{count}} αρένες"
+  },
+  "tutorialSummary": {
+    "heading": "Σύνοψη εκπαίδευσης",
+    "count": "{{seen}} από {{total}} μαθήματα εμφανίστηκαν",
+    "description": "Κάθε μάθημα καλύπτει μια κατάσταση που αξίζει να γνωρίζεις.",
+    "allSeen": "Είδες όλα τα μαθήματα της εκπαίδευσης.",
+    "viewMissed": "Δες τα μαθήματα που έχασες"
+  }
 }

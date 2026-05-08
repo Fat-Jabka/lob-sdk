@@ -1,8 +1,12 @@
 {
   "appLoadingMessage": "Selamat Datang di Lines of Battle!",
+  "skip": "Lewati",
   "home": "Halaman Utama",
   "language": "Bahasa",
   "tutorial": "Tutorial",
+  "tutorialRequired": "Selesaikan tutorial sebelum bermain online",
+  "tutorialRequiredDescription": "Anda harus menyelesaikan tutorial sebelum dapat antri untuk pertandingan online.",
+  "goToTutorial": "Ke tutorial",
   "tutorials": "Tutorial",
   "play": "Bermain",
   "ranking": "Ranking",
@@ -23,7 +27,9 @@
   "addPlayer": "Tambah Pemain",
   "credits": "Credits",
   "settings": "Pengaturan",
-  "eloDescription": "Elo adalah sistem peringkat yang digunakan untuk menghitung tingkat keterampilan relatif pemain. Semakin tinggi Elo kamu, semakin kuat kamu dibandingkan dengan pemain lain. Kemenangan akan meningkatkan Elo kamu, sedangkan kekalahan akan menurunkannya.",
+  "leagueDescription": "Liga Anda mencerminkan tingkat keterampilan Anda. Menanglah untuk maju di dalam liga; setelah mencapai puncak, Anda akan naik ke liga berikutnya. Terlalu banyak kekalahan dapat membuat Anda turun. Arahkan kursor ke lencana liga untuk melihat progres ke liga berikutnya.",
+  "averageLeague": "Liga rata-rata",
+  "clanLeague": "Liga koalisi",
   "welcomeName": "Selamat Datang {{name}}!",
   "myGames": "Permainanku",
   "gameStatus": {
@@ -62,7 +68,6 @@
     "extendQueueSuccess": "Mencari dalam rentang Elo apa pun.",
     "cancelledBy": "Antrean dibatalkan oleh {{username}}.",
     "playersInQueue": "{{count}} pemain mencari",
-    "searchingEloRange": "<0>{{minElo}}</0> - <1>{{maxElo}}</1> (<2>Anda:</2> <3>{{userElo}}</3>)",
     "disconnectedReconnecting": "Koneksi Terputus. Menyambung Ulang"
   },
   "fastMode": "Mode Cepat",
@@ -168,6 +173,10 @@
   "offerDraw": "Mengajukan seri",
   "replayBattle": "Ulangi Pertempuran",
   "downloadReplay": "Unduh Replay",
+  "stepByTurn": "Per giliran (jeda otomatis antar giliran)",
+  "pause": "Jeda",
+  "stop": "Berhenti",
+  "restartReplay": "Mulai ulang replay",
   "replayGame": "Ulangi Permainan",
   "importReplay": "Impor Replay",
   "result": "Hasil",
@@ -428,7 +437,6 @@
   "human": "Manusia",
   "bot": "Bot",
   "armyOfPlayer": "Pasukan Pemain {{player}}",
-  "averageElo": "Rata-Rata Elo",
   "hybridDescription": "Peta hibrida menggunakan medan yang telah ditetapkan dan tidak acak, \ntetapi memungkinkan pemain untuk menggunakan pasukan khusus mereka sendiri untuk bermain.",
   "battleReport": "Laporan Pertempuran",
   "gameEndReasons": {
@@ -449,7 +457,6 @@
     "leader": "Pemimpin",
     "member": "Anggota"
   },
-  "clanElo": "Koalisi Elo: {{elo}}",
   "members": "Anggota",
   "deleteClan": "Hapus Koalisi",
   "deleteClanModal": {
@@ -532,6 +539,19 @@
   "fogOfWar": "Kabut perang",
   "spectatorFullVision": "Visibilitas penuh penonton",
   "kFactorTooltip": "Faktor K ELO (perubahan peringkat maks per pertandingan berperingkat)",
+  "lobby": {
+    "autoStartCountdown": "Mulai otomatis dalam {{countdown}}"
+  },
+  "limitedMode": {
+    "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
+    "homeBannerAvailable": "Mode {{title}} tersedia untuk dibuat",
+    "homeBannerJoinable": "Gabung {{title}}, mulai dalam {{countdown}}",
+    "homeBannerCooldown": "{{title}} terbuka dalam {{countdown}}",
+    "create": "Buat",
+    "createTitle": "Buat {{title}}",
+    "createDescription": "Sebuah permainan {{title}} akan dibuat. Lobi terbuka untuk semua pemain hingga penuh atau mulai otomatis.",
+    "join": "Gabung"
+  },
   "prestigeDropChance": "Peluang mendapatkan {{currency}}: {{chance}}% (dari giliran {{turn}})",
   "low": "Rendah",
   "medium": "Sedang",
@@ -548,6 +568,16 @@
   "preset": "Prasetelan",
   "hybrid": "Hibrida",
   "random": "Acak",
+  "scenarioFeatures": "Fitur",
+  "scenarioFeature": {
+    "fixedMap": "Peta tetap",
+    "proceduralMap": "Peta hasil generasi prosedural",
+    "fixedArmy": "Pasukan tetap",
+    "dynamicArmy": "Pasukan dinamis",
+    "fixedPlayers": "Pemain tetap",
+    "objectives": "Sasaran",
+    "scriptedEvents": "Peristiwa berskrip"
+  },
   "academy": "Akademi",
   "encyclopedia": "Ensiklopedia",
   "tutorialTips": "Tips Tutorial",
@@ -670,5 +700,43 @@
   "startGameNow": "Mulai permainan sekarang?",
   "startGameNowTooltip": "Unit yang belum ditetapkan ke pemain mana pun akan dibagi rata di antara pemain yang terhubung di tim yang sama dengan unit tersebut.",
   "user": "Pengguna",
-  "meleeStaminaCost": "Biaya stamina jarak dekat"
+  "meleeStaminaCost": "Biaya stamina jarak dekat",
+  "profileChart": {
+    "rankedWinrate90d": "Berperingkat (90h)",
+    "arenaWinrate": "Arena",
+    "wins": "Menang",
+    "losses": "Kalah",
+    "totalGames_other": "{{count}} permainan",
+    "totalArenas_other": "{{count}} arena"
+  },
+  "league": {
+    "title": "Liga",
+    "emperor": "Kaisar",
+    "diamond-3": "Berlian III",
+    "diamond-2": "Berlian II",
+    "diamond-1": "Berlian I",
+    "platinum-3": "Platinum III",
+    "platinum-2": "Platinum II",
+    "platinum-1": "Platinum I",
+    "gold-3": "Emas III",
+    "gold-2": "Emas II",
+    "gold-1": "Emas I",
+    "silver-3": "Perak III",
+    "silver-2": "Perak II",
+    "silver-1": "Perak I",
+    "bronze-3": "Perunggu III",
+    "bronze-2": "Perunggu II",
+    "bronze-1": "Perunggu I",
+    "iron-3": "Besi III",
+    "iron-2": "Besi II",
+    "iron-1": "Besi I",
+    "unranked": "Tidak berperingkat"
+  },
+  "tutorialSummary": {
+    "heading": "Ringkasan tutorial",
+    "count": "{{seen}} dari {{total}} pelajaran ditampilkan",
+    "description": "Setiap pelajaran membahas situasi yang patut diketahui.",
+    "allSeen": "Kamu telah melihat semua pelajaran tutorial.",
+    "viewMissed": "Lihat pelajaran yang terlewat"
+  }
 }
