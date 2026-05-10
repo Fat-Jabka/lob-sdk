@@ -349,6 +349,7 @@
   "speedWhenShooting": "Velocità durante il tiro",
   "receivedDamage": "Danno ricevuto",
   "receivedOrgDamage": "Danno organizzazione ricevuto",
+  "receivedMeleeDamage": "Danno corpo a corpo ricevuto",
   "noModifiers": "Nessun modificatore",
   "submitOrders": "Invia ordini",
   "submitOrdersConfirmation": "Sei sicuro di voler inviare i tuoi ordini di battaglia? Una volta inviati, non potrai tornare indietro.",

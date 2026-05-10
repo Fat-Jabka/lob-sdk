@@ -338,6 +338,7 @@
   "speedWhenShooting": "Vitesse en tirant",
   "receivedDamage": "Dégâts reçus",
   "receivedOrgDamage": "Dégâts reçus à l'organisation",
+  "receivedMeleeDamage": "Dégâts reçus au corps à corps",
   "noModifiers": "Aucun modificateur",
   "submitOrders": "Soumettre les ordres",
   "submitOrdersConfirmation": "Êtes-vous sûr de vos ordres? Une fois que vous les aurez validés, vous ne pourrez plus faire marche arrière .",

@@ -349,6 +349,7 @@
   "speedWhenShooting": "Ateş ederken hız",
   "receivedDamage": "Alınan hasar",
   "receivedOrgDamage": "Alınan organizasyon hasarı",
+  "receivedMeleeDamage": "Alınan yakın dövüş hasarı",
   "noModifiers": "Değiştirici yok",
   "submitOrders": "Emirleri gönder",
   "submitOrdersConfirmation": "Savaş emirlerinizi göndermek istediğinizden emin misiniz? Gönderdikten sonra geri dönüş olmayacak.",

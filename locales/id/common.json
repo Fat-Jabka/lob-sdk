@@ -351,6 +351,7 @@
   "speedWhenShooting": "Kecepatan sambil menembak",
   "receivedDamage": "Kerusakan yang diterima",
   "receivedOrgDamage": "Kerusakan organisasi yang diterima",
+  "receivedMeleeDamage": "Kerusakan jarak dekat yang diterima",
   "noModifiers": "Tidak ada efek tambahan",
   "submitOrders": "Laksanakan Perintah",
   "submitOrdersConfirmation": "Apakah Anda yakin ingin mengirimkan perintah pertempuran? Setelah dikirimkan, Anda tidak akan dapat kembali.",

@@ -349,6 +349,7 @@
   "speedWhenShooting": "Lövés közbeni sebesség",
   "receivedDamage": "Ért sebződés",
   "receivedOrgDamage": "Ért kár az Org-ban",
+  "receivedMeleeDamage": "Közelharcban ért sebzés",
   "noModifiers": "Nincsenek modifierek",
   "submitOrders": "Utasítások beküldése",
   "submitOrdersConfirmation": "Biztos, hogy beakarod küldeni az utasításaidat? Amint beküldted őket, már nem fogod tudni módosítani azokat.",

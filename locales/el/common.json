@@ -378,6 +378,7 @@
   "speedWhenShooting": "Ταχύτητα όταν Πυροβολείτε",
   "receivedDamage": "Έλαβε ζημιά",
   "receivedOrgDamage": "Έλαβε ζημιά org",
+  "receivedMeleeDamage": "Λαμβανόμενη ζημιά εγγύς μάχης",
   "noModifiers": "Χωρίς τροποποιητές",
   "submitOrders": "Υποβάλετε εντολές",
   "submitOrdersConfirmation": "Είστε σίγουροι ότι θέλετε να υποβάλετε τις εντολές μάχης σας; Μόλις υποβληθούν, δεν θα μπορείτε να επιστρέψετε.",

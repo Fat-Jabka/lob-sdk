@@ -396,6 +396,7 @@
   "speedWhenShooting": "Speed when shooting",
   "receivedDamage": "Received damage",
   "receivedOrgDamage": "Received org damage",
+  "receivedMeleeDamage": "Received melee damage",
   "noModifiers": "No modifiers",
   "submitOrders": "Submit orders",
   "submitOrdersConfirmation": "Are you sure you want to submit your battle orders? Once submitted, you won't be able to go back.",

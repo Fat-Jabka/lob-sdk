@@ -390,6 +390,7 @@
   "speedWhenShooting": "Tốc độ khi bắn",
   "receivedDamage": "Sát thương nhận",
   "receivedOrgDamage": "Sát thương tổ chức nhận",
+  "receivedMeleeDamage": "Sát thương cận chiến nhận",
   "noModifiers": "Không có hệ số",
   "submitOrders": "Gửi lệnh",
   "submitOrdersConfirmation": "Bạn có chắc chắn muốn gửi lệnh chiến đấu? Một khi đã gửi, bạn sẽ không thể quay lại.",

@@ -390,6 +390,7 @@
   "speedWhenShooting": "السرعة عند الإطلاق",
   "receivedDamage": "الضرر المستلم",
   "receivedOrgDamage": "ضرر التنظيم المستلم",
+  "receivedMeleeDamage": "ضرر القتال القريب المستلم",
   "noModifiers": "لا توجد معدلات",
   "submitOrders": "إرسال الأوامر",
   "submitOrdersConfirmation": "هل أنت متأكد من أنك تريد إرسال أوامر المعركة؟ بمجرد الإرسال، لن تتمكن من العودة.",

@@ -349,6 +349,7 @@
   "speedWhenShooting": "Geschwindigkeit beim Schießen",
   "receivedDamage": "Erhaltener Schaden",
   "receivedOrgDamage": "Erhaltener Org Schaden",
+  "receivedMeleeDamage": "Erhaltener Nahkampfschaden",
   "noModifiers": "Keine Modifikatoren",
   "submitOrders": "Befehle einreichen",
   "submitOrdersConfirmation": "Sind Sie sicher, dass Sie Ihre Befehle einreichen wollen? Einmal eingereicht, können diese nicht mehr rückgängig gemacht werden.",

@@ -390,6 +390,7 @@
   "speedWhenShooting": "गोली चलाते समय गति",
   "receivedDamage": "प्राप्त क्षति",
   "receivedOrgDamage": "प्राप्त संगठन क्षति",
+  "receivedMeleeDamage": "प्राप्त निकट युद्ध क्षति",
   "noModifiers": "कोई संशोधक नहीं",
   "submitOrders": "आदेश जमा करें",
   "submitOrdersConfirmation": "क्या आप वाकई अपने युद्ध आदेश जमा करना चाहते हैं? एक बार जमा करने के बाद, आप वापस नहीं जा सकेंगे।",

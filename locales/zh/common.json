@@ -395,6 +395,7 @@
   "speedWhenShooting": "射击时的速度",
   "receivedDamage": "受到的伤害",
   "receivedOrgDamage": "受到的组织度伤害",
+  "receivedMeleeDamage": "受到的近战伤害",
   "noModifiers": "无修正",
   "submitOrders": "提交所有指令",
   "submitOrdersConfirmation": "你确定要提交这回合的指令吗？一旦提交便不能再更改本回合的行动。",

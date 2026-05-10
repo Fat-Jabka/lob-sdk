@@ -366,6 +366,7 @@
   "speedWhenShooting": "Szybkość w trakcie strzelania",
   "receivedDamage": "Otrzymywane obrażenia",
   "receivedOrgDamage": "Otrzymywane obrażenia Org.",
+  "receivedMeleeDamage": "Otrzymywane obrażenia w walce wręcz",
   "noModifiers": "Brak modyfikatorów",
   "submitOrders": "Zatwierdź Rozkazy",
   "submitOrdersConfirmation": "Na pewno chcesz zatwierdzić rozkazy? Po ich zatwierdzeniu, nie można będzie ich zmienić.",

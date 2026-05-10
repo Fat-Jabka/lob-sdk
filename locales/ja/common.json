@@ -349,6 +349,7 @@
   "speedWhenShooting": "射撃時の速度",
   "receivedDamage": "受けたダメージ",
   "receivedOrgDamage": "受けた組織ダメージ",
+  "receivedMeleeDamage": "受けた近接ダメージ",
   "noModifiers": "修正なし",
   "submitOrders": "命令を提出",
   "submitOrdersConfirmation": "本当に戦闘命令を提出しますか？ 提出後は戻れません。",

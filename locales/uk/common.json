@@ -367,6 +367,7 @@
   "speedWhenShooting": "Швидкість під час руху",
   "receivedDamage": "Отримані ушкодження",
   "receivedOrgDamage": "Отримане ушкодження бойовому духу",
+  "receivedMeleeDamage": "Отримане ушкодження в ближньому бою",
   "noModifiers": "Без змін",
   "submitOrders": "Підтвердити  накази",
   "submitOrdersConfirmation": "Ви впевнені, що хочете підтвердити накази? Після цього змінити їх вже не вдасться.",

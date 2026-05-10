@@ -386,6 +386,7 @@
   "speedWhenShooting": "사격 중 속도",
   "receivedDamage": "받은 피해",
   "receivedOrgDamage": "받은 조직력 피해",
+  "receivedMeleeDamage": "받은 근접 피해",
   "noModifiers": "변동 없음",
   "submitOrders": "명령 하달",
   "submitOrdersConfirmation": "명령을 하달하시겠습니까? 한 번 하달하면 되돌릴 수 없습니다.",
