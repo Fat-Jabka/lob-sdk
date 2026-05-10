@@ -578,7 +578,9 @@
     "createTitle": "Create {{title}}",
     "createDescription": "A {{title}} game will be created. The lobby is open to all players until it fills or auto-starts.",
     "join": "Join",
-    "viewLastGame": "View last game"
+    "viewLastGame": "View last game",
+    "mapPoolTitle": "Map pool",
+    "mapPoolDescription": "One of these maps will be randomly picked for the game, weighted by the chances below."
   },
   "arenas": "Arenas",
   "arena": {
