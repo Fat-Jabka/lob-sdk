@@ -11,6 +11,7 @@ import {
   TerrainType,
   TerrainConfig,
   Size,
+  CustomTerrainCategoryOverride,
 } from "@lob-sdk/types";
 import { RawScenarioInput, normalizeScenario } from "@lob-sdk/scenario";
 import { Scenario } from "@lob-sdk/types";
@@ -207,6 +208,19 @@ export class GameDataManager {
    * Uses a singleton pattern to ensure only one instance exists per era.
    * @param era - The game era ("napoleonic" or "ww2").
    * @returns The GameDataManager instance for the era.
+   *
+   * IMPORTANT: this returns the era SINGLETON, which does NOT know about
+   * scenario-scoped custom defs (custom unit templates, damage types,
+   * formations, unit categories, terrain category overrides). During an
+   * active game, ALWAYS resolve via `game.gameDataManager` /
+   * `unit.gameDataManager` / `editorContext.gameDataManager` instead —
+   * those expose the per-game manager built by {@link createWithCustomDefs}
+   * which is the only manager that knows about the custom defs for that
+   * particular scenario.
+   *
+   * `GameDataManager.get` is only safe in contexts where no game is in
+   * flight: pre-game menus, lobby/matchmaking, REST endpoints reading
+   * era data, scenario-generation utilities, achievements catalogs, etc.
    */
   public static get(era: GameEra): GameDataManager {
     if (!GameDataManager.instances.has(era)) {
@@ -215,6 +229,129 @@ export class GameDataManager {
       GameDataManager.instances.set(era, instance);
     }
     return GameDataManager.instances.get(era)!;
+  }
+
+  /**
+   * Builds a fresh non-singleton GameDataManager for the given era and layers
+   * scenario-scoped custom unit templates, damage types, and formations on
+   * top of the era registry. Returns the cached era singleton unchanged when
+   * no custom defs are provided.
+   */
+  public static createWithCustomDefs(
+    era: GameEra,
+    customDefs: {
+      customUnitTemplates?: UnitTemplate[];
+      customDamageTypes?: DamageTypeTemplate[];
+      customUnitFormations?: FormationTemplate[];
+      customUnitCategories?: UnitCategoryTemplate[];
+      customTerrainCategories?: CustomTerrainCategoryOverride[];
+    },
+  ): GameDataManager {
+    const hasCustom = !!(
+      customDefs.customUnitTemplates?.length ||
+      customDefs.customDamageTypes?.length ||
+      customDefs.customUnitFormations?.length ||
+      customDefs.customUnitCategories?.length ||
+      customDefs.customTerrainCategories?.length
+    );
+
+    if (!hasCustom) {
+      return GameDataManager.get(era);
+    }
+
+    const instance = new GameDataManager(era);
+    instance.loadCustomDefs(customDefs);
+    return instance;
+  }
+
+  /**
+   * Layers scenario-scoped custom defs on top of the era registry already
+   * loaded into this instance. Call only on per-game instances built via
+   * {@link createWithCustomDefs}. Mutating an era singleton would leak
+   * scenario state across games.
+   */
+  public loadCustomDefs(customDefs: {
+    customUnitTemplates?: UnitTemplate[];
+    customDamageTypes?: DamageTypeTemplate[];
+    customUnitFormations?: FormationTemplate[];
+    customUnitCategories?: UnitCategoryTemplate[];
+    customTerrainCategories?: CustomTerrainCategoryOverride[];
+  }): void {
+    // Order matters: categories → terrain categories → damage types →
+    // formations → templates. Terrain categories slot in after unit
+    // categories so the wildcard expansion has the full set of unit
+    // category ids to populate against.
+    //
+    // IMPORTANT: every container we mutate below points at the JSON-imported
+    // era data which is shared across all GameDataManager instances (the era
+    // loader assigns the imports by reference). We must clone before
+    // appending or overwriting, otherwise per-game custom defs leak into the
+    // era singleton and into every other game built afterwards.
+
+    if (customDefs.customUnitCategories?.length) {
+      this.unitCategories = [...this.unitCategories];
+      for (const category of customDefs.customUnitCategories) {
+        this.unitCategories.push(category);
+        this.unitCategoryMap.set(category.id, category);
+        if (category.allowedOrders) {
+          this._unitCategoryAllowedOrders.set(
+            category.id,
+            new Set(
+              category.allowedOrders.map((order) => {
+                const orderType = this._orderNameMap.get(order);
+                if (orderType !== undefined) return orderType;
+                throw new Error(`Order ${order} not found`);
+              }),
+            ),
+          );
+        }
+      }
+      // Backfill terrain-category modifier maps that use `*` wildcards so
+      // newly-added unit categories pick up the era's default terrain
+      // movement / attack / defense modifiers.
+      this.expandTerrainCategoryWildcards();
+    }
+
+    if (customDefs.customTerrainCategories?.length) {
+      // Deep-clone so per-game terrain overrides don't bleed into the JSON
+      // import and onto other GameDataManager instances. Shallow `{...src}`
+      // wouldn't be enough because the inner modifier maps are mutated by
+      // expandTerrainCategoryWildcards below.
+      this.terrainCategories = JSON.parse(
+        JSON.stringify(this.terrainCategories ?? {}),
+      ) as Record<TerrainCategoryType, TerrainCategoryConfig>;
+      for (const override of customDefs.customTerrainCategories) {
+        // Replace wholesale, not merge: the editor produces a complete
+        // config seeded from the cloned built-in, so a partial merge would
+        // double-up wildcards from the previous load.
+        this.terrainCategories[override.id as TerrainCategoryType] = override.config;
+      }
+      // Re-expand wildcards on the (possibly overridden) maps so any newly
+      // introduced category id has the right wildcard fallbacks applied.
+      this.expandTerrainCategoryWildcards();
+    }
+
+    if (customDefs.customDamageTypes?.length) {
+      this.damageTypes = [...this.damageTypes];
+      for (const dt of customDefs.customDamageTypes) {
+        this.damageTypes.push(dt);
+        this._damageTypeMap.set(dt.id, dt);
+        this._damageTypeNameMap.set(dt.name, dt);
+      }
+    }
+
+    if (customDefs.customUnitFormations?.length) {
+      this._formationManager.load(customDefs.customUnitFormations);
+    }
+
+    if (customDefs.customUnitTemplates?.length) {
+      const merged = [
+        ...this._unitTemplateManager.getTemplates(),
+        ...customDefs.customUnitTemplates,
+      ];
+      this._unitTemplateManager = new UnitTemplateManager();
+      this._unitTemplateManager.load(merged);
+    }
   }
 
   /**
@@ -808,6 +945,13 @@ export class GameDataManager {
       throw new Error(`Damage type with name ${name} not found`);
     }
     return template as T;
+  }
+
+  /** Like {@link getDamageTypeByName} but returns null instead of throwing. */
+  public tryGetDamageTypeByName<T extends DamageTypeTemplate>(
+    name: string,
+  ): T | null {
+    return (this._damageTypeNameMap.get(name) as T | undefined) ?? null;
   }
 
   /**

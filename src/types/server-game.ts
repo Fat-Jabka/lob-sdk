@@ -23,9 +23,17 @@ import {
   IMovementSystem,
   LostReason,
   Player,
+  PlayerBattleMetadata,
   UnitDto,
   Size,
+  UnitTemplate,
+  FormationTemplate,
 } from "@lob-sdk/types";
+import type {
+  DamageTypeTemplate,
+  UnitCategoryTemplate,
+} from "../game-data-manager/types";
+import type { CustomTerrainCategoryOverride } from "./scenario";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
 import { Point2, Vector2 } from "@lob-sdk/vector";
@@ -139,6 +147,16 @@ export interface GameMetadata {
   locales?: GameLocales;
   /** Custom variables for game tracking. */
   vars?: Record<string, number>;
+  /** Additive unit templates layered on top of the era registry for this game. */
+  customUnitTemplates?: UnitTemplate[];
+  /** Additive damage types layered on top of the era registry for this game. */
+  customDamageTypes?: DamageTypeTemplate[];
+  /** Additive formation templates layered on top of the era registry for this game. */
+  customUnitFormations?: FormationTemplate[];
+  /** Additive unit categories layered on top of the era registry for this game. */
+  customUnitCategories?: UnitCategoryTemplate[];
+  /** Terrain category overrides applied on top of the era registry for this game. */
+  customTerrainCategories?: CustomTerrainCategoryOverride[];
 }
 
 /**
@@ -244,6 +262,10 @@ export interface DamageHit {
   backlashHit?: DamageHit;
   /** Whether this was a charge attack. */
   charge?: boolean;
+  /** Player number that dealt the damage. Omitted for environmental damage (attrition, morale shatter). */
+  attackerPlayer?: number;
+  /** Unit type that dealt the damage. Omitted for environmental damage. */
+  attackerType?: UnitType;
 }
 
 /**
@@ -963,17 +985,25 @@ export interface IServerGame {
    */
   applyUnitDamageTaken(unit: BaseUnit, collidedWithEnemy: boolean): void;
   /**
-   * Records damage taken by a unit for a player
-   * @param unit - The unit that took damage
-   * @param damage - The amount of damage taken
+   * Records damage taken by a unit for the unit's owner.
+   * Updates `metadata.damageTaken` keyed by the victim unit type.
    */
-  recordUnitDamageForPlayer(unit: BaseUnit, damage: number): void;
+  recordDamageTaken(unit: BaseUnit, damage: number): void;
   /**
-   * Gets the total damage taken by a player's units
-   * @param playerNumber - The player number
-   * @returns Object mapping unit IDs to damage amounts
+   * Records damage dealt by an attacking player. Updates both
+   * `metadata.damageDealt` (keyed by victim type) and
+   * `metadata.damageDealtBy` (keyed by attacker type).
    */
-  getPlayerUnitDamageTaken(playerNumber: number): Record<string, number>;
+  recordDamageDealt(
+    attackerPlayer: number,
+    attackerType: UnitType,
+    victimType: UnitType,
+    damage: number,
+  ): void;
+  /**
+   * Returns a player's battle metadata, initializing it lazily if needed.
+   */
+  getPlayerMetadata(playerNumber: number): PlayerBattleMetadata;
 
   /**
    * Clears all turn-level caches
@@ -1122,6 +1152,14 @@ export interface ServerGameProps {
   endReason?: GameEndReason | null;
   /** User id of the player who created the game. Defaults to 0 when unknown (e.g. tests). */
   creatorId?: number;
+  /**
+   * Pre-built GameDataManager for this game. When the game uses
+   * scenario-scoped custom unit templates, damage types, or formations, the
+   * caller passes a per-game instance built via
+   * {@link GameDataManager.createWithCustomDefs}. Omit to fall back to the
+   * era singleton.
+   */
+  gameDataManager?: GameDataManager;
 }
 
 /**
