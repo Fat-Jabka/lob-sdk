@@ -19,16 +19,18 @@ export enum LostReason {
  */
 export interface PlayerBattleMetadata {
   /**
-   * Gross HP this player lost (cumulative, before any recovery), keyed by this
-   * player's unit type (the victim). For net loss / casualty calculations,
-   * subtract {@link damageHealed} for the same unit type.
+   * Cumulative HP this player lost, keyed by this player's unit type (the
+   * victim). "Cumulative" because the same unit can be damaged, healed via
+   * supply, and damaged again — every damage event contributes here.
    */
   damageTaken?: UnitCounts;
   /**
-   * HP this player recovered via the supply / reinforcement system, keyed by
-   * this player's unit type. Always <= {@link damageTaken} for the same key.
-   * Tracked separately so the {@link damageDealt}/{@link damageTaken} invariant
-   * is preserved (recovery doesn't undo an attacker's credited damage).
+   * Cumulative HP this player recovered via the supply / reinforcement system,
+   * keyed by this player's unit type. Always <= {@link damageTaken} for the
+   * same key (you can't heal damage that never happened). Battle reports add
+   * this (converted HP -> fractional unit count) to the strength column so
+   * supply-restored units register as additional troops fielded, instead of
+   * making cumulative casualties exceed initial army size.
    */
   damageHealed?: UnitCounts;
   /**
