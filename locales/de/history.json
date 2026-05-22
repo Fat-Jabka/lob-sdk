@@ -4,7 +4,6 @@
   "yourTeam": "Dein Team",
   "opponentTeam": "Gegnerteam",
   "ranked": "Rangliste",
-  "showPlayers": "Spieler anzeigen",
   "playersModalTitle": "Spieler — Spiel #{{gameId}}",
   "rosterCountLabel": "{{count}} Spieler"
 }

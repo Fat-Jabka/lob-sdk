@@ -4,7 +4,6 @@
   "yourTeam": "आपकी टीम",
   "opponentTeam": "प्रतिद्वंद्वी टीम",
   "ranked": "रैंक किया गया",
-  "showPlayers": "खिलाड़ी दिखाएँ",
   "playersModalTitle": "खिलाड़ी — गेम #{{gameId}}",
   "rosterCountLabel": "{{count}} खिलाड़ी"
 }

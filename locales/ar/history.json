@@ -4,7 +4,6 @@
   "yourTeam": "فريقك",
   "opponentTeam": "فريق الخصم",
   "ranked": "مصنف",
-  "showPlayers": "عرض اللاعبين",
   "playersModalTitle": "اللاعبون — اللعبة #{{gameId}}",
   "rosterCountLabel": "{{count}} لاعبًا"
 }

@@ -4,7 +4,6 @@
   "yourTeam": "あなたのチーム",
   "opponentTeam": "相手チーム",
   "ranked": "ランク戦",
-  "showPlayers": "プレイヤーを表示",
   "playersModalTitle": "プレイヤー — ゲーム #{{gameId}}",
   "rosterCountLabel": "{{count}}人"
 }

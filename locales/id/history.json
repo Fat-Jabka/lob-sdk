@@ -4,7 +4,6 @@
   "yourTeam": "Tim Anda",
   "opponentTeam": "Tim lawan",
   "ranked": "Peringkat",
-  "showPlayers": "Tampilkan pemain",
   "playersModalTitle": "Pemain — permainan #{{gameId}}",
   "rosterCountLabel": "{{count}} pemain"
 }
