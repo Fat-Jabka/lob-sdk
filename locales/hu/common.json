@@ -430,6 +430,7 @@
     "description": "Szeretnél az első lenni? <storeLink>Látogasd meg az Áruházat</storeLink> és szerezz <premiumCurrency/>-et!"
   },
   "team": "Csapat",
+  "teams": "Csapatok",
   "playerType": "Irányító típusa",
   "human": "Ember",
   "bot": "Bot",
@@ -716,5 +717,6 @@
     "goToGame": "Ugrás a játékhoz",
     "ignore": "Mellőz"
   },
-  "kills": "Megsemmisítések"
+  "kills": "Megsemmisítések",
+  "rewards": "Jutalmak"
 }
