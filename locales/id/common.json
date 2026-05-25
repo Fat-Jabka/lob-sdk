@@ -64,7 +64,6 @@
   "matchmakingQueue": {
     "inQueue": "Kamu sekarang berada dalam antrean! Sistem sedang mencari pemain lain yang telah memilih pengaturan yang sama dengan kamu.",
     "matchFound": "Ketika permainan telah ditemukan, kamu akan diarahkan ke permainan.",
-    "extendQueue": "Perluas Antrean",
     "cancelledBy": "Antrean dibatalkan oleh {{username}}.",
     "playersInQueue": "{{count}} pemain mencari",
     "disconnectedReconnecting": "Koneksi Terputus. Menyambung Ulang"
@@ -120,6 +119,7 @@
   "avatars": "Avatars",
   "withdraw": "Withdraw",
   "importScenario": "Impor skenario",
+  "importScenarioTooLarge": "Skenario ini terlalu besar untuk diimpor. Ukuran maksimumnya adalah {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Kamu bisa impor skenario apapun yang kamu inginkan.",
     "createInfo": "Kamu bahkan bisa membuat skenariomu sendiri di <scenarioEditorLink/>."
@@ -184,6 +184,7 @@
   "purchase": "Pembelian",
   "purchased": "telah dibeli",
   "forUnit": "Untuk {{unit}}",
+  "maxUnitSkinsSelected": "Maks. {{max}} skin per tipe",
   "select": "Pilih",
   "selectAll": "Pilih Semua",
   "deselect": "Batalkan pilih",
@@ -448,7 +449,8 @@
   },
   "strength": "Kekuatan",
   "casualties": "Korban",
-  "noRewards": "Tidak ada hadiah",
+  "kills": "Pembunuhan",
+  "rewards": "Hadiah",
   "clan": "Koalisi",
   "clans": "Koalisi",
   "createClan": "Buat Koalisi",
@@ -538,9 +540,21 @@
   "unknown": "Tidak diketahui",
   "fogOfWar": "Kabut perang",
   "spectatorFullVision": "Visibilitas penuh penonton",
+  "publicGame": "Publik",
+  "openGames": "Game terbuka",
+  "map": "Peta",
+  "enabled": "Aktif",
+  "disabled": "Nonaktif",
+  "createdAgo": "Dibuat",
+  "host": "Tuan rumah",
+  "noPublicGames": "Tidak ada permainan publik saat ini.",
   "kFactorTooltip": "Faktor K ELO (perubahan peringkat maks per pertandingan berperingkat)",
   "lobby": {
-    "autoStartCountdown": "Mulai otomatis dalam {{countdown}}"
+    "autoStartCountdown": "Mulai otomatis dalam {{countdown}}",
+    "joinTeam": "Gabung Tim {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Pilih tim yang lebih kecil",
+    "teamFull": "Tim sudah penuh",
+    "teamNoLongerAvailable": "Orang lain bergabung lebih dulu. Pilih lagi."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -629,6 +643,8 @@
     "statusInGame": "Dalam permainan",
     "statusAvailable": "Tersedia",
     "statusLeft": "Keluar",
+    "statusCompleted": "Selesai",
+    "allGamesPlayed": "Anda telah memainkan semua permainan Anda di arena ini.",
     "inArenaGameModalTitle": "Anda sedang dalam pertandingan arena",
     "inArenaGameModalMessage": "Anda sedang dalam pertandingan arena. Buka gim untuk melakukan giliran Anda.",
     "goToGame": "Ke gim",
@@ -741,5 +757,11 @@
     "description": "Setiap pelajaran membahas situasi yang patut diketahui.",
     "allSeen": "Kamu telah melihat semua pelajaran tutorial.",
     "viewMissed": "Lihat pelajaran yang terlewat"
+  },
+  "matchFoundModal": {
+    "title": "Pertandingan ditemukan!",
+    "message": "Pertandingan lambatmu siap dimainkan.",
+    "goToGame": "Buka pertandingan",
+    "ignore": "Abaikan"
   }
 }

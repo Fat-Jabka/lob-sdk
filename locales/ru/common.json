@@ -64,7 +64,6 @@
   "matchmakingQueue": {
     "inQueue": "Вы находитесь в очереди подбора! Система ищет соперника, выбравшего те же настройки, что и Вы.",
     "matchFound": "Как только соперник будет найден, система перенаправит Вас в игру.",
-    "extendQueue": "Расширить очередь поиска",
     "cancelledBy": "Очередь была отменена {{username}}.",
     "playersInQueue": "{{count}} игроков в очереди",
     "disconnectedReconnecting": "Соединение Потеряно. Переподключение..."
@@ -130,6 +129,7 @@
   "avatars": "Аватары",
   "withdraw": "Покинуть бой",
   "importScenario": "Импорт сценария",
+  "importScenarioTooLarge": "Этот сценарий слишком большой для импорта. Максимальный размер: {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Вы можете импортировать любой созданный сообществом сценарий!",
     "createInfo": "Также, вы можете создать собственный сценарий в <scenarioEditorLink/>,",
@@ -195,6 +195,7 @@
   "purchase": "Приобрести",
   "purchased": "Приобретено!",
   "forUnit": "Для: {{unit}}",
+  "maxUnitSkinsSelected": "Макс. {{max}} скинов на тип",
   "select": "Выбрать",
   "selectAll": "Выбрать все",
   "deselect": "Отменить выбор",
@@ -492,7 +493,8 @@
   },
   "strength": "Начальная мощь армии",
   "casualties": "Потери",
-  "noRewards": "Без наград",
+  "kills": "Убийства",
+  "rewards": "Награды",
   "clan": "Коалиция",
   "clans": "Коалиции",
   "createClan": "Создать Коалицию",
@@ -568,7 +570,11 @@
   "checkingUpdates": "Проверяем обновления...",
   "arenas": "Арены",
   "lobby": {
-    "autoStartCountdown": "Автозапуск через {{countdown}}"
+    "autoStartCountdown": "Автозапуск через {{countdown}}",
+    "joinTeam": "Присоединиться к команде {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Выберите меньшую команду",
+    "teamFull": "Команда заполнена",
+    "teamNoLongerAvailable": "Кто-то присоединился первым. Выберите снова."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} на {{playersPerTeam}} {{battleTypeName}}",
@@ -623,6 +629,8 @@
     "statusInGame": "В игре",
     "statusAvailable": "Доступно",
     "statusLeft": "Вышел",
+    "statusCompleted": "Завершил",
+    "allGamesPlayed": "Вы сыграли все свои игры на этой арене.",
     "inArenaGameModalTitle": "Вы в аренной игре",
     "inArenaGameModalMessage": "Вы сейчас в аренной игре. Перейдите к игре, чтобы сделать ход.",
     "goToGame": "Перейти к игре",
@@ -660,8 +668,13 @@
   "era": "Эра",
   "inSlowQueueModal": {
     "title": "Игра добавлена в очередь!",
-    "message": "Как только будут найдены остальные игроки, игра появится в разделе «Мои игры» на Главной странице!",
-    "found": "Игроки найдены, вы можете начать играть сейчас, <0>нажав здесь</0>."
+    "message": "Как только будут найдены остальные игроки, игра появится в разделе «Мои игры» на Главной странице!"
+  },
+  "matchFoundModal": {
+    "title": "Соперник найден!",
+    "message": "Ваша медленная игра готова.",
+    "goToGame": "К игре",
+    "ignore": "Игнорировать"
   },
   "active": "Текущие игры",
   "inQueue": "В очереди",
@@ -843,6 +856,14 @@
   "unknown": "Неизвестно",
   "fogOfWar": "Туман войны",
   "spectatorFullVision": "Полная видимость для зрителей",
+  "publicGame": "Публичная",
+  "openGames": "Открытые игры",
+  "map": "Карта",
+  "enabled": "Включено",
+  "disabled": "Выключено",
+  "createdAgo": "Создано",
+  "host": "Хост",
+  "noPublicGames": "Сейчас нет публичных игр.",
   "kFactorTooltip": "Коэффициент K ELO (макс. изменение рейтинга за рейтинговую партию)",
   "max": "Максимум",
   "minDistanceToFAA": "Минимальная дистанция для Огня при движении",

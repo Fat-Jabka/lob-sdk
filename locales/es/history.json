@@ -4,7 +4,10 @@
   "yourTeam": "Tu equipo",
   "opponentTeam": "Equipo rival",
   "ranked": "Clasificatoria",
-  "showPlayers": "Ver jugadores",
   "playersModalTitle": "Jugadores — partida n.º {{gameId}}",
-  "rosterCountLabel": "{{count}} jugadores"
+  "rosterCountLabel": "{{count}} jugadores",
+  "result": "Resultado",
+  "date": "Fecha",
+  "players": "Jugadores",
+  "replayNotAvailable": "Repetición no disponible"
 }

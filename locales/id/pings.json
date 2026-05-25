@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "Bahaya",
+    "attack": "Serang",
+    "help": "Bantuan",
+    "retreat": "Mundur",
+    "missing": "Hilang",
+    "onMyWay": "Dalam perjalanan",
+    "bait": "Umpan",
+    "hold": "Bertahan"
+  }
+}

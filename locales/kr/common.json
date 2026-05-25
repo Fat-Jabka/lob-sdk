@@ -64,7 +64,6 @@
   "matchmakingQueue": {
     "inQueue": "경기 탐색 대기열에 들어오셨습니다! 등급 체계에 기반해 귀하와 동일한 설정을 선택한 다른 플레이어를 탐색 중입니다.",
     "matchFound": "일치하는 항목이 발견되면 경기로 리디렉션됩니다.",
-    "extendQueue": "대기 연장",
     "cancelledBy": "{{username}} 님이 대기를 취소했습니다.",
     "playersInQueue": "{{count}} 명의 플레이어가 탐색 중",
     "disconnectedReconnecting": "연결 끔김. 재연결 중"
@@ -130,6 +129,7 @@
   "avatars": "아바타",
   "withdraw": "포기",
   "importScenario": "전역 가져오기",
+  "importScenarioTooLarge": "이 전역은 너무 커서 가져올 수 없습니다. 최대 크기는 {{maxKb}} KB입니다.",
   "importScenarioModal": {
     "importInfo": "원하는 전역을 가져올 수 있습니다.",
     "createInfo": "<scenarioEditorLink/>에서 직접 전역을 만들 수도 있습니다.",
@@ -192,6 +192,7 @@
   "purchase": "구입",
   "purchased": "구입함",
   "forUnit": "{{unit}} 외형",
+  "maxUnitSkinsSelected": "유형당 최대 {{max}}개 스킨",
   "select": "선택",
   "selectAll": "모두 선택",
   "deselect": "선택 해제",
@@ -482,7 +483,8 @@
   },
   "strength": "전력",
   "casualties": "사상자",
-  "noRewards": "보상 없음",
+  "kills": "격파",
+  "rewards": "보상",
   "clan": "연합",
   "clans": "연합",
   "createClan": "연합 창설",
@@ -598,6 +600,8 @@
     "statusInGame": "게임 중",
     "statusAvailable": "이용 가능",
     "statusLeft": "나감",
+    "statusCompleted": "완료",
+    "allGamesPlayed": "이 아레나에서 모든 게임을 플레이했습니다.",
     "inArenaGameModalTitle": "아레나 대전 중입니다",
     "inArenaGameModalMessage": "현재 아레나 대전 중입니다. 게임으로 이동해 차례를 진행하세요.",
     "goToGame": "게임으로 이동",
@@ -622,7 +626,11 @@
   "open": "열기",
   "closed": "닫기",
   "lobby": {
-    "autoStartCountdown": "{{countdown}} 후 자동 시작"
+    "autoStartCountdown": "{{countdown}} 후 자동 시작",
+    "joinTeam": "{{team}}팀 참가 ({{count}}/{{capacity}})",
+    "teamLocked": "더 적은 팀을 선택하세요",
+    "teamFull": "팀이 가득 찼습니다",
+    "teamNoLongerAvailable": "다른 플레이어가 먼저 참가했습니다. 다시 선택하세요."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} 대 {{playersPerTeam}} {{battleTypeName}}",
@@ -651,8 +659,13 @@
   "era": "시대",
   "inSlowQueueModal": {
     "title": "대기열에 경기가 추가되었습니다!",
-    "message": "나머지 플레이어를 찾으면 홈에 경기가 표시됩니다!",
-    "found": "다른 플레이어가 해당 경기를 찾았습니다. <0>여기를</0> 클릭해 지금 플레이할 수 있습니다."
+    "message": "나머지 플레이어를 찾으면 홈에 경기가 표시됩니다!"
+  },
+  "matchFoundModal": {
+    "title": "매치를 찾았습니다!",
+    "message": "느린 매치가 플레이 준비되었습니다.",
+    "goToGame": "게임으로 이동",
+    "ignore": "무시"
   },
   "active": "활성화",
   "inQueue": "대기열에 있음",
@@ -834,6 +847,14 @@
   "unknown": "미상",
   "fogOfWar": "전장의 안개",
   "spectatorFullVision": "관전자 전체 시야",
+  "publicGame": "공개",
+  "openGames": "열린 게임",
+  "map": "맵",
+  "enabled": "활성화",
+  "disabled": "비활성화",
+  "createdAgo": "생성 시간",
+  "host": "호스트",
+  "noPublicGames": "현재 공개 게임이 없습니다.",
   "kFactorTooltip": "ELO K 계수 (랭크 매치당 최대 레이팅 변동)",
   "max": "최대",
   "minDistanceToFAA": "FAA까지 최소 거리",

@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "Pericolo",
+    "attack": "Attacca",
+    "help": "Aiuto",
+    "retreat": "Ritirata",
+    "missing": "Scomparso",
+    "onMyWay": "Sto arrivando",
+    "bait": "Esca",
+    "hold": "Tieni la posizione"
+  }
+}

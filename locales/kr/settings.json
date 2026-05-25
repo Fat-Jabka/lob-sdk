@@ -185,7 +185,8 @@
     "controlGroup7": "부대 지정 7",
     "controlGroup8": "부대 지정 8",
     "controlGroup9": "부대 지정 9",
-    "controlGroup0": "부대 지정 0"
+    "controlGroup0": "부대 지정 0",
+    "openPingWheel": "핑 휠 열기"
   },
   "routingTransparency": {
     "title": "궤멸 상태 부대 투명도"
@@ -203,6 +204,10 @@
   "renderScalePercent": {
     "title": "렌더 스케일",
     "description": "값이 높을수록 화면은 더 선명하지만 느려지고, 낮을수록 더 흐릿하지만 빨라집니다."
+  },
+  "hudScalePercent": {
+    "title": "HUD 크기",
+    "description": "게임 중 HUD 크기를 조정합니다: 액션 버튼, 상단 버튼, 턴 표시기, 승리 바."
   },
   "groundQuality": {
     "title": "지형 품질",

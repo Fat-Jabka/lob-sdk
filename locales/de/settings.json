@@ -151,7 +151,8 @@
     "toggleSupplyLines": "Versorgungslinien umschalten",
     "toggleStraightLine": "Gerade Linie umschalten",
     "toggleDrawLine": "Zeichnungslinien deaktivieren umschalten",
-    "splitInHalf": "In Hälfte teilen"
+    "splitInHalf": "In Hälfte teilen",
+    "openPingWheel": "Ping-Rad öffnen"
   },
   "routingTransparency": {
     "title": "Transparenz von fliehenden Einheiten"
@@ -169,6 +170,10 @@
   "renderScalePercent": {
     "title": "Render-Skalierung",
     "description": "Ein hoher Wert lässt das Spiel schärfer aussehen, aber langsamer laufen. Ein niedriger Wert macht es unschärfer, aber schneller."
+  },
+  "hudScalePercent": {
+    "title": "HUD-Skalierung",
+    "description": "Ändert die Größe des HUD im Spiel: Aktionsschaltflächen, obere Schaltflächen, Rundenanzeige und Siegesleiste."
   },
   "groundQuality": {
     "title": "Bodenqualität",

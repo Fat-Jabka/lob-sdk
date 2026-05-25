@@ -189,7 +189,8 @@
     "controlGroup7": "控制编组7",
     "controlGroup8": "控制编组8",
     "controlGroup9": "控制编组9",
-    "controlGroup0": "控制编组0"
+    "controlGroup0": "控制编组0",
+    "openPingWheel": "打开标记轮盘"
   },
   "routingTransparency": {
     "title": "溃退单位透明度"
@@ -207,6 +208,10 @@
   "renderScalePercent": {
     "title": "渲染缩放",
     "description": "数值越高画面越清晰，但越慢；越低越模糊，但越快。"
+  },
+  "hudScalePercent": {
+    "title": "HUD 缩放",
+    "description": "调整游戏内 HUD 的大小：操作按钮、顶部按钮、回合指示器和胜利条。"
   },
   "groundQuality": {
     "title": "地形质量",

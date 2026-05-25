@@ -4,7 +4,10 @@
   "yourTeam": "فريقك",
   "opponentTeam": "فريق الخصم",
   "ranked": "مصنف",
-  "showPlayers": "عرض اللاعبين",
   "playersModalTitle": "اللاعبون — اللعبة #{{gameId}}",
-  "rosterCountLabel": "{{count}} لاعبًا"
+  "rosterCountLabel": "{{count}} لاعبًا",
+  "result": "النتيجة",
+  "date": "التاريخ",
+  "players": "اللاعبون",
+  "replayNotAvailable": "إعادة العرض غير متوفرة"
 }

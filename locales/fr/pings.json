@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "Danger",
+    "attack": "Attaquer",
+    "help": "À l’aide",
+    "retreat": "Retraite",
+    "missing": "Disparu",
+    "onMyWay": "J’arrive",
+    "bait": "Appât",
+    "hold": "Tenir"
+  }
+}

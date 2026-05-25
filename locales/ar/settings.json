@@ -185,7 +185,8 @@
     "controlGroup7": "مجموعة التحكم 7",
     "controlGroup8": "مجموعة التحكم 8",
     "controlGroup9": "مجموعة التحكم 9",
-    "controlGroup0": "مجموعة التحكم 0"
+    "controlGroup0": "مجموعة التحكم 0",
+    "openPingWheel": "فتح عجلة الإشارات"
   },
   "routingTransparency": {
     "title": "شفافية الوحدة المنسحبة"
@@ -203,6 +204,10 @@
   "renderScalePercent": {
     "title": "مقياس العرض",
     "description": "قيمة عالية تجعل المظهر أوضح لكن أبطأ، وقيمة منخفضة تجعله أكثر ضبابية لكن أسرع."
+  },
+  "hudScalePercent": {
+    "title": "حجم واجهة HUD",
+    "description": "تغيير حجم واجهة اللعب (HUD): أزرار الإجراءات، الأزرار العلوية، مؤشر الدور وشريط النصر."
   },
   "groundQuality": {
     "title": "جودة الأرض",

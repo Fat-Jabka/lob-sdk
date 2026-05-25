@@ -125,7 +125,7 @@ export interface GameConstants {
 
   TILE_SIZE: number;
 
-  MAX_RANKED_GAME_TURNS: number;
+  DEFAULT_MAX_TURN: number;
   MIN_CUSTOM_GAME_MAX_TURNS: number;
   MAX_CUSTOM_GAME_MAX_TURNS: number;
   MIN_OFFLINE_GAME_MAX_TURNS: number;
@@ -446,7 +446,12 @@ export interface RangedDamageTypeTemplate {
   };
   ranges: DamageTypeRange[];
   arcHeight?: number;
-  areaOfEffect: AoeConfig;
+  /**
+   * Optional — many built-in ranged damage types (musket, rifle,
+   * horse-archer-bow, canister) ship with no AoE at all. Read sites must
+   * guard with `if (areaOfEffect)`.
+   */
+  areaOfEffect?: AoeConfig;
   enfiladeFire?: boolean;
   cannotUseAfterRun?: boolean;
   projectilePenetration?: number;

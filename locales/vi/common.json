@@ -64,7 +64,6 @@
   "matchmakingQueue": {
     "inQueue": "Bạn hiện đang trong hàng đợi ghép! Hệ thống đang tìm kiếm người chơi khác đã chọn cùng cài đặt với bạn.",
     "matchFound": "Khi tìm thấy trận đấu, bạn sẽ được chuyển hướng đến trò chơi.",
-    "extendQueue": "Mở rộng hàng đợi",
     "cancelledBy": "Hàng đợi đã bị hủy bởi {{username}}.",
     "playersInQueue": "{{count}} người chơi đang tìm kiếm",
     "disconnectedReconnecting": "Mất Kết Nối. Đang Kết Nối Lại"
@@ -130,6 +129,7 @@
   "avatars": "Ảnh đại diện",
   "withdraw": "Rút lui",
   "importScenario": "Nhập kịch bản",
+  "importScenarioTooLarge": "Kịch bản này quá lớn để nhập. Kích thước tối đa là {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Bạn có thể nhập bất kỳ kịch bản nào bạn muốn.",
     "createInfo": "Bạn thậm chí có thể tạo kịch bản riêng của mình trong <scenarioEditorLink/>.",
@@ -195,6 +195,7 @@
   "purchase": "Mua",
   "purchased": "Đã mua",
   "forUnit": "Cho {{unit}}",
+  "maxUnitSkinsSelected": "Tối đa {{max}} skin mỗi loại",
   "select": "Chọn",
   "selectAll": "Chọn tất cả",
   "deselect": "Bỏ chọn",
@@ -489,7 +490,8 @@
   },
   "strength": "Sức mạnh",
   "casualties": "Thương vong",
-  "noRewards": "Không có phần thưởng",
+  "kills": "Tiêu diệt",
+  "rewards": "Phần thưởng",
   "clan": "Liên minh",
   "clans": "Các liên minh",
   "createClan": "Tạo liên minh",
@@ -562,7 +564,11 @@
     "message": "Bạn có chắc chắn muốn rời <0>{{clanName}}</0>?"
   },
   "lobby": {
-    "autoStartCountdown": "Tự động bắt đầu sau {{countdown}}"
+    "autoStartCountdown": "Tự động bắt đầu sau {{countdown}}",
+    "joinTeam": "Tham gia Đội {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Chọn đội nhỏ hơn",
+    "teamFull": "Đội đã đầy",
+    "teamNoLongerAvailable": "Người khác đã tham gia trước. Chọn lại."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -621,6 +627,8 @@
     "statusInGame": "Đang chơi",
     "statusAvailable": "Sẵn sàng",
     "statusLeft": "Đã rời",
+    "statusCompleted": "Đã hoàn thành",
+    "allGamesPlayed": "Bạn đã chơi tất cả các trận của mình trong đấu trường này.",
     "inArenaGameModalTitle": "Bạn đang trong trận đấu trường",
     "inArenaGameModalMessage": "Bạn đang trong trận đấu trường. Vào trò chơi để thực hiện lượt của bạn.",
     "goToGame": "Đi đến trò chơi",
@@ -658,8 +666,13 @@
   "era": "Thời đại",
   "inSlowQueueModal": {
     "title": "Trò chơi đã được thêm vào hàng đợi!",
-    "message": "Khi tìm thấy những người chơi còn lại, trò chơi sẽ xuất hiện trong phần Trò chơi của tôi ở Trang chủ!",
-    "found": "Những người chơi khác đã được tìm thấy cho trò chơi này, bạn có thể chơi ngay bằng cách <0>nhấp vào đây</0>."
+    "message": "Khi tìm thấy những người chơi còn lại, trò chơi sẽ xuất hiện trong phần Trò chơi của tôi ở Trang chủ!"
+  },
+  "matchFoundModal": {
+    "title": "Đã tìm thấy trận đấu!",
+    "message": "Trận đấu chậm của bạn đã sẵn sàng.",
+    "goToGame": "Vào trận đấu",
+    "ignore": "Bỏ qua"
   },
   "active": "Hoạt động",
   "inQueue": "Trong hàng đợi",
@@ -838,6 +851,14 @@
   "unknown": "Không xác định",
   "fogOfWar": "Sương mù chiến tranh",
   "spectatorFullVision": "Tầm nhìn đầy đủ cho khán giả",
+  "publicGame": "Công khai",
+  "openGames": "Trận đấu đang mở",
+  "map": "Bản đồ",
+  "enabled": "Bật",
+  "disabled": "Tắt",
+  "createdAgo": "Đã tạo",
+  "host": "Chủ phòng",
+  "noPublicGames": "Hiện không có trò chơi công khai nào.",
   "kFactorTooltip": "Hệ số K ELO (thay đổi xếp hạng tối đa mỗi trận xếp hạng)",
   "max": "Tối đa",
   "minDistanceToFAA": "Khoảng cách tối thiểu đến FAA",

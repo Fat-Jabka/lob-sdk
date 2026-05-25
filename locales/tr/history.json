@@ -4,7 +4,10 @@
   "yourTeam": "Takımınız",
   "opponentTeam": "Rakip Takım",
   "ranked": "Sıralamalı",
-  "showPlayers": "Oyuncuları göster",
   "playersModalTitle": "Oyuncular — oyun #{{gameId}}",
-  "rosterCountLabel": "{{count}} oyuncu"
+  "rosterCountLabel": "{{count}} oyuncu",
+  "result": "Sonuç",
+  "date": "Tarih",
+  "players": "Oyuncular",
+  "replayNotAvailable": "Tekrar mevcut değil"
 }

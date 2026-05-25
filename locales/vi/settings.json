@@ -185,7 +185,8 @@
     "controlGroup7": "Nhóm điều khiển 7",
     "controlGroup8": "Nhóm điều khiển 8",
     "controlGroup9": "Nhóm điều khiển 9",
-    "controlGroup0": "Nhóm điều khiển 0"
+    "controlGroup0": "Nhóm điều khiển 0",
+    "openPingWheel": "Mở vòng ping"
   },
   "routingTransparency": {
     "title": "Độ trong suốt đơn vị rút lui"
@@ -203,6 +204,10 @@
   "renderScalePercent": {
     "title": "Tỷ lệ render",
     "description": "Giá trị cao hơn thì hình ảnh sắc nét hơn nhưng chậm hơn. Giá trị thấp hơn thì mờ hơn nhưng mượt hơn."
+  },
+  "hudScalePercent": {
+    "title": "Tỷ lệ HUD",
+    "description": "Thay đổi kích thước HUD trong trận: nút hành động, nút phía trên, chỉ báo lượt và thanh chiến thắng."
   },
   "groundQuality": {
     "title": "Chất lượng mặt đất",

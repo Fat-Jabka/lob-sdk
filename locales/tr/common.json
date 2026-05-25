@@ -63,7 +63,6 @@
   "matchmakingQueue": {
     "inQueue": "Şimdi eşleştirme kuyruğundasınız! Sistem, sizinle aynı ayarları seçmiş başka bir oyuncu arıyor.",
     "matchFound": "Bir eşleşme bulunduğunda, oyuna yönlendirileceksiniz.",
-    "extendQueue": "Kuyruğu genişlet",
     "cancelledBy": "Kuyruk {{username}} tarafından iptal edildi.",
     "playersInQueue": "{{count}} oyuncu aranıyor",
     "disconnectedReconnecting": "Bağlantı Kesildi. Yeniden Bağlanıyor"
@@ -119,6 +118,7 @@
   "avatars": "Avatarlar",
   "withdraw": "Çekil",
   "importScenario": "Senaryo içe aktar",
+  "importScenarioTooLarge": "Bu senaryo içe aktarılamayacak kadar büyük. Maksimum boyut {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "İstediğiniz herhangi bir senaryoyu içe aktarabilirsiniz.",
     "createInfo": "Kendi senaryolarınızı bile <scenarioEditorLink/> içinde oluşturabilirsiniz."
@@ -183,6 +183,7 @@
   "purchase": "Satın Al",
   "purchased": "Satın Alındı",
   "forUnit": "{{unit}} için",
+  "maxUnitSkinsSelected": "Tür başına en fazla {{max}} skin",
   "select": "Seç",
   "selectAll": "Tümünü Seç",
   "deselect": "Seçimi Kaldır",
@@ -446,7 +447,8 @@
   },
   "strength": "Güç",
   "casualties": "Kayıplar",
-  "noRewards": "Ödül yok",
+  "kills": "Öldürmeler",
+  "rewards": "Ödüller",
   "clan": "Koalisyon",
   "clans": "Koalisyonlar",
   "createClan": "Koalisyon Oluştur",
@@ -528,6 +530,14 @@
   "unknown": "Bilinmiyor",
   "fogOfWar": "Savaş sisi",
   "spectatorFullVision": "İzleyici tam görüş",
+  "publicGame": "Herkese açık",
+  "openGames": "Açık oyunlar",
+  "map": "Harita",
+  "enabled": "Etkin",
+  "disabled": "Devre dışı",
+  "createdAgo": "Oluşturuldu",
+  "host": "Ev sahibi",
+  "noPublicGames": "Şu anda herkese açık oyun yok.",
   "kFactorTooltip": "ELO K Faktörü (sıralamalı maç başına maks. puan değişimi)",
   "prestigeDropChance": "{{currency}} düşme şansı: {{chance}}% ({{turn}}. turdan itibaren)",
   "low": "Düşük",
@@ -537,7 +547,11 @@
   "turningDelay": "Dönüş gecikmesi",
   "allyOverlap": "Müttefik çakışması",
   "lobby": {
-    "autoStartCountdown": "Otomatik başlangıç: {{countdown}}"
+    "autoStartCountdown": "Otomatik başlangıç: {{countdown}}",
+    "joinTeam": "Takım {{team}}'a Katıl ({{count}}/{{capacity}})",
+    "teamLocked": "Daha küçük takımı seç",
+    "teamFull": "Takım dolu",
+    "teamNoLongerAvailable": "Başkası önce katıldı. Tekrar seç."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -619,6 +633,8 @@
     "statusInGame": "Oyunda",
     "statusAvailable": "Müsait",
     "statusLeft": "Ayrıldı",
+    "statusCompleted": "Tamamladı",
+    "allGamesPlayed": "Bu arenadaki tüm oyunlarını oynadın.",
     "inArenaGameModalTitle": "Bir arena maçındasınız",
     "inArenaGameModalMessage": "Şu anda bir arena maçındasınız. Hamlenizi yapmak için oyuna gidin.",
     "goToGame": "Oyuna git",
@@ -737,5 +753,11 @@
     "description": "Her ders bilmeye değer bir durumu kapsar.",
     "allSeen": "Eğitimdeki tüm dersleri gördün.",
     "viewMissed": "Kaçırılan dersleri gör"
+  },
+  "matchFoundModal": {
+    "title": "Maç bulundu!",
+    "message": "Yavaş maçın oynamaya hazır.",
+    "goToGame": "Maça git",
+    "ignore": "Yoksay"
   }
 }

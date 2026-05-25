@@ -63,7 +63,6 @@
   "matchmakingQueue": {
     "inQueue": "Sei ora nella coda di matchmaking! Il sistema sta cercando un altro giocatore che ha selezionato le stesse impostazioni di te.",
     "matchFound": "Una volta trovato un avversario, sarai reindirizzato al gioco.",
-    "extendQueue": "Estendi coda",
     "cancelledBy": "La coda è stata cancellata da {{username}}.",
     "playersInQueue": "{{count}} giocatori in ricerca",
     "disconnectedReconnecting": "Connessione Persa. Riconnessione"
@@ -119,6 +118,7 @@
   "avatars": "Avatar",
   "withdraw": "Ritirati",
   "importScenario": "Importa scenario",
+  "importScenarioTooLarge": "Questo scenario è troppo grande per essere importato. La dimensione massima è {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Puoi importare qualsiasi scenario desideri.",
     "createInfo": "Puoi anche creare i tuoi scenari nell'<scenarioEditorLink/>."
@@ -183,6 +183,7 @@
   "purchase": "Acquista",
   "purchased": "Acquistato",
   "forUnit": "Per {{unit}}",
+  "maxUnitSkinsSelected": "Max {{max}} skin per tipo",
   "select": "Seleziona",
   "selectAll": "Seleziona tutto",
   "deselect": "Deseleziona",
@@ -445,7 +446,8 @@
   },
   "strength": "Forza",
   "casualties": "Vittime",
-  "noRewards": "Nessuna ricompensa",
+  "kills": "Uccisioni",
+  "rewards": "Ricompense",
   "clan": "Coalizione",
   "clans": "Coalizioni",
   "createClan": "Crea coalizione",
@@ -558,6 +560,8 @@
     "statusInGame": "In partita",
     "statusAvailable": "Disponibile",
     "statusLeft": "Uscito",
+    "statusCompleted": "Completato",
+    "allGamesPlayed": "Hai giocato tutte le tue partite in questa arena.",
     "inArenaGameModalTitle": "Sei in una partita d'arena",
     "inArenaGameModalMessage": "Sei attualmente in una partita d'arena. Vai alla partita per fare la tua mossa.",
     "goToGame": "Vai alla partita",
@@ -592,13 +596,25 @@
   "unknown": "Sconosciuto",
   "fogOfWar": "Nebbia di guerra",
   "spectatorFullVision": "Visione completa dello spettatore",
+  "publicGame": "Pubblica",
+  "openGames": "Partite aperte",
+  "map": "Mappa",
+  "enabled": "Attivo",
+  "disabled": "Disattivato",
+  "createdAgo": "Creato",
+  "host": "Host",
+  "noPublicGames": "Nessuna partita pubblica al momento.",
   "kFactorTooltip": "Fattore K ELO (variazione massima punteggio per partita classificata)",
   "prestigeDropChance": "Probabilità di ottenere {{currency}}: {{chance}}% (dal turno {{turn}})",
   "low": "Bassa",
   "medium": "Media",
   "high": "Alta",
   "lobby": {
-    "autoStartCountdown": "Avvio automatico tra {{countdown}}"
+    "autoStartCountdown": "Avvio automatico tra {{countdown}}",
+    "joinTeam": "Unisciti al Team {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Scegli la squadra più piccola",
+    "teamFull": "La squadra è piena",
+    "teamNoLongerAvailable": "Qualcun altro si è unito prima. Scegli di nuovo."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -738,5 +754,11 @@
     "description": "Ogni lezione tratta una situazione che vale la pena conoscere.",
     "allSeen": "Hai visto tutte le lezioni del tutorial.",
     "viewMissed": "Vedi lezioni mancate"
+  },
+  "matchFoundModal": {
+    "title": "Partita trovata!",
+    "message": "La tua partita lenta è pronta.",
+    "goToGame": "Vai alla partita",
+    "ignore": "Ignora"
   }
 }

@@ -4,7 +4,10 @@
   "yourTeam": "आपकी टीम",
   "opponentTeam": "प्रतिद्वंद्वी टीम",
   "ranked": "रैंक किया गया",
-  "showPlayers": "खिलाड़ी दिखाएँ",
   "playersModalTitle": "खिलाड़ी — गेम #{{gameId}}",
-  "rosterCountLabel": "{{count}} खिलाड़ी"
+  "rosterCountLabel": "{{count}} खिलाड़ी",
+  "result": "परिणाम",
+  "date": "दिनांक",
+  "players": "खिलाड़ी",
+  "replayNotAvailable": "रीप्ले उपलब्ध नहीं"
 }

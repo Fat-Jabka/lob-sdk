@@ -59,7 +59,6 @@
   "matchmakingQueue": {
     "inQueue": "Ви в черзі на підбір гри! Система шукає іншого гравця з такими ж налаштуваннями, як у вас.",
     "matchFound": "Щойно гру буде знайдено, вас буде перенаправлено до гри.",
-    "extendQueue": "Розширити чергу",
     "cancelledBy": "Чергу було скасовано {{username}}.",
     "playersInQueue": "{{count}} гравців шукають",
     "disconnectedReconnecting": "Втрачено З'єднання. Перепідключення"
@@ -115,6 +114,7 @@
   "avatars": "Аватари",
   "withdraw": "Відступити",
   "importScenario": "Імпортувати сценарій",
+  "importScenarioTooLarge": "Цей сценарій надто великий для імпорту. Максимальний розмір: {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Ви можете імпортувати будь-який сценарій.",
     "createInfo": "Ви навіть можете створювати власні сценарії у <scenarioEditorLink/>."
@@ -183,6 +183,7 @@
   "purchase": "Купити",
   "purchased": "Куплено",
   "forUnit": "Для {{unit}}",
+  "maxUnitSkinsSelected": "Макс. {{max}} скінів на тип",
   "select": "Вибрати",
   "selectAll": "Вибрати все",
   "deselect": "Скасувати вибір",
@@ -462,7 +463,8 @@
   },
   "strength": "Сила",
   "casualties": "Втрати",
-  "noRewards": "Нагород немає",
+  "kills": "Вбивства",
+  "rewards": "Нагороди",
   "clan": "Коаліція",
   "clans": "Коаліції",
   "createClan": "Створити коаліцію",
@@ -544,6 +546,14 @@
   "unknown": "Невідомо",
   "fogOfWar": "Туман війни",
   "spectatorFullVision": "Повна видимість для глядачів",
+  "publicGame": "Публічна",
+  "openGames": "Відкриті ігри",
+  "map": "Карта",
+  "enabled": "Увімкнено",
+  "disabled": "Вимкнено",
+  "createdAgo": "Створено",
+  "host": "Хост",
+  "noPublicGames": "Наразі немає публічних ігор.",
   "kFactorTooltip": "Коефіцієнт K ELO (макс. зміна рейтингу за рейтингову партію)",
   "prestigeDropChance": "Шанс отримати {{currency}}: {{chance}}% (з ходу {{turn}})",
   "low": "Низька",
@@ -555,7 +565,11 @@
   "hard": "Жорстκε",
   "soft": "М'яκε",
   "lobby": {
-    "autoStartCountdown": "Автозапуск через {{countdown}}"
+    "autoStartCountdown": "Автозапуск через {{countdown}}",
+    "joinTeam": "Приєднатися до команди {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Виберіть меншу команду",
+    "teamFull": "Команда заповнена",
+    "teamNoLongerAvailable": "Хтось приєднався першим. Виберіть знову."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} на {{playersPerTeam}} {{battleTypeName}}",
@@ -635,6 +649,8 @@
     "statusInGame": "У грі",
     "statusAvailable": "Доступно",
     "statusLeft": "Вийшов",
+    "statusCompleted": "Завершив",
+    "allGamesPlayed": "Ви зіграли всі свої ігри на цій арені.",
     "inArenaGameModalTitle": "Ви в аренній грі",
     "inArenaGameModalMessage": "Ви зараз в аренній грі. Перейдіть до гри, щоб зробити свій хід.",
     "goToGame": "Перейти до гри",
@@ -753,5 +769,11 @@
     "description": "Кожен урок охоплює ситуацію, яку варто знати.",
     "allSeen": "Ви побачили всі уроки навчання.",
     "viewMissed": "Переглянути пропущені уроки"
+  },
+  "matchFoundModal": {
+    "title": "Суперника знайдено!",
+    "message": "Ваша повільна гра готова.",
+    "goToGame": "До гри",
+    "ignore": "Ігнорувати"
   }
 }

@@ -62,7 +62,6 @@
   "matchmakingQueue": {
     "inQueue": "You are now in the matchmaking queue! The system is searching for another player who has selected the same settings as you.",
     "matchFound": "Once a match is found, you will be redirected to the game.",
-    "extendQueue": "Extend Queue",
     "cancelledBy": "The queue was cancelled by {{username}}.",
     "playersInQueue": "{{count}} players searching",
     "disconnectedReconnecting": "Connection Lost. Reconnecting"
@@ -131,6 +130,7 @@
   "avatars": "Avatars",
   "withdraw": "Withdraw",
   "importScenario": "Import scenario",
+  "importScenarioTooLarge": "This scenario is too large to import. The maximum size is {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "You can import any scenario you want.",
     "createInfo": "You can even create your own scenarios in the <scenarioEditorLink/>.",
@@ -196,6 +196,7 @@
   "purchase": "Purchase",
   "purchased": "Purchased",
   "forUnit": "For {{unit}}",
+  "maxUnitSkinsSelected": "Max {{max}} skins per type",
   "select": "Select",
   "selectAll": "Select All",
   "deselect": "Deselect",
@@ -493,7 +494,8 @@
   },
   "strength": "Strength",
   "casualties": "Casualties",
-  "noRewards": "No rewards",
+  "kills": "Kills",
+  "rewards": "Rewards",
   "clan": "Coalition",
   "clans": "Coalitions",
   "createClan": "Create Coalition",
@@ -568,7 +570,11 @@
   "submittingOrders": "Submitting orders...",
   "checkingUpdates": "Checking updates...",
   "lobby": {
-    "autoStartCountdown": "Auto-start in {{countdown}}"
+    "autoStartCountdown": "Auto-start in {{countdown}}",
+    "joinTeam": "Join Team {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Pick the smaller team",
+    "teamFull": "Team is full",
+    "teamNoLongerAvailable": "Someone else joined first. Pick again."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -624,6 +630,8 @@
     "statusInGame": "In game",
     "statusAvailable": "Available",
     "statusLeft": "Left",
+    "statusCompleted": "Completed",
+    "allGamesPlayed": "You've played all your games in this arena.",
     "inArenaGameModalTitle": "You're in an arena game",
     "inArenaGameModalMessage": "You are currently in an arena game. Go to the game to take your turn.",
     "goToGame": "Go to game",
@@ -663,8 +671,13 @@
   "era": "Era",
   "inSlowQueueModal": {
     "title": "Game added to the queue!",
-    "message": "Once it finds the rest of the players, the game will appear in the My Games section of Home!",
-    "found": "Other players have already been found for this game, you can play now by <0>clicking here</0>."
+    "message": "Once it finds the rest of the players, the game will appear in the My Games section of Home!"
+  },
+  "matchFoundModal": {
+    "title": "Match found!",
+    "message": "Your slow match is ready to play.",
+    "goToGame": "Go to game",
+    "ignore": "Ignore"
   },
   "active": "Active",
   "inQueue": "In queue",
@@ -846,6 +859,14 @@
   "unknown": "Unknown",
   "fogOfWar": "Fog of war",
   "spectatorFullVision": "Spectator Full Vision",
+  "publicGame": "Public",
+  "openGames": "Open games",
+  "map": "Map",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "createdAgo": "Created",
+  "host": "Host",
+  "noPublicGames": "No public games right now.",
   "kFactorTooltip": "ELO K Factor (max rating change per ranked game)",
   "max": "Max",
   "minDistanceToFAA": "Min distance to FAA",

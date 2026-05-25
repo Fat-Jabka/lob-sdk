@@ -63,7 +63,6 @@
   "matchmakingQueue": {
     "inQueue": "Sikeresen felkerültél a várólistára! A rendszerünk most olyan ellenfelet keres neked, aki az általad kiválaszott módban és alkalmas beállítások mellett szeretne játszani.",
     "matchFound": "Amint találtunk alkalmas ellenfelet, átleszel irányítva a csatára.",
-    "extendQueue": "Várólista bővítése",
     "cancelledBy": "A várólistát {{username}} törölte.",
     "playersInQueue": "{{count}} játékos keres",
     "disconnectedReconnecting": "Kapcsolat Megszakadt. Újracsatlakozás"
@@ -119,6 +118,7 @@
   "avatars": "Profilképek",
   "withdraw": "Visszavonulás",
   "importScenario": "Pálya importálása",
+  "importScenarioTooLarge": "Ez a pálya túl nagy az importáláshoz. A maximális méret {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Importálhatsz bármilyen pályát, amit csak akarsz",
     "createInfo": "A saját pályáidat is létrehozhatod emitt: <scenarioEditorLink/>."
@@ -183,6 +183,7 @@
   "purchase": "Vásárlás",
   "purchased": "Megvásárolva",
   "forUnit": "Költség {{unit}}",
+  "maxUnitSkinsSelected": "Max. {{max}} skin típusonként",
   "select": "Kiválasztás",
   "selectAll": "Összes kiválasztása",
   "deselect": "Visszaállítás",
@@ -429,6 +430,7 @@
     "description": "Szeretnél az első lenni? <storeLink>Látogasd meg az Áruházat</storeLink> és szerezz <premiumCurrency/>-et!"
   },
   "team": "Csapat",
+  "teams": "Csapatok",
   "playerType": "Irányító típusa",
   "human": "Ember",
   "bot": "Bot",
@@ -506,6 +508,8 @@
     "statusInGame": "Játékban",
     "statusAvailable": "Elérhető",
     "statusLeft": "Kilépett",
+    "statusCompleted": "Befejezte",
+    "allGamesPlayed": "Lejátszottad az összes meccsedet ebben az arénában.",
     "inArenaGameModalTitle": "Aréna mérkőzésben vagy",
     "inArenaGameModalMessage": "Jelenleg egy aréna mérkőzésben vagy. Menj a játékhoz, hogy lépj.",
     "goToGame": "Ugrás a játékhoz",
@@ -540,6 +544,14 @@
   "unknown": "Ismeretlen",
   "fogOfWar": "Háború ködje",
   "spectatorFullVision": "Néző teljes látómezője",
+  "publicGame": "Nyilvános",
+  "openGames": "Nyitott játékok",
+  "map": "Térkép",
+  "enabled": "Engedélyezve",
+  "disabled": "Letiltva",
+  "createdAgo": "Létrehozva",
+  "host": "Házigazda",
+  "noPublicGames": "Jelenleg nincsenek nyilvános játékok.",
   "kFactorTooltip": "ELO K faktor (max. rangváltozás rangsorolt meccsenként)",
   "prestigeDropChance": "{{currency}} megszerzési esély: {{chance}}% ({{turn}}. körből)",
   "low": "Alacsony",
@@ -599,7 +611,11 @@
     "linkingAccount": "Discord fiók összekapcsolása..."
   },
   "lobby": {
-    "autoStartCountdown": "Automatikus indítás {{countdown}} múlva"
+    "autoStartCountdown": "Automatikus indítás {{countdown}} múlva",
+    "joinTeam": "Csatlakozás a {{team}}. csapathoz ({{count}}/{{capacity}})",
+    "teamLocked": "Válaszd a kisebb csapatot",
+    "teamFull": "A csapat tele van",
+    "teamNoLongerAvailable": "Valaki más csatlakozott először. Válassz újra."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} a {{playersPerTeam}} ellen {{battleTypeName}}",
@@ -694,5 +710,13 @@
     "description": "Minden lecke egy érdemes megismerni való helyzetet mutat be.",
     "allSeen": "Láttad a bemutató összes leckéjét.",
     "viewMissed": "Kihagyott leckék megtekintése"
-  }
+  },
+  "matchFoundModal": {
+    "title": "Mérkőzés található!",
+    "message": "A lassú meccsed készen áll a játékra.",
+    "goToGame": "Ugrás a játékhoz",
+    "ignore": "Mellőz"
+  },
+  "kills": "Megsemmisítések",
+  "rewards": "Jutalmak"
 }

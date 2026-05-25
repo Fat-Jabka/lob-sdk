@@ -4,7 +4,10 @@
   "yourTeam": "Η ομάδα σας.",
   "opponentTeam": "Αντίπαλη ομάδα.",
   "ranked": "αγώνας κατάταξης.",
-  "showPlayers": "Εμφάνιση παικτών",
   "playersModalTitle": "Παίκτες — παιχνίδι #{{gameId}}",
-  "rosterCountLabel": "{{count}} παίκτες"
+  "rosterCountLabel": "{{count}} παίκτες",
+  "result": "Αποτέλεσμα",
+  "date": "Ημερομηνία",
+  "players": "Παίκτες",
+  "replayNotAvailable": "Η επανάληψη δεν είναι διαθέσιμη"
 }

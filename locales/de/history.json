@@ -4,7 +4,10 @@
   "yourTeam": "Dein Team",
   "opponentTeam": "Gegnerteam",
   "ranked": "Rangliste",
-  "showPlayers": "Spieler anzeigen",
   "playersModalTitle": "Spieler — Spiel #{{gameId}}",
-  "rosterCountLabel": "{{count}} Spieler"
+  "rosterCountLabel": "{{count}} Spieler",
+  "result": "Ergebnis",
+  "date": "Datum",
+  "players": "Spieler",
+  "replayNotAvailable": "Wiederholung nicht verfügbar"
 }

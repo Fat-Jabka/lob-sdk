@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "危険",
+    "attack": "攻撃",
+    "help": "援護",
+    "retreat": "撤退",
+    "missing": "敵が見えない",
+    "onMyWay": "今向かう",
+    "bait": "おとり",
+    "hold": "維持"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "Tehlike",
+    "attack": "Saldır",
+    "help": "Yardım",
+    "retreat": "Geri çekil",
+    "missing": "Kayıp",
+    "onMyWay": "Yoldayım",
+    "bait": "Yem",
+    "hold": "Tut"
+  }
+}

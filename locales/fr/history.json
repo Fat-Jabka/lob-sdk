@@ -4,7 +4,10 @@
   "yourTeam": "Votre équipe",
   "opponentTeam": "Équipe adverse",
   "ranked": "Classé",
-  "showPlayers": "Afficher les joueurs",
   "playersModalTitle": "Joueurs — partie n° {{gameId}}",
-  "rosterCountLabel": "{{count}} joueurs"
+  "rosterCountLabel": "{{count}} joueurs",
+  "result": "Résultat",
+  "date": "Date",
+  "players": "Joueurs",
+  "replayNotAvailable": "Revisionnage indisponible"
 }

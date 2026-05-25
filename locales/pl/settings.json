@@ -158,7 +158,8 @@
     "controlGroup7": "Grupa kontrolna 7",
     "controlGroup8": "Grupa kontrolna 8",
     "controlGroup9": "Grupa kontrolna 9",
-    "controlGroup0": "Grupa kontrolna 0"
+    "controlGroup0": "Grupa kontrolna 0",
+    "openPingWheel": "Otwórz koło pingów"
   },
   "routingTransparency": {
     "title": "Przezroczystość jednostek uciekających"
@@ -176,6 +177,10 @@
   "renderScalePercent": {
     "title": "Skala renderowania",
     "description": "Wysoka wartość sprawia, że gra wygląda ostrzej, ale działa wolniej. Niska wartość sprawia, że jest bardziej rozmyta, ale szybsza."
+  },
+  "hudScalePercent": {
+    "title": "Skala HUD",
+    "description": "Zmienia rozmiar HUD w grze: przyciski akcji, górne przyciski, wskaźnik tury i pasek zwycięstwa."
   },
   "groundQuality": {
     "title": "Jakość terenu",

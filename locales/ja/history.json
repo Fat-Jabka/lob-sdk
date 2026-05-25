@@ -4,7 +4,10 @@
   "yourTeam": "あなたのチーム",
   "opponentTeam": "相手チーム",
   "ranked": "ランク戦",
-  "showPlayers": "プレイヤーを表示",
   "playersModalTitle": "プレイヤー — ゲーム #{{gameId}}",
-  "rosterCountLabel": "{{count}}人"
+  "rosterCountLabel": "{{count}}人",
+  "result": "結果",
+  "date": "日付",
+  "players": "プレイヤー",
+  "replayNotAvailable": "リプレイは利用できません"
 }

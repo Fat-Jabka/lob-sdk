@@ -4,7 +4,10 @@
   "yourTeam": "Saját csapat",
   "opponentTeam": "Ellenfél csapata",
   "ranked": "Ranglista",
-  "showPlayers": "Játékosok megjelenítése",
   "playersModalTitle": "Játékosok — #{{gameId}}. játék",
-  "rosterCountLabel": "{{count}} játékos"
+  "rosterCountLabel": "{{count}} játékos",
+  "result": "Eredmény",
+  "date": "Dátum",
+  "players": "Játékosok",
+  "replayNotAvailable": "A visszajátszás nem érhető el"
 }

@@ -4,7 +4,10 @@
   "yourTeam": "Ваша команда",
   "opponentTeam": "Команда соперника",
   "ranked": "Рейтинговая",
-  "showPlayers": "Показать игроков",
   "playersModalTitle": "Игроки — игра №{{gameId}}",
-  "rosterCountLabel": "{{count}} игроков"
+  "rosterCountLabel": "{{count}} игроков",
+  "result": "Результат",
+  "date": "Дата",
+  "players": "Игроки",
+  "replayNotAvailable": "Повтор недоступен"
 }

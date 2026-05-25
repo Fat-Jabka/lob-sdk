@@ -63,7 +63,6 @@
   "matchmakingQueue": {
     "inQueue": "現在マッチメイキングキューにいます。同じ設定を選択したプレイヤーを探しています。",
     "matchFound": "マッチが見つかると、自動的にゲームに移動します。",
-    "extendQueue": "キューを拡張",
     "cancelledBy": "キューは{{username}}によってキャンセルされました。",
     "playersInQueue": "{{count}}人のプレイヤーが検索中",
     "disconnectedReconnecting": "接続が切断されました。再接続中"
@@ -119,6 +118,7 @@
   "avatars": "アバター",
   "withdraw": "撤退",
   "importScenario": "シナリオをインポート",
+  "importScenarioTooLarge": "このシナリオは大きすぎてインポートできません。最大サイズは{{maxKb}} KBです。",
   "importScenarioModal": {
     "importInfo": "任意のシナリオをインポートできます。",
     "createInfo": "<scenarioEditorLink/> で独自のシナリオを作成することもできます。"
@@ -183,6 +183,7 @@
   "purchase": "購入",
   "purchased": "購入済み",
   "forUnit": "{{unit}} 用",
+  "maxUnitSkinsSelected": "種別ごとに最大{{max}}スキン",
   "select": "選択",
   "selectAll": "すべて選択",
   "deselect": "選択解除",
@@ -445,7 +446,8 @@
   },
   "strength": "力",
   "casualties": "犠牲者",
-  "noRewards": "報酬なし",
+  "kills": "撃破",
+  "rewards": "報酬",
   "clan": "連合",
   "clans": "連合軍",
   "createClan": "連合を作成",
@@ -526,6 +528,14 @@
   "unknown": "不明",
   "fogOfWar": "戦争の霧",
   "spectatorFullVision": "観戦者フルビジョン",
+  "publicGame": "公開",
+  "openGames": "募集中のゲーム",
+  "map": "マップ",
+  "enabled": "有効",
+  "disabled": "無効",
+  "createdAgo": "作成",
+  "host": "ホスト",
+  "noPublicGames": "現在、公開ゲームはありません。",
   "kFactorTooltip": "ELO K係数（ランクマッチ1試合あたりの最大レート変動）",
   "prestigeDropChance": "{{currency}}ドロップ確率：{{chance}}%（{{turn}}ターン目から）",
   "low": "低",
@@ -538,7 +548,11 @@
   "soft": "柔らかい",
   "infantry": "歩兵",
   "lobby": {
-    "autoStartCountdown": "{{countdown}}で自動開始"
+    "autoStartCountdown": "{{countdown}}で自動開始",
+    "joinTeam": "チーム{{team}}に参加 ({{count}}/{{capacity}})",
+    "teamLocked": "少ない方のチームを選んでください",
+    "teamFull": "チームは満員です",
+    "teamNoLongerAvailable": "他のプレイヤーが先に参加しました。もう一度選んでください。"
   },
   "limitedMode": {
     "title": "{{playersPerTeam}}対{{playersPerTeam}} {{battleTypeName}}",
@@ -617,6 +631,8 @@
     "statusInGame": "対戦中",
     "statusAvailable": "利用可能",
     "statusLeft": "退出",
+    "statusCompleted": "完了",
+    "allGamesPlayed": "このアリーナでのすべての対戦を終えました。",
     "inArenaGameModalTitle": "アリーナの対戦中です",
     "inArenaGameModalMessage": "現在アリーナの対戦中です。手番を行うにはゲームに移動してください。",
     "goToGame": "ゲームへ",
@@ -735,5 +751,11 @@
     "description": "各レッスンは知っておくべき状況を扱います。",
     "allSeen": "チュートリアルのすべてのレッスンを見ました。",
     "viewMissed": "見逃したレッスンを表示"
+  },
+  "matchFoundModal": {
+    "title": "マッチが見つかりました！",
+    "message": "スローマッチの準備ができました。",
+    "goToGame": "ゲームへ",
+    "ignore": "無視"
   }
 }

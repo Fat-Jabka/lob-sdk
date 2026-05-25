@@ -185,7 +185,8 @@
     "controlGroup7": "नियंत्रण समूह 7",
     "controlGroup8": "नियंत्रण समूह 8",
     "controlGroup9": "नियंत्रण समूह 9",
-    "controlGroup0": "नियंत्रण समूह 0"
+    "controlGroup0": "नियंत्रण समूह 0",
+    "openPingWheel": "पिंग व्हील खोलें"
   },
   "routingTransparency": {
     "title": "रूटिंग यूनिट पारदर्शिता"
@@ -203,6 +204,10 @@
   "renderScalePercent": {
     "title": "रेंडर स्केल",
     "description": "उच्च मान से खेल अधिक स्पष्ट दिखता है लेकिन धीमा चलता है। निम्न मान से खेल अधिक धुंधला दिखता है लेकिन तेज़ चलता है।"
+  },
+  "hudScalePercent": {
+    "title": "HUD स्केल",
+    "description": "इन-गेम HUD का आकार बदलें: एक्शन बटन, ऊपरी बटन, चाल संकेतक और विजय बार।"
   },
   "groundQuality": {
     "title": "भूमि गुणवत्ता",

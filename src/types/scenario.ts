@@ -4,11 +4,29 @@ import {
   PlayerSetup,
   UnitDtoPartialId,
   TerrainType,
+  TerrainCategoryConfig,
   AnyInstruction,
   Range,
   Size,
+  UnitTemplate,
+  FormationTemplate,
 } from "@lob-sdk/types";
+import type {
+  DamageTypeTemplate,
+  UnitCategoryTemplate,
+} from "../game-data-manager/types";
 import { Tutorial } from "./tutorial";
+
+/**
+ * Scenario-scoped override for a single terrain category. The {@link id}
+ * either matches an era built-in (replacing its config wholesale, useful to
+ * give custom unit categories proper terrain modifiers) or introduces a new
+ * category id that custom terrains can reference.
+ */
+export interface CustomTerrainCategoryOverride {
+  id: string;
+  config: TerrainCategoryConfig;
+}
 
 /**
  * Translations for scenario content, organized by language.
@@ -260,6 +278,22 @@ export interface LegacyRandomScenario extends BaseScenario {
 export type ScenarioName = string;
 
 /**
+ * A sprite uploaded by a scenario creator, embedded inline as a base64
+ * data-URL. Referenced by custom unit formations via `baseSprite`/`overlaySprite`
+ * names carrying the `cs_` prefix. Kept small by the editor (re-encoded to webp
+ * and size-capped); aggregate weight is bounded by the per-collection count
+ * caps in validate-custom.ts and the server's decompressed-payload cap.
+ */
+export interface CustomSprite {
+  /** `data:image/webp;base64,...` (or png). */
+  dataUrl: string;
+  /** Intrinsic width in px (used to size the rendered sprite). */
+  width: number;
+  /** Intrinsic height in px. */
+  height: number;
+}
+
+/**
  * Feature-based scenario schema (replaces the legacy preset/hybrid/random union).
  * All maps go through the procedural pipeline; fixed maps are wrapped in a single
  * {@link InstructionStaticMap} as the first instruction.
@@ -350,4 +384,51 @@ export interface Scenario {
    * this field. Safe to omit for non-tutorial scenarios.
    */
   tutorial?: Tutorial;
+
+  /**
+   * Additive unit templates scoped to this scenario. Ids must be >= 10000
+   * and unique among custom templates; collisions with era built-ins are
+   * rejected by validation. Resolved at runtime via the per-game
+   * GameDataManager layered on top of the era's templates.
+   */
+  customUnitTemplates?: UnitTemplate[];
+
+  /**
+   * Additive damage types scoped to this scenario. Ids and names must not
+   * collide with era built-ins. Referenced by custom unit templates via
+   * `meleeDamageType` / `rangedDamageTypes`.
+   */
+  customDamageTypes?: DamageTypeTemplate[];
+
+  /**
+   * Additive formation templates scoped to this scenario. Ids must not
+   * collide with era built-ins. Referenced by custom unit templates via
+   * `formations[].id`.
+   */
+  customUnitFormations?: FormationTemplate[];
+
+  /**
+   * Additive unit categories scoped to this scenario. Ids must not collide
+   * with era built-ins. Referenced by custom unit templates via `category`.
+   */
+  customUnitCategories?: UnitCategoryTemplate[];
+
+  /**
+   * Per-scenario overrides for terrain category configs. Each entry either
+   * replaces the era's config for an existing terrain category id (so custom
+   * unit categories can get specific movement / attack / defense modifiers
+   * per terrain instead of inheriting the era's `*` wildcard default), or
+   * introduces a brand new category id usable for tooling that wants new
+   * terrain semantics. After loading, the terrain-category wildcard
+   * expansion runs again so newly-added unit categories pick up defaults.
+   */
+  customTerrainCategories?: CustomTerrainCategoryOverride[];
+
+  /**
+   * Uploaded sprites embedded inline (base64), keyed by a
+   * `cs_<type>_<formationId>_<base|overlay>` name that custom unit formations
+   * reference via `baseSprite`/`overlaySprite`. Registered client-side into the
+   * sprite data service so they render like built-in sprites.
+   */
+  customSprites?: Record<string, CustomSprite>;
 }

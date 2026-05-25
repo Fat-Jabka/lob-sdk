@@ -158,7 +158,8 @@
     "controlGroup7": "Gruppo di controllo 7",
     "controlGroup8": "Gruppo di controllo 8",
     "controlGroup9": "Gruppo di controllo 9",
-    "controlGroup0": "Gruppo di controllo 0"
+    "controlGroup0": "Gruppo di controllo 0",
+    "openPingWheel": "Apri ruota dei ping"
   },
   "routingTransparency": {
     "title": "Trasparenza delle unità in rotta"
@@ -176,6 +177,10 @@
   "renderScalePercent": {
     "title": "Scala di rendering",
     "description": "Un valore alto rende il gioco più nitido ma più lento. Un valore basso lo rende più sfocato ma più veloce."
+  },
+  "hudScalePercent": {
+    "title": "Scala dell'HUD",
+    "description": "Ridimensiona l'HUD di gioco: pulsanti azione, pulsanti in alto, indicatore del turno e barra della vittoria."
   },
   "groundQuality": {
     "title": "Qualità del terreno",

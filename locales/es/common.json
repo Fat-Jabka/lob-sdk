@@ -52,7 +52,6 @@
   "matchmakingQueue": {
     "inQueue": "¡Ahora estás en la cola de emparejamiento! El sistema está buscando otro jugador que haya seleccionado las mismas configuraciones que tú.",
     "matchFound": "Una vez que se encuentre un emparejamiento, serás redirigido al juego.",
-    "extendQueue": "Extender cola",
     "cancelledBy": "La cola fue cancelada por {{username}}.",
     "playersInQueue": "{{count}} jugadores buscando",
     "disconnectedReconnecting": "Conexión Perdida. Reconectando"
@@ -116,6 +115,7 @@
   "avatars": "Avatares",
   "withdraw": "Retirarse",
   "importScenario": "Importar escenario",
+  "importScenarioTooLarge": "Este escenario es demasiado grande para importar. El tamaño máximo es {{maxKb}} KB.",
   "importScenarioModal": {
     "importInfo": "Podés importar cualquier escenario que quieras.",
     "createInfo": "Incluso podés crear tus propios escenarios en el <scenarioEditorLink/>.",
@@ -181,6 +181,7 @@
   "purchase": "Comprar",
   "purchased": "Comprado",
   "forUnit": "Para {{unit}}",
+  "maxUnitSkinsSelected": "Máx. {{max}} skins por tipo",
   "select": "Seleccionar",
   "selectAll": "Seleccionar Todo",
   "deselect": "Deseleccionar",
@@ -458,7 +459,8 @@
   },
   "strength": "Fuerza",
   "casualties": "Bajas",
-  "noRewards": "Sin recompensas",
+  "kills": "Eliminaciones",
+  "rewards": "Recompensas",
   "clan": "Coalición",
   "clans": "Coaliciones",
   "createClan": "Crear Coalición",
@@ -573,6 +575,8 @@
     "statusInGame": "En partida",
     "statusAvailable": "Disponible",
     "statusLeft": "Abandonó",
+    "statusCompleted": "Completó",
+    "allGamesPlayed": "Ya jugaste todas tus partidas en esta arena.",
     "inArenaGameModalTitle": "Estás en una partida de arena",
     "inArenaGameModalMessage": "Estás en una partida de arena. Ve al juego para hacer tu turno.",
     "goToGame": "Ir al juego",
@@ -606,7 +610,11 @@
   "round": "Ronda",
   "current": "Actual",
   "lobby": {
-    "autoStartCountdown": "Inicio automático en {{countdown}}"
+    "autoStartCountdown": "Inicio automático en {{countdown}}",
+    "joinTeam": "Unirse al Equipo {{team}} ({{count}}/{{capacity}})",
+    "teamLocked": "Elige el equipo más pequeño",
+    "teamFull": "El equipo está lleno",
+    "teamNoLongerAvailable": "Alguien se unió primero. Elige de nuevo."
   },
   "limitedMode": {
     "title": "{{playersPerTeam}} vs {{playersPerTeam}} {{battleTypeName}}",
@@ -628,8 +636,13 @@
   "era": "Época",
   "inSlowQueueModal": {
     "title": "¡Juego añadido a la cola!",
-    "message": "Una vez que encuentre al resto de los jugadores, el juego aparecerá en la sección Mis Juegos de Inicio.",
-    "found": "Ya se han encontrado otros jugadores para este juego, puedes jugar ahora haciendo <0>clic aquí</0>."
+    "message": "Una vez que encuentre al resto de los jugadores, el juego aparecerá en la sección Mis Juegos de Inicio."
+  },
+  "matchFoundModal": {
+    "title": "¡Partida encontrada!",
+    "message": "Tu partida lenta está lista para jugarse.",
+    "goToGame": "Ir a la partida",
+    "ignore": "Ignorar"
   },
   "active": "Activo",
   "inQueue": "En cola",
@@ -742,6 +755,14 @@
   "unknown": "Desconocido",
   "fogOfWar": "Niebla de guerra",
   "spectatorFullVision": "Visión completa del espectador",
+  "publicGame": "Pública",
+  "openGames": "Partidas abiertas",
+  "map": "Mapa",
+  "enabled": "Activado",
+  "disabled": "Desactivado",
+  "createdAgo": "Creado hace",
+  "host": "Anfitrión",
+  "noPublicGames": "No hay partidas públicas en este momento.",
   "kFactorTooltip": "Factor K ELO (cambio máximo de puntuación por partida clasificada)",
   "prestigeDropChance": "Probabilidad de obtener {{currency}}: {{chance}}% (desde el turno {{turn}})",
   "low": "Baja",

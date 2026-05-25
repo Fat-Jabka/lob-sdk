@@ -1,0 +1,12 @@
+{
+  "types": {
+    "danger": "Veszély",
+    "attack": "Támadás",
+    "help": "Segítség",
+    "retreat": "Visszavonulás",
+    "missing": "Eltűnt",
+    "onMyWay": "Úton vagyok",
+    "bait": "Csali",
+    "hold": "Tartás"
+  }
+}
