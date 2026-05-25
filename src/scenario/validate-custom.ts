@@ -30,6 +30,13 @@ export const MAX_CUSTOM_UNIT_CATEGORIES = 50;
 export const MAX_CUSTOM_TERRAIN_CATEGORIES = 50;
 export const MAX_CUSTOM_SPRITES = 200;
 
+/**
+ * Generous magnitude ceiling for any single numeric stat in a custom def. The
+ * bound only rejects NaN/Infinity and absurd values (e.g. 1e308) that would
+ * poison the simulation math.
+ */
+export const MAX_ABS_STAT = 1e9;
+
 export interface CustomDefValidationError {
   scope:
     | "unitTemplate"
@@ -133,6 +140,33 @@ function validateCustomTerrainCategories(
   return errors;
 }
 
+/**
+ * Returns a message for every numeric field in a custom def that is not finite
+ * or exceeds MAX_ABS_STAT in magnitude. Walks nested objects/arrays (a
+ * template's formations, a damage type's ranges, etc.); JSON inputs are acyclic
+ * and size-capped upstream, so the recursion is bounded.
+ */
+function findOutOfRangeNumbers(value: unknown, path: string): string[] {
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) return [`${path} must be a finite number`];
+    if (Math.abs(value) > MAX_ABS_STAT) {
+      return [`${path} exceeds the max allowed magnitude (${MAX_ABS_STAT})`];
+    }
+    return [];
+  }
+  if (Array.isArray(value)) {
+    return value.flatMap((item, i) =>
+      findOutOfRangeNumbers(item, `${path}[${i}]`),
+    );
+  }
+  if (value !== null && typeof value === "object") {
+    return Object.entries(value).flatMap(([key, val]) =>
+      findOutOfRangeNumbers(val, path ? `${path}.${key}` : key),
+    );
+  }
+  return [];
+}
+
 function validateCustomDamageTypes(
   customDamageTypes: DamageTypeTemplate[],
   eraGameDataManager: GameDataManager,
@@ -196,6 +230,9 @@ function validateCustomDamageTypes(
         field: dt.name,
         message: `Ranged damage type "${dt.name}" needs at least one range bracket`,
       });
+    }
+    for (const message of findOutOfRangeNumbers(dt, "")) {
+      errors.push({ scope: "damageType", field: dt.name, message });
     }
     seenIds.add(dt.id);
     seenNames.add(dt.name);
@@ -427,6 +464,10 @@ function validateCustomUnitTemplates(
         field: template.name,
         message: `defaultFormation "${template.defaultFormation}" must match one of the unit's formations (${templateFormations.map((f) => f.id).join(", ") || "<empty>"})`,
       });
+    }
+
+    for (const message of findOutOfRangeNumbers(template, "")) {
+      errors.push({ scope: "unitTemplate", field: template.name, message });
     }
   }
 
