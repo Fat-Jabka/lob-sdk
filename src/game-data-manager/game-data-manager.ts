@@ -119,11 +119,6 @@ export class GameDataManager {
   readonly era: GameEra;
   private static instances: Map<GameEra, GameDataManager> = new Map();
 
-  /**
-   * Terrain is considered globally impassable (e.g., Deep Water) if the modifier is this or less.
-   */
-  public static readonly IMPASSABLE_THRESHOLD = -10;
-
   // Centralized data cache
   private battleTypes: Record<DynamicBattleType, BattleTypeTemplate> =
     {} as Record<DynamicBattleType, BattleTypeTemplate>;
@@ -606,6 +601,20 @@ export class GameDataManager {
             // UnitCategoryId is a string, so bracket access is safe and supported.
             if (!(unitCategory.id in modifierMap)) {
               modifierMap[unitCategory.id] = defaultValue;
+            }
+          }
+        }
+      }
+
+      // `impassable` shares the `*` wildcard convention but holds booleans, so
+      // it is expanded separately from the numeric modifier maps above.
+      const impassableMap = category.impassable;
+      if (impassableMap && "*" in impassableMap) {
+        const defaultValue = impassableMap["*"];
+        if (defaultValue !== undefined) {
+          for (const unitCategory of this.unitCategories) {
+            if (!(unitCategory.id in impassableMap)) {
+              impassableMap[unitCategory.id] = defaultValue;
             }
           }
         }
@@ -1218,16 +1227,16 @@ export class GameDataManager {
   }
 
   /**
-   * Check if terrain is passable.
-   * If no category is provided, it falls back to the supplyLines.movementCategory or "infantry".
-   * Terrain is considered impassable if the movement modifier is -10 or less.
+   * Passable unless the terrain category's `impassable` flag is set for the
+   * unit category (or via the `*` wildcard).
    */
   public isPassable(
     terrainType: TerrainType,
     unitCategory: UnitCategoryId,
   ): boolean {
-    const modifier = this.getMovementModifier(terrainType, unitCategory);
-    return modifier > GameDataManager.IMPASSABLE_THRESHOLD;
+    const category = this.getCategoryByTerrain(terrainType);
+    const terrainCategory = this.terrainCategories![category];
+    return !terrainCategory?.impassable?.[unitCategory];
   }
 
   /**

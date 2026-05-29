@@ -3,6 +3,7 @@ import { CUSTOM_UNIT_TYPE_MIN } from "@lob-sdk/scenario";
 import {
   FormationTemplate,
   RangeUnitTemplate,
+  TerrainType,
   UnitTemplate,
 } from "@lob-sdk/types";
 import {
@@ -59,10 +60,8 @@ describe("GameDataManager custom defs", () => {
         customUnitCategories: [{ id: "drone", firingAltitude: 0 }],
       });
       // The era's terrain configs use a `*` wildcard for default movement.
-      // Without the re-expansion, isPassable for an unknown category would
-      // fall back to 0 ( > IMPASSABLE_THRESHOLD = -10) and silently report
-      // every terrain as passable. With re-expansion, the result must match
-      // what an existing category would get on the same terrain.
+      // Without the re-expansion a new category would miss the wildcard value
+      // and read 0, so it must match what an existing category gets.
       const terrainType = m.getTerrains()[0]!.id;
       const builtInCategory = m.getUnitCategories()[0]!.id;
       // Same modifier ⇒ same passability ⇒ wildcard was applied.
@@ -407,6 +406,26 @@ describe("GameDataManager custom defs", () => {
       });
       const tc = m.getTerrainCategories() as Record<string, any>;
       expect(tc.forest.movementModifier.drone).toBe(0.5);
+    });
+
+    it("blocks a category via the impassable flag on a custom override", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customTerrainCategories: [
+          { id: "forest", config: { impassable: { infantry: true } } },
+        ],
+      });
+      expect(m.isPassable(TerrainType.Forest, "infantry")).toBe(false);
+      // Categories without the flag stay passable.
+      expect(m.isPassable(TerrainType.Forest, "artillery")).toBe(true);
+    });
+
+    it("re-expands the impassable `*` wildcard to new unit categories", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customUnitCategories: [{ id: "drone", firingAltitude: 0 }],
+      });
+      // deepWater is impassable via `*`; the new category must inherit it
+      // instead of falling through to the passable default.
+      expect(m.isPassable(TerrainType.DeepWater, "drone")).toBe(false);
     });
   });
 });

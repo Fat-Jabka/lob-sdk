@@ -353,14 +353,14 @@
   },
 
   "deepWater": {
-    "movementModifier": {
-      "*": -10
+    "impassable": {
+      "*": true
     }
   },
 
   "cliff": {
-    "movementModifier": {
-      "*": -10
+    "impassable": {
+      "*": true
     }
   },
 
@@ -435,8 +435,8 @@
     }
   },
   "city": {
-    "movementModifier": {
-      "*": -10
+    "impassable": {
+      "*": true
     },
     "hitboxHeight": 0.99,
     "staminaCostModifier": 1,
