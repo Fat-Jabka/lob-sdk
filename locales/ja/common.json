@@ -26,7 +26,6 @@
   "createdAt": "{{date}} に作成",
   "addPlayer": "プレイヤーを追加",
   "credits": "クレジット",
-  "roadmap": "ロードマップ",
   "settings": "設定",
   "leagueDescription": "リーグはあなたのスキルレベルを反映します。試合に勝ってリーグ内で進歩を積み、頂点に達すると次のリーグに昇格します。負けが続くと降格することがあります。次のリーグまでの進捗を確認するには、リーグバッジにカーソルを合わせてください。",
   "averageLeague": "Average League",
