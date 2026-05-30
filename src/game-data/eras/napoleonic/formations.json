@@ -316,5 +316,20 @@
         "duration": 12
       }
     ]
+  },
+  {
+    "id": "ship",
+    "frontBackArc": 90,
+    "minFlankAngle": 180,
+    "maxFlankAngle": 180,
+    "collisionCircles": 2,
+    "collisionCircleSize": 12,
+    "collisionCirclesVertical": true,
+    "disablesFlankMelee": true,
+    "disable180Turnaround": true,
+    "shootingAngle": 45,
+    "shootingMaxTargets": 2,
+    "shootingSides": 1,
+    "minMovementModifier": -0.25
   }
 ]
