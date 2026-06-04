@@ -49,7 +49,7 @@
     "timeToForm": 4,
     "timeToUnform": 2,
     "minMovementModifier": -0.5,
-    "receivedMeleeDamageModifier": -0.1,
+    "receivedMeleeDamageModifier": 0,
     "projectilePassThrough": 0.1
   },
   {
