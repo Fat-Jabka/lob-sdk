@@ -243,6 +243,7 @@ export class GameDataManager {
       customTerrainCategories?: CustomTerrainCategoryOverride[];
       customGameConstants?: Partial<GameConstants>;
       customGameRules?: DeepPartial<GameRules>;
+      customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
     },
   ): GameDataManager {
     const hasCustom = !!(
@@ -252,7 +253,8 @@ export class GameDataManager {
       customDefs.customUnitCategories?.length ||
       customDefs.customTerrainCategories?.length ||
       Object.keys(customDefs.customGameConstants ?? {}).length ||
-      Object.keys(customDefs.customGameRules ?? {}).length
+      Object.keys(customDefs.customGameRules ?? {}).length ||
+      Object.keys(customDefs.customOrders ?? {}).length
     );
 
     if (!hasCustom) {
@@ -278,8 +280,9 @@ export class GameDataManager {
     customTerrainCategories?: CustomTerrainCategoryOverride[];
     customGameConstants?: Partial<GameConstants>;
     customGameRules?: DeepPartial<GameRules>;
+    customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
   }): void {
-    // Order matters: categories → terrain categories → damage types →
+    // Order matters: orders → categories → terrain categories → damage types →
     // formations → templates. Terrain categories slot in after unit
     // categories so the wildcard expansion has the full set of unit
     // category ids to populate against.
@@ -296,6 +299,25 @@ export class GameDataManager {
     this.terrainCategories = JSON.parse(
       JSON.stringify(this.terrainCategories ?? {}),
     ) as Record<TerrainCategoryType, TerrainCategoryConfig>;
+
+    if (
+      customDefs.customOrders &&
+      Object.keys(customDefs.customOrders).length > 0
+    ) {
+      // Clone the shared era array, then deep-merge each override by id and
+      // re-key the maps. Unknown ids are skipped (validation rejects them).
+      this._orders = [...this._orders];
+      for (const [idStr, override] of Object.entries(customDefs.customOrders)) {
+        if (!override) continue;
+        const id = Number(idStr);
+        const idx = this._orders.findIndex((o) => o.id === id);
+        if (idx < 0) continue;
+        const merged = deepMerge<OrderTemplate>(this._orders[idx], override);
+        this._orders[idx] = merged;
+        this._orderMap.set(merged.id, merged);
+        this._orderNameMap.set(merged.name, merged.id);
+      }
+    }
 
     if (customDefs.customUnitCategories?.length) {
       // Clone, then replace-by-id so override doesn't duplicate the entry.
