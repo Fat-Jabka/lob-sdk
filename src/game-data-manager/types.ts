@@ -350,9 +350,9 @@ export interface GameConstants {
   ROUTING_FORMATION: string;
 
   /**
-   * Whether the era is in beta.
+   * Whether the era is an experimental prototype.
    */
-  BETA: boolean;
+  PROTOTYPE: boolean;
 
   /**
    * Divisor for converting internal stat precision to display values.
