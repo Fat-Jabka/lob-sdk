@@ -708,7 +708,7 @@ export class GameDataManager {
    * @returns The ammo reserve, or 0 if not configured for this battle type.
    */
   public getAmmoReserve(battleType: DynamicBattleType): number {
-    return this.getGameRules().ammo?.ammoReserve[battleType] ?? 0;
+    return this.getGameRules().ammo?.ammoReserve?.[battleType] ?? 0;
   }
 
   /**
@@ -717,7 +717,7 @@ export class GameDataManager {
    * @returns The conversion rate, or 0 if not configured for this battle type.
    */
   public getGoldToAmmoRate(battleType: DynamicBattleType): number {
-    return this.getGameRules().ammo?.goldToAmmoRate[battleType] ?? 0;
+    return this.getGameRules().ammo?.goldToAmmoRate?.[battleType] ?? 0;
   }
 
   /**
