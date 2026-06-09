@@ -27,8 +27,8 @@
       "micro": 90000,
       "clash": 110000,
       "combat": 225000,
-      "battle": 300000,
-      "grand_battle": 400000
+      "battle": 330000,
+      "grand_battle": 500000
     },
     "goldToAmmoRate": {
       "micro": 1400,
