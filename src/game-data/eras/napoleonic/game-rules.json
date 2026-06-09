@@ -16,7 +16,7 @@
     "runningMovementPenalty": -0.8,
     "rangedAttackPenalty": -0.15,
     "meleeAttackPenalty": -0.4,
-    "meleeDefensePenalty": -0.5
+    "meleeDefensePenalty": -0.2
   },
   "ammo": {
     "baseReserve": 250000,
@@ -26,16 +26,16 @@
     "ammoReserve": {
       "micro": 90000,
       "clash": 110000,
-      "combat": 190000,
-      "battle": 225000,
-      "grand_battle": 275000
+      "combat": 225000,
+      "battle": 300000,
+      "grand_battle": 400000
     },
     "goldToAmmoRate": {
       "micro": 1400,
-      "clash": 1400,
-      "combat": 1400,
-      "battle": 1400,
-      "grand_battle": 1400
+      "clash": 1300,
+      "combat": 1200,
+      "battle": 1100,
+      "grand_battle": 1000
     }
   },
   "skirmisherSpawning": {
@@ -43,8 +43,8 @@
   },
   "allyCollision": {
     "collisionBounceScale": 0.005,
-    "overlapStopCharge": 0.4,
-    "maxSpeedPenalty": -0.1,
+    "overlapStopCharge": 0.3,
+    "maxSpeedPenalty": -0.5,
     "maxOrgDamageReceived": 0.3,
     "maxMeleeAttackPenalty": -0.5,
     "maxRangedAttackPenalty": -0.5,
@@ -85,7 +85,7 @@
     "safeDistance": 144,
     "distantThreatOrgRecoveryModifier": 0.2,
     "distantThreatDistance": 72,
-    "routingOrgRecoveryModifier": -0.4,
+    "routingOrgRecoveryModifier": -0.3,
     "maxOrgRecoveryByHpModifier": -0.99,
     "vpDebuffGraceZone": 0.3,
     "vpDebuffMultiplier": 0.5
