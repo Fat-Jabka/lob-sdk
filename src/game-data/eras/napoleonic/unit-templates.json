@@ -1533,7 +1533,7 @@
       {
         "id": "ship",
         "baseSprite": "ship",
-        "overlaySprite": null
+        "overlaySprite": "ship"
       }
     ],
     "pushStrength": 0,
