@@ -1,9 +1,10 @@
 import { Point2 } from "@lob-sdk/vector";
 
 /**
- * Simplifies a path with the Douglas-Peucker algorithm: drops points that lie within `epsilon`
- * (coordinate units) of the simplified path. Iterative (no recursion), never mutates the input,
- * and handles zero-length segments (duplicate points / closed loops) without dividing by zero.
+ * Simplifies a path with the Douglas-Peucker algorithm: drops points within `epsilon` (coordinate
+ * units) of the kept segment, measured point-to-segment (clamped at the endpoints), not to the
+ * classic infinite line. Iterative (no recursion), never mutates the input, and handles zero-length
+ * segments (duplicate points / closed loops) without dividing by zero.
  *
  * @param path - Points to simplify. Not mutated.
  * @param epsilon - Max allowed deviation; must be finite and >= 0.
