@@ -1526,7 +1526,7 @@
     "manpower": 200,
     "gold": 0,
     "rotationSpeed": 0.05,
-    "rotationMaxThreshold": 3,
+    "rotationMaxThreshold": 0.26,
     "runRotationSpeed": 0.2,
     "defaultFormation": "ship",
     "formations": [
